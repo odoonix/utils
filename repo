@@ -199,9 +199,9 @@ init_repo_single(){
     url="git@github.com:$project/$name.git"
 
     echo "---------------------------------------------"
-    echo "Workspace: $project "
-    echo "Project  : $name  "
-    echo "URL      :$url   "
+    echo "| Workspace     | $project "
+    echo "| Project       | $name  "
+    echo "| URL           | $url   "
     echo "---------------------------------------------"
     check_repo_single $name
 
@@ -225,9 +225,10 @@ init_repo_single(){
             updateRepo $name
             ;;
         *)
-            echo -e "\e[32m Everything is ok\e[0m"
+            echo -e "| \e[32m Everything is ok\e[0m"
             ;;
     esac
+    print_repo_close_info
 }
 
 init_repo(){

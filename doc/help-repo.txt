@@ -1,0 +1,9 @@
+
+Usage: repo [-h]
+
+
+     --help,-h: Display help
+   --check, -c: Checks all repos
+    --init, -i: Init the repo if not exist and update use -i all for all repo
+
+
