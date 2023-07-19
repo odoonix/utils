@@ -25,9 +25,14 @@ DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
 odoo="16.0"
 root="/mnt/odoo/addons-16"
 # ViraWeb123 Customers
+# odoo-beton          -> Tachar
+# odoo-mobile-service -> elbaan
+#
 REPO_CUSTOMER=( \
     "odoo-beton" \
     "odoo-mobile-service" \
+    "odoo-gilsa" \
+    "odoo-7tooti" \
 )
 
 # OCA Supported projects
@@ -264,9 +269,18 @@ init_repo(){
         return 0
     fi
 
-    if [[ $1 = "vw" ]]; 
+    if [[ $1 = "viraweb123" ]]; 
     then
         for key in "${REPO_VW[@]}"
+        do
+            init_repo_single "viraweb123" $key
+        done
+        return 0
+    fi
+
+    if [[ $1 = "customer" ]]; 
+    then
+        for key in "${REPO_CUSTOMER[@]}"
         do
             init_repo_single "viraweb123" $key
         done
