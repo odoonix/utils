@@ -87,6 +87,7 @@ checkBranch() {
 branchStatus(){
 
     cd $1
+    git fetch origin $odoo >/dev/null 2>&1
     base=$( git merge-base $odoo "origin/$odoo" )
     aref=$( git rev-parse  $odoo )
     bref=$( git rev-parse  "origin/$odoo" )
