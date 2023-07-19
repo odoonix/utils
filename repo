@@ -81,8 +81,6 @@ checkBranch() {
     return 0
 }
 
-
-
 # test change
 branchStatus(){
 
