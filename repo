@@ -1,0 +1,299 @@
+#!/bin/bash
+
+SOURCE=${BASH_SOURCE[0]}
+DIRC=`pwd`
+
+while [ -L "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+  TARGET=$(readlink "$SOURCE")
+  if [[ $TARGET == /* ]]; then
+    #echo "SOURCE '$SOURCE' is an absolute symlink to '$TARGET'"
+    SOURCE=$TARGET
+  else
+    DIR=$( dirname "$SOURCE" )
+    #echo "SOURCE '$SOURCE' is a relative symlink to '$TARGET' (relative to '$DIR')"
+    SOURCE=$DIR/$TARGET # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+  fi
+done
+#echo "SOURCE is '$SOURCE'"
+RDIR=$( dirname "$SOURCE" )
+DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
+
+
+#################################################################
+# Configs
+#################################################################
+odoo="16.0"
+root="/mnt/odoo/addons-16"
+# ViraWeb123 Customers
+REPO_CUSTOMER=( \
+    "odoo-beton" \
+    "odoo-mobile-service" \
+)
+
+# OCA Supported projects
+REPO_OCA=(\
+    "OpenUpgrade" \
+    "sale-workflow" \
+    "purchase-workflow" \
+    "server-tools" \
+    "pos" \
+    "iot" \
+    "web" \
+    "hr" \
+    "payroll" \
+)
+
+# Viraweb123 Projects   
+REPO_VW=( \
+    "odoo-iot" \
+    "odoo-hr" \
+    "odoo-sms" \
+    "odoo-themes" \
+    "odoo-viraweb123" \
+    "odoo-pos" \
+    "odoo-utils" \
+)
+
+# NOTE: not supprted and will removed soon
+REPO_DEPRICATED=(\
+    "CybroAddons" \
+    "design-themes" \
+)
+
+#################################################################
+# Utilities
+#################################################################
+checkBranch() {
+	path="${1}"
+	branch="${2}"
+
+    if [ ! -d "$DIRC/$path" ]; 
+    then 
+        return 1
+    fi
+	cd "$DIRC/$path"
+
+    BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+    cd "$DIRC"
+    if [[ "$BRANCH" != "$odoo" ]]; then
+        return 1
+    fi
+    return 0
+}
+
+
+branchStatus(){
+
+    cd $1
+    base=$( git merge-base $odoo "origin/$odoo" )
+    aref=$( git rev-parse  $odoo )
+    bref=$( git rev-parse  "origin/$odoo" )
+    cd "$DIRC"
+
+    if [ $aref = $bref ]; then
+        return 0
+    fi
+
+    if [ $aref = $base ]; then
+        return -1 # behind
+    fi
+    
+    if [ $bref = $base ]; then
+        #echo ahead
+        return 1
+    fi
+
+    return 2
+
+}
+
+updateRepo(){
+	path="${1}"
+	
+	cd $path
+	git pull
+    cd $DIRC
+}
+
+message_check(){
+    cmd=$1
+    success_message=$2
+    fail_mesage=$3
+
+    $cmd
+    state=$?
+    if [[ $state = 0 ]];
+    then
+        echo -e "|\e[32m \xE2\x9C\x94 $success_message\e[0m"
+    else
+        echo -e "|\e[31m \u2718 $fail_mesage\e[0m"
+    fi
+    return $state
+}
+
+directory_exist(){
+    return 1
+}
+
+#################################################################
+# Functions
+#################################################################
+check_repo_single(){
+    repo=$1
+
+    
+    message_check \
+            " [ -d $repo ] " \
+            "Directory of the repository exist" \
+            "Directory of the repostiory not exist"
+    if [ $? != 0 ]; then 
+        return 1
+    fi
+
+    message_check \
+        "checkBranch $repo $odoo" \
+        "Repository branch matched with $odoo" \
+        "Repository branch does not matched with $odoo"
+    if [ $? != 0 ]; then 
+        return 2
+    fi
+
+
+    message_check \
+        "branchStatus $repo" \
+        "Repository is uptodate" \
+        "Repository is behind/ahead, need to update"
+    if [ $? != 0 ]; then 
+        return 3
+    fi
+
+    return 0
+}
+
+
+print_repo_info(){
+    echo "------------------------------------------------"
+    echo "| Project      | $1"
+    echo "| Repository   | $2"
+    echo "+-----------------------------------------------+"
+}
+
+print_repo_close_info(){
+    echo "------------------------------------------------"
+    echo
+    echo
+}
+
+check_repos(){
+    # Checking OCA Repos
+    for repo in ${REPO_OCA[@]}; do
+        print_repo_info "oca" $repo
+        check_repo_single $repo
+        print_repo_close_info
+    done
+}
+
+init_repo_single(){
+    project=$1
+    name=$2
+    url="git@github.com:$project/$name.git"
+
+    echo "---------------------------------------------"
+    echo "Workspace: $project "
+    echo "Project  : $name  "
+    echo "URL      :$url   "
+    echo "---------------------------------------------"
+    check_repo_single $name
+
+    state=$?
+    case $state in
+        1)
+            git clone "$url" \
+                --depth=1\
+                --branch=$odoo
+            ;;
+        2)
+            if [[ -d "$name" ]];
+            then
+                rm -fR "$name"
+            fi
+            git clone "$url" \
+                --depth=1\
+                --branch=$odoo
+            ;;
+        3)
+            updateRepo $name
+            ;;
+        *)
+            echo -e "\e[32m Everything is ok\e[0m"
+            ;;
+    esac
+}
+
+init_repo(){
+    name=$1
+    if [[ $1 = "all" ]]; 
+    then
+        init_repo "oca"
+        init_repo "vw"
+        return 0
+    fi
+
+    # All oca
+    if [[ $1 = "oca" ]]; 
+    then
+        for key in "${REPO_OCA[@]}"
+        do
+            init_repo_single "oca" $key
+        done
+        return 0
+    fi
+
+    if [[ $1 = "vw" ]]; 
+    then
+        for key in "${REPO_VW[@]}"
+        do
+            init_repo_single "viraweb123" $key
+        done
+        return 0
+    fi
+
+    # for single repo
+    if [[ ${REPO_OCA[@]} =~ $name ]]
+    then
+        init_repo_single "oca" $name
+    else
+        echo "Project with the name $name is not supported"
+    fi
+}
+
+
+VALID_ARGS=$(getopt -o 'hc' --long 'help,check,init:' -- "$@")
+if [[ $? -ne 0 ]]; then
+    exit 1;
+fi
+
+eval set -- "$VALID_ARGS"
+while [ : ]; do
+  case "$1" in
+    -c| --check)
+        echo "Checking repos"
+        check_repos
+        shift
+        ;;
+    
+    -i| --init)
+        echo "Init repos"
+        init_repo $2
+        shift 2
+        ;;
+
+    -h| --help)
+        cat "doc/help-repo.txt"
+        exit 1
+        ;;
+    --) shift; 
+        break 
+        ;;
+  esac
+done
