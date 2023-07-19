@@ -197,6 +197,13 @@ check_repos(){
         check_repo_single $repo
         print_repo_close_info
     done
+
+    for repo in ${REPO_CUSTOMER[@]}; do
+        print_repo_info "viraweb123" $repo
+        check_repo_single $repo
+        print_repo_close_info
+    done
+    
 }
 
 init_repo_single(){
