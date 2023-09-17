@@ -23,7 +23,6 @@ DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
 # Configs
 #################################################################
 odoo="16.0"
-root="/mnt/odoo/addons-16"
 # ViraWeb123 Customers
 # odoo-beton          -> Tachar
 # odoo-mobile-service -> elbaan
@@ -37,6 +36,9 @@ REPO_CUSTOMER=( \
 
 # OCA Supported projects
 REPO_OCA=(\
+    "account-invoicing" \
+    "account-reconcile" \
+    "bank-statement-import" \
     "OpenUpgrade" \
     "sale-workflow" \
     "purchase-workflow" \
@@ -63,6 +65,10 @@ REPO_VW=( \
 REPO_DEPRICATED=(\
     "CybroAddons" \
     "design-themes" \
+)
+REPO_DEPRICATED_KEY=(\
+    "CybroOdoo" \
+    "odoo" \
 )
 
 #################################################################
@@ -209,6 +215,14 @@ check_repos(){
         check_repo_single $repo
         print_repo_close_info
     done
+
+    print_repo_info "odoo" "design-themes"
+    check_repo_single "design-themes"
+    print_repo_close_info
+
+    print_repo_info "CybroOdoo" "CybroAddons"
+    check_repo_single "CybroAddons"
+    print_repo_close_info
     
 }
 
@@ -256,6 +270,8 @@ init_repo(){
     then
         init_repo "oca"
         init_repo "vw"
+        init_repo "customer"
+        init_repo "old"
         return 0
     fi
 
@@ -285,6 +301,12 @@ init_repo(){
             init_repo_single "viraweb123" $key
         done
         return 0
+    fi
+
+    if [[ $1 = "old" ]]; 
+    then
+        init_repo_single "odoo" "design-themes"
+        init_repo_single "CybroOdoo" "CybroAddons"
     fi
 
     # for single repo
@@ -318,7 +340,7 @@ while [ : ]; do
         ;;
 
     -h| --help)
-        cat "doc/help-repo.txt"
+        cat "${DIR}/doc/help-repo.txt"
         exit 1
         ;;
     --) shift; 

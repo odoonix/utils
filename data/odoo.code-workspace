@@ -1,0 +1,89 @@
+{
+	"folders": [
+		{
+			"path": "../../odoo-utils"
+		},
+		{
+			"path": "../../healthup"
+		},
+		{
+			"path": "../../hr"
+		},
+		{
+			"path": "../../iot"
+		},
+		{
+			"path": "../../odoo"
+		},
+		{
+			"path": "../../odoo-beton"
+		},
+		{
+			"path": "../../odoo-exchange"
+		},
+		{
+			"path": "../../odoo-hr"
+		},
+		{
+			"path": "../../odoo-iot"
+		},
+		{
+			"path": "../../odoo-mobile-service"
+		},
+		{
+			"path": "../../odoo-themes"
+		},
+		{
+			"path": "../../odoo-viraweb123"
+		},
+		{
+			"path": "../../OpenUpgrade"
+		},
+		{
+			"path": "../../payroll"
+		},
+		{
+			"path": "../../pos"
+		},
+		{
+			"path": "../../purchase-workflow"
+		},
+		{
+			"path": "../../sale-workflow"
+		},
+		{
+			"path": "../../server-tools"
+		},
+		{
+			"path": "../../trip2persia"
+		},
+		{
+			"path": "../../web"
+		},
+		{
+			"path": "../../CybroAddons"
+		},
+		{
+			"path": "../../design-themes"
+		},
+		{
+			"path": "../../odoo-gilsa"
+		},
+		{
+			"path": "../../account-invoicing"
+		},
+		{
+			"path": "../../account-reconcile"
+		},
+		{
+			"path": "../../bank-statement-import"
+		}
+	],
+	"settings": {
+		"svg.preview.background": "black",
+		"[python]": {
+			"editor.defaultFormatter": "ms-python.python"
+		},
+		"python.formatting.provider": "autopep8"
+	}
+}
