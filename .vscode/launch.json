@@ -20,6 +20,11 @@
         }
     ],
     "configurations": [
+        //---------------------------------------------------------------------------
+        // Run the project
+        // This one is used to run the whole application. You can install, update and
+        // launch any of them.
+        //---------------------------------------------------------------------------
         {
             "name": "odoo16-run",
             "type": "python",
@@ -41,16 +46,19 @@
                 "--load",
                 "vw_odooo_patch",
                 "--update",
-                "all",
+                "vw-calendar",
                 "--dev",
                 "all"
             ]
         },
+        //----------------------------------------------------------------------------
+        // Update all
+        //----------------------------------------------------------------------------
         {
-            "name": "odoo16-update-db-test",
+            "name": "odoo16-update:all",
             "type": "python",
             "request": "launch",
-            "program": "/home/maso/Git/odoo/odoo_16/odoo-bin",
+            "program": "${fileWorkspaceFolder}/../odoo/odoo-bin",
             "console": "integratedTerminal",
             "justMyCode": true,
             "args": [
@@ -61,90 +69,27 @@
                 "--db_user",
                 "odoo",
                 "--database",
-                "test",
+                "odoo16-main",
                 "--addons-path",
-                "/home/maso/Git/odoo/odoo_16/addons,/home/maso/Git/CybroOdoo/CybroAddons,/home/maso/Git/viraweb123/odoo-hr,/home/maso/Git/viraweb123/odoo-beton,/home/maso/Git/viraweb123/odoo-mobile-service,/home/maso/Git/viraweb123/odoo-viraweb123,/home/maso/Git/viraweb123/odoo-themes,/home/maso/Git/oca/sale-workflow-16,/home/maso/Git/oca/iot-16",
+                "${fileWorkspaceFolder}/../odoo/addons,${fileWorkspaceFolder}/../CybroAddons,${fileWorkspaceFolder}/../odoo-exchange,${fileWorkspaceFolder}/../odoo-viraweb123,${fileWorkspaceFolder}/../odoo-mobile-service,${fileWorkspaceFolder}/../sale-workflow,${fileWorkspaceFolder}/../iot,${fileWorkspaceFolder}/../odoo-beton,${fileWorkspaceFolder}/../trip2persia,${fileWorkspaceFolder}/../account-reconcile,${fileWorkspaceFolder}/../bank-statement-import",
                 "--update",
                 "all",
+                "--load-language",
+                "fa_IR",
                 "--stop-after-init"
             ]
         },
+        //----------------------------------------------------------------------------
+        // Test Projects
+        //
+        // This one is used to test the whole application. No online application, just
+        // run tests. Add vw tag to all test from our company.
+        //----------------------------------------------------------------------------
         {
-            "name": "odoo16-test",
+            "name": "odoo16-test:odoo-viraweb123",
             "type": "python",
             "request": "launch",
-            "program": "/home/maso/Git/odoo/odoo_16/odoo-bin",
-            "console": "integratedTerminal",
-            "justMyCode": true,
-            "args": [
-                "--db_host",
-                "localhost",
-                "--db_password",
-                "odoo",
-                "--db_user",
-                "odoo",
-                "--database",
-                "odootest162",
-                "--addons-path",
-                "/home/maso/Git/odoo/odoo_16/addons,/home/maso/Git/CybroOdoo/CybroAddons,/home/maso/Git/viraweb123/odoo-exchange,/home/maso/Git/viraweb123/odoo-viraweb123,/home/maso/Git/viraweb123/odoo-mobile-service,/home/maso/Git/oca/sale-workflow-16,/home/maso/Git/viraweb123/odoo-hr",
-                "--update",
-                "sale_blanket_order",
-                "--test-enable",
-                "--dev",
-                "all"
-            ]
-        },
-        {
-            "name": "sales-workflow-test-16",
-            "type": "python",
-            "request": "launch",
-            "program": "/home/maso/Git/odoo/odoo_16/odoo-bin",
-            "console": "integratedTerminal",
-            "justMyCode": true,
-            "args": [
-                "--db_host",
-                "localhost",
-                "--db_password",
-                "odoo",
-                "--db_user",
-                "odoo",
-                "--database",
-                "odootest${input:randomPort}",
-                "--addons-path",
-                "/home/maso/Git/odoo/odoo_16/addons,/home/maso/Git/CybroOdoo/CybroAddons,/home/maso/Git/viraweb123/odoo-exchange,/home/maso/Git/viraweb123/odoo-viraweb123,/home/maso/Git/viraweb123/odoo-mobile-service,/home/maso/Git/oca/sale-workflow-16,/home/maso/Git/oca/server-tools-16,/home/maso/Git/oca/account-invoicing-16",
-                "--init",
-                "sale_blanket_order",
-                "--test-enable",
-                "--stop-after-init"
-            ]
-        },
-        {
-            "name": "iot",
-            "type": "python",
-            "request": "launch",
-            "program": "/home/maso/Git/odoo/odoo_16/odoo-bin",
-            "console": "integratedTerminal",
-            "justMyCode": true,
-            "args": [
-                "--db_host",
-                "localhost",
-                "--db_password",
-                "odoo",
-                "--db_user",
-                "odoo",
-                "--database",
-                "odooiottest",
-                "--addons-path",
-                "/home/maso/Git/odoo/odoo_16/addons,/home/maso/Git/viraweb123/iot",
-                "--init",
-                "iot_oca,iot_input_oca"
-            ]
-        },
-        {
-            "name": "iot-test",
-            "type": "python",
-            "request": "launch",
-            "program": "/home/maso/Git/odoo/odoo_16/odoo-bin",
+            "program": "${fileWorkspaceFolder}/../odoo/odoo-bin",
             "console": "integratedTerminal",
             "justMyCode": true,
             "args": [
@@ -157,62 +102,14 @@
                 "--database",
                 "odooiottest${input:databaseName}",
                 "--addons-path",
-                "/home/maso/Git/odoo/odoo_16/addons,/home/maso/Git/viraweb123/iot",
+                "${fileWorkspaceFolder}/../odoo/addons,${fileWorkspaceFolder}/../CybroAddons,${fileWorkspaceFolder}/../odoo-exchange,${fileWorkspaceFolder}/../odoo-viraweb123,${fileWorkspaceFolder}/../odoo-mobile-service,${fileWorkspaceFolder}/../sale-workflow,${fileWorkspaceFolder}/../iot,${fileWorkspaceFolder}/../odoo-beton,${fileWorkspaceFolder}/../trip2persia,${fileWorkspaceFolder}/../account-reconcile,${fileWorkspaceFolder}/../bank-statement-import",
                 "--init",
-                "iot_oca,iot_input_oca",
-                "--test-enable",
-                "--stop-after-init"
-            ]
-        },
-        {
-            "name": "odoo-hr-test",
-            "type": "python",
-            "request": "launch",
-            "program": "/home/maso/Git/odoo/odoo_16/odoo-bin",
-            "console": "integratedTerminal",
-            "justMyCode": true,
-            "args": [
-                "--db_host",
-                "localhost",
-                "--db_password",
-                "odoo",
-                "--db_user",
-                "odoo",
-                "--database",
-                "odooiottest${input:databaseName}",
-                "--addons-path",
-                "/home/maso/Git/odoo/odoo_16/addons,/home/maso/Git/viraweb123/odoo-hr",
-                "--init",
-                "vw_hr_attendence",
+                "vw_sms_authentication",
                 "--test-tag",
-                "vw_hr_attendance",
+                "vw",
                 "--stop-after-init"
             ]
         },
-        {
-            "name": "odoo-hr-voucher-test",
-            "type": "python",
-            "request": "launch",
-            "program": "/home/maso/Git/odoo/odoo_16/odoo-bin",
-            "console": "integratedTerminal",
-            "justMyCode": true,
-            "args": [
-                "--db_host",
-                "localhost",
-                "--db_password",
-                "odoo",
-                "--db_user",
-                "odoo",
-                "--database",
-                "odooiottest${input:databaseName}",
-                "--addons-path",
-                "/home/maso/Git/odoo/odoo_16/addons,/home/maso/Git/viraweb123/odoo-hr,/home/maso/Git/viraweb123/odoo-viraweb123",
-                "--init",
-                "vw_hr_voucher",
-                "--test-tag",
-                "vw_hr_voucher",
-                "--stop-after-init"
-            ]
-        }
+
     ]
 }
