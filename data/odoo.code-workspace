@@ -1,81 +1,107 @@
 {
 	"folders": [
 		{
-			"path": "../../odoo-utils"
+			"name": "odoo-utils",
+			"path": ".."
 		},
 		{
+			"name": "healthup",
 			"path": "../../healthup"
 		},
 		{
+			"name": "hr",
 			"path": "../../hr"
 		},
 		{
+			"name": "iot",
 			"path": "../../iot"
 		},
 		{
+			"name": "odoo",
 			"path": "../../odoo"
 		},
 		{
+			"name": "odoo-beton",
 			"path": "../../odoo-beton"
 		},
 		{
+			"name": "odoo-exchange",
 			"path": "../../odoo-exchange"
 		},
 		{
+			"name": "odoo-hr",
 			"path": "../../odoo-hr"
 		},
 		{
+			"name": "odoo-iot",
 			"path": "../../odoo-iot"
 		},
 		{
+			"name": "odoo-mobile-service",
 			"path": "../../odoo-mobile-service"
 		},
 		{
+			"name": "odoo-themes",
 			"path": "../../odoo-themes"
 		},
 		{
+			"name": "odoo-viraweb123",
 			"path": "../../odoo-viraweb123"
 		},
 		{
+			"name": "OpenUpgrade",
 			"path": "../../OpenUpgrade"
 		},
 		{
+			"name": "payroll",
 			"path": "../../payroll"
 		},
 		{
+			"name": "pos",
 			"path": "../../pos"
 		},
 		{
-			"path": "../../purchase-workflow"
-		},
-		{
+			"name": "sale-workflow",
 			"path": "../../sale-workflow"
 		},
 		{
+			"name": "purchase-workflow",
+			"path": "../../purchase-workflow"
+		},
+		{
+			"name": "server-tools",
 			"path": "../../server-tools"
 		},
 		{
+			"name": "trip2persia",
 			"path": "../../trip2persia"
 		},
 		{
+			"name": "web",
 			"path": "../../web"
 		},
 		{
+			"name": "CybroAddons",
 			"path": "../../CybroAddons"
 		},
 		{
+			"name": "design-themes",
 			"path": "../../design-themes"
 		},
 		{
+			"name": "odoo-gilsa",
 			"path": "../../odoo-gilsa"
 		},
 		{
+			"name": "account-invoicing",
 			"path": "../../account-invoicing"
 		},
 		{
+			"name": "account-reconcile",
 			"path": "../../account-reconcile"
 		},
 		{
+			"name": "bank-statement-import",
 			"path": "../../bank-statement-import"
 		}
 	],
