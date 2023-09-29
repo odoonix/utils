@@ -86,7 +86,7 @@
         // run tests. Add vw tag to all test from our company.
         //----------------------------------------------------------------------------
         {
-            "name": "odoo16-test:odoo-viraweb123",
+            "name": "odoo16-test:viraweb123",
             "type": "python",
             "request": "launch",
             "program": "${fileWorkspaceFolder}/../odoo/odoo-bin",
@@ -104,12 +104,11 @@
                 "--addons-path",
                 "${fileWorkspaceFolder}/../odoo/addons,${fileWorkspaceFolder}/../CybroAddons,${fileWorkspaceFolder}/../odoo-exchange,${fileWorkspaceFolder}/../odoo-viraweb123,${fileWorkspaceFolder}/../odoo-mobile-service,${fileWorkspaceFolder}/../sale-workflow,${fileWorkspaceFolder}/../iot,${fileWorkspaceFolder}/../odoo-beton,${fileWorkspaceFolder}/../trip2persia,${fileWorkspaceFolder}/../account-reconcile,${fileWorkspaceFolder}/../bank-statement-import",
                 "--init",
-                "vw_sms_authentication",
+                "vw_sms_authentication,vw_hr_voucher,vw_hr_attendence",
                 "--test-tag",
                 "vw",
                 "--stop-after-init"
             ]
         },
-
     ]
 }
