@@ -59,6 +59,7 @@ REPO_VW=( \
     "odoo-viraweb123" \
     "odoo-pos" \
     "odoo-utils" \
+    "docker" \
 )
 
 # NOTE: not supprted and will removed soon
@@ -269,7 +270,7 @@ init_repo(){
     if [[ $1 = "all" ]]; 
     then
         init_repo "oca"
-        init_repo "vw"
+        init_repo "viraweb123"
         init_repo "customer"
         init_repo "old"
         return 0

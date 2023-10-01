@@ -103,6 +103,15 @@
 		{
 			"name": "bank-statement-import",
 			"path": "../../bank-statement-import"
+		},
+		{
+			"path": "../../odoo-7tooti"
+		},
+		{
+			"path": "../../docker"
+		},
+		{
+			"path": "../../odoo-sms"
 		}
 	],
 	"settings": {
