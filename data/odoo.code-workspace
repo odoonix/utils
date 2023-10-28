@@ -112,6 +112,12 @@
 		},
 		{
 			"path": "../../odoo-sms"
+		},
+		{
+			"path": "../../../../Git/Rollsizer"
+		},
+		{
+			"path": "../../odoo16.0e_addons"
 		}
 	],
 	"settings": {
