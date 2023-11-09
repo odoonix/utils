@@ -123,7 +123,7 @@
 	"settings": {
 		"svg.preview.background": "black",
 		"[python]": {
-			"editor.defaultFormatter": "ms-python.python"
+			"editor.defaultFormatter": "ms-python.autopep8"
 		},
 		"python.formatting.provider": "autopep8"
 	}

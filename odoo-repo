@@ -17,7 +17,7 @@ done
 #echo "SOURCE is '$SOURCE'"
 RDIR=$( dirname "$SOURCE" )
 DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
-
+DEVELOPER_MODE=false
 
 #################################################################
 # Configs
@@ -127,6 +127,13 @@ updateRepo(){
     cd $DIRC
 }
 
+
+installPrecommit(){
+    cd $1
+    pre-commit install>/dev/null 2>&1
+    cd "$DIRC"
+}
+
 message_check(){
     cmd=$1
     success_message=$2
@@ -177,6 +184,14 @@ check_repo_single(){
         "Repository is behind/ahead, need to update"
     if [ $? != 0 ]; then 
         return 3
+    fi
+
+
+    if $DEVELOPER_MODE; then
+        message_check \
+            "installPrecommit $repo" \
+            "Repository pre-commit hook is added" \
+            "Fail to add precommit"
     fi
 
     return 0
@@ -319,7 +334,7 @@ init_repo(){
 }
 
 
-VALID_ARGS=$(getopt -o 'hc' --long 'help,check,init:' -- "$@")
+VALID_ARGS=$(getopt -o 'hcd' --long 'help,check,init:,dev' -- "$@")
 if [[ $? -ne 0 ]]; then
     exit 1;
 fi
@@ -327,12 +342,16 @@ fi
 eval set -- "$VALID_ARGS"
 while [ : ]; do
   case "$1" in
+    -d| --dev)
+        echo "Loading development environment"
+        DEVELOPER_MODE=true
+        shift
+        ;;
     -c| --check)
         echo "Checking repos"
         check_repos
         shift
         ;;
-    
     -i| --init)
         echo "Init repos"
         init_repo $2
