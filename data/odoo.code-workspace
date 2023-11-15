@@ -118,6 +118,9 @@
 		},
 		{
 			"path": "../../odoo16.0e_addons"
+		},
+		{
+			"path": "../../odoo-studyiniranadmission"
 		}
 	],
 	"settings": {

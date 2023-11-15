@@ -32,6 +32,7 @@ REPO_CUSTOMER=( \
     "odoo-mobile-service" \
     "odoo-gilsa" \
     "odoo-7tooti" \
+    "odoo-studyiniranadmission" \
 )
 
 # OCA Supported projects
