@@ -121,6 +121,9 @@
 		},
 		{
 			"path": "../../odoo-studyiniranadmission"
+		},
+		{
+			"path": "../../odoo-prb"
 		}
 	],
 	"settings": {

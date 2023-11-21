@@ -59,6 +59,7 @@ REPO_VW=( \
     "odoo-themes" \
     "odoo-viraweb123" \
     "odoo-utils" \
+    "odoo-prb" \
     "docker" \
 )
 
