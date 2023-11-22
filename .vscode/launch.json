@@ -17,6 +17,16 @@
                 "random": true,
                 "uniqueCount": 10
             }
+        },
+        {
+            "id": "modulesTest",
+            "type": "pickString",
+            "description": "List of Module to test, leave empty for all module",
+            "options": [
+                "prb,prb_portal",
+                "gym,gym_analysis,gym_diet,gym_workout",
+            ],
+            "default": "prb,prb_portal"
         }
     ],
     "configurations": [
@@ -26,10 +36,10 @@
         // launch any of them.
         //---------------------------------------------------------------------------
         {
-            "name": "odoo16-run",
+            "name": "Odoo Run",
             "type": "python",
             "request": "launch",
-            "program": "${fileWorkspaceFolder}/../odoo/odoo-bin",
+            "program": "${config:odoo.bin}",
             "console": "integratedTerminal",
             "justMyCode": true,
             "args": [
@@ -42,41 +52,13 @@
                 "--database",
                 "odoo16-main2",
                 "--addons-path",
-                "${fileWorkspaceFolder}/../odoo/addons,${fileWorkspaceFolder}/../CybroAddons,${fileWorkspaceFolder}/../odoo-exchange,${fileWorkspaceFolder}/../odoo-viraweb123,${fileWorkspaceFolder}/../odoo-mobile-service,${fileWorkspaceFolder}/../sale-workflow,${fileWorkspaceFolder}/../iot,${fileWorkspaceFolder}/../odoo-beton,${fileWorkspaceFolder}/../trip2persia,${fileWorkspaceFolder}/../account-reconcile,${fileWorkspaceFolder}/../bank-statement-import,${fileWorkspaceFolder}/../odoo-hr,${fileWorkspaceFolder}/../healthup",
+                "${config:odoo.addons.path}",
                 "--load",
                 "vw_odooo_patch,iot_ext_api_oca",
                 "--update",
-                "all",
+                "prb,prb_portal",
                 "--dev",
                 "all"
-            ]
-        },
-        //----------------------------------------------------------------------------
-        // Update all
-        //----------------------------------------------------------------------------
-        {
-            "name": "odoo16-update:all",
-            "type": "python",
-            "request": "launch",
-            "program": "${fileWorkspaceFolder}/../odoo/odoo-bin",
-            "console": "integratedTerminal",
-            "justMyCode": true,
-            "args": [
-                "--db_host",
-                "localhost",
-                "--db_password",
-                "odoo",
-                "--db_user",
-                "odoo",
-                "--database",
-                "odoo16-main",
-                "--addons-path",
-                "${fileWorkspaceFolder}/../odoo/addons,${fileWorkspaceFolder}/../CybroAddons,${fileWorkspaceFolder}/../odoo-exchange,${fileWorkspaceFolder}/../odoo-viraweb123,${fileWorkspaceFolder}/../odoo-mobile-service,${fileWorkspaceFolder}/../sale-workflow,${fileWorkspaceFolder}/../iot,${fileWorkspaceFolder}/../odoo-beton,${fileWorkspaceFolder}/../trip2persia,${fileWorkspaceFolder}/../account-reconcile,${fileWorkspaceFolder}/../bank-statement-import,${fileWorkspaceFolder}/../odoo-hr,${fileWorkspaceFolder}/../healthup",
-                "--update",
-                "all",
-                "--load-language",
-                "fa_IR",
-                "--stop-after-init"
             ]
         },
         //----------------------------------------------------------------------------
@@ -86,10 +68,10 @@
         // run tests. Add vw tag to all test from our company.
         //----------------------------------------------------------------------------
         {
-            "name": "odoo16-test:viraweb123",
+            "name": "Odoo Test",
             "type": "python",
             "request": "launch",
-            "program": "${fileWorkspaceFolder}/../odoo/odoo-bin",
+            "program": "${config:odoo.bin}",
             "console": "integratedTerminal",
             "justMyCode": true,
             "args": [
@@ -102,75 +84,13 @@
                 "--database",
                 "odooiottest${input:databaseName}",
                 "--addons-path",
-                "${fileWorkspaceFolder}/../odoo/addons,${fileWorkspaceFolder}/../CybroAddons,${fileWorkspaceFolder}/../odoo-exchange,${fileWorkspaceFolder}/../odoo-viraweb123,${fileWorkspaceFolder}/../odoo-mobile-service,${fileWorkspaceFolder}/../sale-workflow,${fileWorkspaceFolder}/../iot,${fileWorkspaceFolder}/../odoo-beton,${fileWorkspaceFolder}/../trip2persia,${fileWorkspaceFolder}/../account-reconcile,${fileWorkspaceFolder}/../bank-statement-import,${fileWorkspaceFolder}/../odoo-hr",
+                "${config:odoo.addons.path}",
                 "--init",
-                "vw_hr_attendence",
+                "${input:modulesTest}",
                 "--test-tag",
                 "vw",
                 "--stop-after-init"
             ]
-        },
-
-
-
-
-        //---------------------------------------------------------------------------
-        // Run With EP addons
-        // This one is used to run the whole application. You can install, update and
-        // launch any of them.
-        //---------------------------------------------------------------------------
-        {
-            "name": "odoo16e-run",
-            "type": "python",
-            "request": "launch",
-            "program": "${fileWorkspaceFolder}/../odoo/odoo-bin",
-            "console": "integratedTerminal",
-            "justMyCode": true,
-            "args": [
-                "--db_host",
-                "localhost",
-                "--db_password",
-                "odoo",
-                "--db_user",
-                "odoo",
-                "--database",
-                "odoo16e-main2",
-                "--addons-path",
-                "${fileWorkspaceFolder}/../odoo16.0e_addons,${fileWorkspaceFolder}/../odoo/addons,${fileWorkspaceFolder}/../CybroAddons,${fileWorkspaceFolder}/../odoo-exchange,${fileWorkspaceFolder}/../odoo-viraweb123,${fileWorkspaceFolder}/../odoo-mobile-service,${fileWorkspaceFolder}/../sale-workflow,${fileWorkspaceFolder}/../iot,${fileWorkspaceFolder}/../odoo-beton,${fileWorkspaceFolder}/../trip2persia,${fileWorkspaceFolder}/../account-reconcile,${fileWorkspaceFolder}/../bank-statement-import,${fileWorkspaceFolder}/../odoo-hr,${fileWorkspaceFolder}/../healthup,/home/maso/Git/Rollsizer/odoo",
-                "--update",
-                "all",
-                "--dev",
-                "all"
-            ]
-        },
-        //----------------------------------------------------------------------------
-        // Test Projects: en
-        //----------------------------------------------------------------------------
-        {
-            "name": "odoo16-test-16.0eb:viraweb123",
-            "type": "python",
-            "request": "launch",
-            "program": "${fileWorkspaceFolder}/../odoo/odoo-bin",
-            "console": "integratedTerminal",
-            "justMyCode": true,
-            "args": [
-                "--db_host",
-                "localhost",
-                "--db_password",
-                "odoo",
-                "--db_user",
-                "odoo",
-                "--database",
-                "odooiottest${input:databaseName}",
-                "--addons-path",
-                "${fileWorkspaceFolder}/../odoo16.0e_addons,${fileWorkspaceFolder}/../odoo/addons,${fileWorkspaceFolder}/../CybroAddons,${fileWorkspaceFolder}/../odoo-exchange,${fileWorkspaceFolder}/../odoo-viraweb123,${fileWorkspaceFolder}/../odoo-mobile-service,${fileWorkspaceFolder}/../sale-workflow,${fileWorkspaceFolder}/../iot,${fileWorkspaceFolder}/../odoo-beton,${fileWorkspaceFolder}/../trip2persia,${fileWorkspaceFolder}/../account-reconcile,${fileWorkspaceFolder}/../bank-statement-import,${fileWorkspaceFolder}/../odoo-hr",
-                "--init",
-                "appointment_account",
-                "--test-tag",
-                "vw",
-                "--stop-after-init"
-            ]
-        },
-
+        }
     ]
 }
