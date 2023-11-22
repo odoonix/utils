@@ -22,56 +22,24 @@ DEVELOPER_MODE=false
 #################################################################
 # Configs
 #################################################################
-odoo="16.0"
+odoo="17.0"
 # ViraWeb123 Customers
 # odoo-beton          -> Tachar
 # odoo-mobile-service -> elbaan
 #
-REPO_CUSTOMER=( \
-    "odoo-beton" \
-    "odoo-mobile-service" \
-    "odoo-gilsa" \
-    "odoo-7tooti" \
-    "odoo-studyiniranadmission" \
-)
+REPO_CUSTOMER=()
 
 # OCA Supported projects
-REPO_OCA=(\
-    "account-invoicing" \
-    "account-reconcile" \
-    "bank-statement-import" \
-    "OpenUpgrade" \
-    "sale-workflow" \
-    "purchase-workflow" \
-    "server-tools" \
-    "pos" \
-    "iot" \
-    "web" \
-    "hr" \
-    "payroll" \
-)
+REPO_OCA=()
 
 # Viraweb123 Projects   
 REPO_VW=( \
-    "odoo-iot" \
-    "odoo-hr" \
-    "odoo-sms" \
-    "odoo-themes" \
     "odoo-viraweb123" \
-    "odoo-utils" \
-    "odoo-prb" \
-    "docker" \
 )
 
 # NOTE: not supprted and will removed soon
-REPO_DEPRICATED=(\
-    "CybroAddons" \
-    "design-themes" \
-)
-REPO_DEPRICATED_KEY=(\
-    "CybroOdoo" \
-    "odoo" \
-)
+REPO_DEPRICATED=()
+REPO_DEPRICATED_KEY=()
 
 #################################################################
 # Utilities
@@ -232,15 +200,6 @@ check_repos(){
         check_repo_single $repo
         print_repo_close_info
     done
-
-    print_repo_info "odoo" "design-themes"
-    check_repo_single "design-themes"
-    print_repo_close_info
-
-    print_repo_info "CybroOdoo" "CybroAddons"
-    check_repo_single "CybroAddons"
-    print_repo_close_info
-    
 }
 
 init_repo_single(){
@@ -318,12 +277,6 @@ init_repo(){
             init_repo_single "viraweb123" $key
         done
         return 0
-    fi
-
-    if [[ $1 = "old" ]]; 
-    then
-        init_repo_single "odoo" "design-themes"
-        init_repo_single "CybroOdoo" "CybroAddons"
     fi
 
     # for single repo

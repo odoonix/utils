@@ -23,10 +23,9 @@
             "type": "pickString",
             "description": "List of Module to test, leave empty for all module",
             "options": [
-                "prb,prb_portal",
-                "gym,gym_analysis,gym_diet,gym_workout",
+                "web",
             ],
-            "default": "prb,prb_portal"
+            "default": "web"
         }
     ],
     "configurations": [
@@ -50,13 +49,11 @@
                 "--db_user",
                 "odoo",
                 "--database",
-                "odoo16-main2",
+                "odoo17-main",
                 "--addons-path",
                 "${config:odoo.addons.path}",
-                "--load",
-                "vw_odooo_patch,iot_ext_api_oca",
                 "--update",
-                "prb,prb_portal",
+                "web",
                 "--dev",
                 "all"
             ]
