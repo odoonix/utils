@@ -30,7 +30,9 @@ odoo="17.0"
 REPO_CUSTOMER=()
 
 # OCA Supported projects
-REPO_OCA=()
+REPO_OCA=(
+    "OpenUpgrade" \
+)
 
 # Viraweb123 Projects   
 REPO_VW=( \
