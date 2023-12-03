@@ -25,6 +25,7 @@
             "options": [
                 "prb,prb_portal",
                 "gym,gym_analysis,gym_diet,gym_workout",
+                "education,employee_fleet_request,gym,gym_account,gym_analysis,gym_analysis_healthup,gym_analysis_iot,gym_analysis_portal,gym_attendance,gym_diet,gym_diet_portal,gym_membership,gym_workout,gym_workout_portal,iot_ext_api_oca,l10n_ir_contact,vw_calendar,vw_customize_title_header,vw_debranding_base,vw_debranding_website,vw_faratotal,vw_gamification,vw_hr_voucher,vw_login_styles,vw_payment_zarinpal,vw_sms_authentication"
             ],
             "default": "prb,prb_portal"
         }
@@ -87,8 +88,7 @@
                 "${config:odoo.addons.path}",
                 "--init",
                 "${input:modulesTest}",
-                "--test-tag",
-                "vw",
+                "--test-enable",
                 "--stop-after-init"
             ]
         }
