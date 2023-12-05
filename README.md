@@ -9,7 +9,7 @@ Following extensions are required:
 
 - Clone "odoo-utils" repository
 
-- Go to ./odoo-utils/ directory 
+- Go to outside of odoo-utils Directory
   
 - Run command ./odoo-utils/odoo-repo --init all
 
