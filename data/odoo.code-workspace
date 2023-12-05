@@ -124,6 +124,9 @@
 		},
 		{
 			"path": "../../odoo-prb"
+		},
+		{
+			"path": "../../odoo-whatsapp"
 		}
 	],
 	"settings": {
