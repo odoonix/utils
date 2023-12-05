@@ -127,6 +127,9 @@
 		},
 		{
 			"path": "../../odoo-whatsapp"
+		},
+		{
+			"path": "../../doctorlands"
 		}
 	],
 	"settings": {

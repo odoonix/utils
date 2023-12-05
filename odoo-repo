@@ -33,7 +33,11 @@ REPO_CUSTOMER=( \
     "odoo-gilsa" \
     "odoo-7tooti" \
     "odoo-studyiniranadmission" \
+
+
     "doctorlands" \
+    "healthup" \
+    "trip2persia"
 )
 
 # OCA Supported projects
