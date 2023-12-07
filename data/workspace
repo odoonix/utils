@@ -1,18 +1,20 @@
 {
 	"folders": [
 		{
-			"name": "odoo-utils",
-			"path": ".."
+			"name": "Odoo: Commiunity",
+			"path": "./odoo"
 		},
 		{
-			"name": "odoo",
-			"path": "../../odoo"
+			"name": "OCA: OpenUpgrade",
+			"path": "./OpenUpgrade"
 		},
 		{
-			"path": "../../odoo-viraweb123"
+			"name": "VW: utils",
+			"path": "./odoo-util"
 		},
 		{
-			"path": "../../OpenUpgrade"
+			"name": "VW: Base",
+			"path": "./odoo-viraweb123"
 		}
 	],
 	"settings": {

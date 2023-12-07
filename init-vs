@@ -1,0 +1,43 @@
+#!/bin/bash
+
+echo '----------------------------------------------------------'
+echo '| __      ___        __          __  _    __ ___  ____   |'
+echo '| \ \    / (_)       \ \        / / | |  /_ |__ \|___ \  |'
+echo '|  \ \  / / _ _ __ __ \ \  /\  / /__| |__ | |  ) | __) | |'
+echo '|   \ \/ / | | "__/ _` \ \/  \/ / _ \  _ \| | / / |__ <  |'
+echo '|    \  /  | | | | (_| |\  /\  /  __/ |_) | |/ /_ ___) | |'
+echo '|     \/   |_|_|  \__,_| \/  \/ \___|_.__/|_|____|____/  |'
+echo '|                                                        |'
+echo '|                                                        |'
+echo '----------------------------------------------------------'
+echo '| VS Workspace Builder                                   |'
+echo '| Odoo 17.0                                              |'
+echo '----------------------------------------------------------'
+
+SOURCE_PATH="./"
+GIT_OPTIONS=" --branch 17.0  --depth 1"
+git clone $GIT_OPTIONS git@github.com:viraweb123/odoo-utils.git 
+
+# TODO: get list of module to install (ODOO, VW, OCA, ..)
+chmod +x odoo-utils/odoo-repo
+odoo-utils/odoo-repo --init all
+
+# Clone ODOO
+git clone $GIT_OPTIONS git@github.com:odoo/odoo.git
+
+# Make venv
+python -m venv .venv
+source .venv/bin/activate
+pip install -r odoo/requirements.txt
+
+# Make workspace
+mkdir .vscode
+cp -i "${SOURCE_PATH}/data/workspace"                 "odoo.code-workspace"
+cp -i "${SOURCE_PATH}/data/template-tasks.json"       "task.json"
+cp -i "${SOURCE_PATH}/data/template-settings.json"    "settings.json"
+cp -i "${SOURCE_PATH}/data/template-launch.json"      "launch.json"
+# TODO: update project list based on project list
+
+
+# Open code editor
+code odoo.code-workspace

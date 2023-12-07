@@ -1,4 +1,0 @@
-{
-    "odoo.bin": "${workspaceFolder}/../odoo/odoo-bin",
-    "odoo.addons.path": "${workspaceFolder}/../odoo/addons"
-}
