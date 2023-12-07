@@ -14,29 +14,12 @@ echo '| VS Workspace Builder                                   |'
 echo '| Odoo 16.0                                              |'
 echo '----------------------------------------------------------'
 
-SOURCE_PATH="./odoo-utils"
-GIT_OPTIONS=" --branch 16.0  --depth 1"
-git clone $GIT_OPTIONS git@github.com:viraweb123/odoo-utils.git 
 
-# TODO: get list of module to install (ODOO, VW, OCA, ..)
-chmod +x odoo-utils/odoo-repo
-odoo-utils/odoo-repo --init all
-
-# Clone ODOO
-git clone $GIT_OPTIONS git@github.com:odoo/odoo.git
-
-# Make venv
-python -m venv .venv
-source .venv/bin/activate
-pip install -r odoo/requirements.txt
 
 # Make workspace
 mkdir .vscode
-cp -i "${SOURCE_PATH}/data/template-tasks.json"       "task.json"
-cp -i "${SOURCE_PATH}/data/template-settings.json"    "settings.json"
-cp -i "${SOURCE_PATH}/data/template-launch.json"      "launch.json"
+cp -f ".vscode/task.json"   "odoo-utils/data/template-tasks.json"
+cp -f ".vscode/settings.json"   "odoo-utils/data/template-settings.json"
+cp -f ".vscode/launch.json"   "odoo-utils/data/template-launch.json"  
+
 # TODO: update project list based on project list
-
-
-# Open code editor
-code .
