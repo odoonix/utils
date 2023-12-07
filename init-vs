@@ -26,16 +26,16 @@ odoo-utils/odoo-repo --init all
 git clone $GIT_OPTIONS git@github.com:odoo/odoo.git
 
 # Make venv
-python -m venv .venv
-source .venv/bin/activate
+python -m venv odoo-utils/.venv
+source odoo-utils/.venv/bin/activate
 pip install -r odoo/requirements.txt
 
 # Make workspace
-mkdir .vscode
-cp -i "${SOURCE_PATH}/data/workspace"                 "odoo.code-workspace"
-cp -i "${SOURCE_PATH}/data/template-tasks.json"       "task.json"
-cp -i "${SOURCE_PATH}/data/template-settings.json"    "settings.json"
-cp -i "${SOURCE_PATH}/data/template-launch.json"      "launch.json"
+mkdir odoo-utils/.vscode
+cp -f -i "${SOURCE_PATH}/data/workspace"                 "odoo.code-workspace"
+cp -f -i "${SOURCE_PATH}/data/template-tasks.json"       "odoo-utils/.vscode/task.json"
+cp -f -i "${SOURCE_PATH}/data/template-settings.json"    "odoo-utils/.vscode/settings.json"
+cp -f -i "${SOURCE_PATH}/data/template-launch.json"      "odoo-utils/.vscode/launch.json"
 # TODO: update project list based on project list
 
 

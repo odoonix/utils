@@ -10,7 +10,7 @@
 		},
 		{
 			"name": "VW: utils",
-			"path": "./odoo-util"
+			"path": "./odoo-utils"
 		},
 		{
 			"name": "VW: Base",
