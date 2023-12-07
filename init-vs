@@ -31,7 +31,7 @@ source .venv/bin/activate
 pip install -r odoo/requirements.txt
 
 # Make workspace
-mkdir .vscode
+mkdir -p .vscode
 cp -i "${SOURCE_PATH}/data/template-tasks.json"       "task.json"
 cp -i "${SOURCE_PATH}/data/template-settings.json"    "settings.json"
 cp -i "${SOURCE_PATH}/data/template-launch.json"      "launch.json"

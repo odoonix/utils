@@ -17,7 +17,7 @@ echo '----------------------------------------------------------'
 
 
 # Make workspace
-mkdir .vscode
+mkdir -p .vscode
 cp -f ".vscode/task.json"   "odoo-utils/data/template-tasks.json"
 cp -f ".vscode/settings.json"   "odoo-utils/data/template-settings.json"
 cp -f ".vscode/launch.json"   "odoo-utils/data/template-launch.json"  
