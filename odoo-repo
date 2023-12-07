@@ -65,7 +65,7 @@ REPO_VW=( \
     "odoo-viraweb123" \
     "odoo-utils" \
     "odoo-prb" \
-    "odoo-whatsapp" \
+    "odoo-social" \
     "docker" \
 )
 

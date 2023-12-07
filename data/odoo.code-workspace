@@ -1,135 +1,162 @@
 {
 	"folders": [
 		{
-			"name": "odoo-utils",
-			"path": ".."
-		},
-		{
-			"name": "healthup",
-			"path": "../../healthup"
-		},
-		{
-			"name": "hr",
-			"path": "../../hr"
-		},
-		{
-			"name": "iot",
-			"path": "../../iot"
-		},
-		{
-			"name": "odoo",
+			"name": "Odoo: Comiunity",
 			"path": "../../odoo"
 		},
 		{
-			"name": "odoo-beton",
-			"path": "../../odoo-beton"
+			"name": "Odoo: Enterprise",
+			"path": "../../odoo16.0e_addons"
 		},
 		{
-			"name": "odoo-exchange",
-			"path": "../../odoo-exchange"
+			"name": "Odoo: Themes",
+			"path": "../../design-themes"
+		},
+
+
+
+
+
+
+		{
+			"name": "OCA: Account Invoicing",
+			"path": "../../account-invoicing"
 		},
 		{
-			"name": "odoo-hr",
-			"path": "../../odoo-hr"
+			"name": "OCA: Account Reconcile",
+			"path": "../../account-reconcile"
 		},
 		{
-			"name": "odoo-iot",
-			"path": "../../odoo-iot"
+			"name": "OCA: bank-statement-import",
+			"path": "../../bank-statement-import"
 		},
 		{
-			"name": "odoo-mobile-service",
-			"path": "../../odoo-mobile-service"
+			"name": "OCA: hr",
+			"path": "../../hr"
 		},
 		{
-			"name": "odoo-themes",
-			"path": "../../odoo-themes"
+			"name": "OCA: iot",
+			"path": "../../iot"
 		},
 		{
-			"name": "odoo-viraweb123",
-			"path": "../../odoo-viraweb123"
-		},
-		{
-			"name": "OpenUpgrade",
+			"name": "OCA: OpenUpgrade",
 			"path": "../../OpenUpgrade"
 		},
 		{
-			"name": "payroll",
+			"name": "OCA: Payroll",
 			"path": "../../payroll"
 		},
 		{
-			"name": "pos",
+			"name": "OCA: POS",
 			"path": "../../pos"
 		},
 		{
-			"name": "sale-workflow",
+			"name": "OCA: Sale Workflow",
 			"path": "../../sale-workflow"
 		},
 		{
-			"name": "purchase-workflow",
+			"name": "OCA: Purchase Workflow",
 			"path": "../../purchase-workflow"
 		},
 		{
-			"name": "server-tools",
+			"name": "OCA: Server Tools",
 			"path": "../../server-tools"
 		},
 		{
-			"name": "trip2persia",
+			"name": "OCA: web",
+			"path": "../../web"
+		},
+
+
+
+
+
+
+		{
+			"name": "VW: Utils",
+			"path": ".."
+		},
+		{
+			"name": "VW: HR",
+			"path": "../../odoo-hr"
+		},
+		{
+			"name": "VW: Beton",
+			"path": "../../odoo-beton"
+		},
+		{
+			"name": "VW: Mobile Service",
+			"path": "../../odoo-mobile-service"
+		},
+		{
+			"name": "VW: IoT",
+			"path": "../../odoo-iot"
+		},
+		{
+			"name": "VW: Base",
+			"path": "../../odoo-viraweb123"
+		},
+		{
+			"name": "VW: PRB",
+			"path": "../../odoo-prb"
+		},
+		{
+			"name": "VW: Social",
+			"path": "../../odoo-social"
+		},
+		{
+			"name": "VW: SMS",
+			"path": "../../odoo-sms"
+		},
+		{
+			"name": "VW: Docker",
+			"path": "../../docker"
+		},
+		{
+			"name": "VW: Themes",
+			"path": "../../odoo-themes"
+		},
+		
+
+
+
+
+		{
+			"name": "Customer: Healthup",
+			"path": "../../healthup"
+		},
+		{
+			"name": "Customer: Gilsa",
+			"path": "../../odoo-gilsa"
+		},
+		{
+			"name": "Customer: 7Tooti",
+			"path": "../../odoo-7tooti"
+		},
+		{
+			"name": "Customer: StudyinIranAdmission",
+			"path": "../../odoo-studyiniranadmission"
+		},
+		{
+			"name": "Customer: Trip2persia",
 			"path": "../../trip2persia"
 		},
 		{
-			"name": "web",
-			"path": "../../web"
+			"name": "Customer: Doctorland",
+			"path": "../../doctorlands"
 		},
+
+
+
+
+
+
 		{
 			"name": "CybroAddons",
 			"path": "../../CybroAddons"
 		},
 		{
-			"name": "design-themes",
-			"path": "../../design-themes"
-		},
-		{
-			"name": "odoo-gilsa",
-			"path": "../../odoo-gilsa"
-		},
-		{
-			"name": "account-invoicing",
-			"path": "../../account-invoicing"
-		},
-		{
-			"name": "account-reconcile",
-			"path": "../../account-reconcile"
-		},
-		{
-			"name": "bank-statement-import",
-			"path": "../../bank-statement-import"
-		},
-		{
-			"path": "../../odoo-7tooti"
-		},
-		{
-			"path": "../../docker"
-		},
-		{
-			"path": "../../odoo-sms"
-		},
-		{
 			"path": "../../../../Git/Rollsizer"
-		},
-		{
-			"path": "../../odoo16.0e_addons"
-		},
-		{
-			"path": "../../odoo-studyiniranadmission"
-		},
-		{
-			"path": "../../odoo-prb"
-		},
-		{
-			"path": "../../odoo-whatsapp"
-		},
-		{
-			"path": "../../doctorlands"
 		}
 	],
 	"settings": {

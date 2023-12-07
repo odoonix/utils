@@ -58,7 +58,7 @@
                 "--load",
                 "vw_odooo_patch,iot_ext_api_oca",
                 "--update",
-                "prb,prb_portal",
+                "payment_pinpayments",
                 "--dev",
                 "all"
             ]
