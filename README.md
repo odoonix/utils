@@ -27,3 +27,7 @@ Following extensions are required:
 
 - Please check addons-path in odoo-utils/.vscode/setting.json" directory and delete the paths you don't have in your workspace
 
+
+
+
+source < (curl -s https://raw.githubusercontent.com/viraweb123/odoo-utils/16.0/init-vs?token=GHSAT0AAAAAACDMBQKKA3GUULYTCMBRLNNIZLRO7QA)
