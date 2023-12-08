@@ -32,6 +32,8 @@ pip install -r odoo/requirements.txt
 
 # Make workspace
 mkdir -p .vscode
+
+echo "Try to load new VS configuraiton"
 cp -i "${SOURCE_PATH}/data/template-tasks.json"       "task.json"
 cp -i "${SOURCE_PATH}/data/template-settings.json"    "settings.json"
 cp -i "${SOURCE_PATH}/data/template-launch.json"      "launch.json"
