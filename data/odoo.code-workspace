@@ -5,10 +5,6 @@
 			"path": ".."
 		},
 		{
-			"name": "healthup",
-			"path": "../../healthup"
-		},
-		{
 			"name": "hr",
 			"path": "../../hr"
 		},
@@ -23,10 +19,6 @@
 		{
 			"name": "odoo-beton",
 			"path": "../../odoo-beton"
-		},
-		{
-			"name": "odoo-exchange",
-			"path": "../../odoo-exchange"
 		},
 		{
 			"name": "odoo-hr",
@@ -73,10 +65,6 @@
 			"path": "../../server-tools"
 		},
 		{
-			"name": "trip2persia",
-			"path": "../../trip2persia"
-		},
-		{
 			"name": "web",
 			"path": "../../web"
 		},
@@ -114,16 +102,10 @@
 			"path": "../../odoo-sms"
 		},
 		{
-			"path": "../../../../Git/Rollsizer"
-		},
-		{
-			"path": "../../odoo16.0e_addons"
-		},
-		{
-			"path": "../../odoo-studyiniranadmission"
-		},
-		{
 			"path": "../../odoo-prb"
+		},
+		{
+			"path": "../../odoo16.0e"
 		}
 	],
 	"settings": {
@@ -131,6 +113,7 @@
 		"[python]": {
 			"editor.defaultFormatter": "ms-python.autopep8"
 		},
-		"python.formatting.provider": "autopep8"
+		"python.formatting.provider": "autopep8",
+		"editor.inlineSuggest.showToolbar": "always"
 	}
 }

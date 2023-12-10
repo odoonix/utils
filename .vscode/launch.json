@@ -53,10 +53,8 @@
                 "odoo16-main2",
                 "--addons-path",
                 "${config:odoo.addons.path}",
-                "--load",
-                "vw_odooo_patch,iot_ext_api_oca",
                 "--update",
-                "prb,prb_portal",
+                "prb,prb_portal,education_snippet,education",
                 "--dev",
                 "all"
             ]
@@ -87,8 +85,7 @@
                 "${config:odoo.addons.path}",
                 "--init",
                 "${input:modulesTest}",
-                "--test-tag",
-                "vw",
+                "--test-enable",
                 "--stop-after-init"
             ]
         }
