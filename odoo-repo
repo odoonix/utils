@@ -32,9 +32,9 @@ REPO_CUSTOMER=( \
     "odoo-mobile-service" \
     "odoo-gilsa" \
     "odoo-7tooti" \
-    "odoo-studyiniranadmission" \
 
 
+    "studyiniranadmission" \
     "doctorlands" \
     "healthup" \
     "trip2persia"
