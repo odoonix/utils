@@ -2,41 +2,6 @@
 version: '3.1'
 
 services:
-#    odoo16:
-#        image: odoo-runner:16.0.1
-#        environment:
-#            db_host: db
-#            db_port: 5432
-#            db_user: odoo
-#            db_password: odoo
-#        ports:
-#        - 8069:8069
-#        - 8071:8071
-#        - 8072:8072
-#        volumes:
-#        - /home/maso/Git/odoo/odoo_16:/var/lib/odoo
-#        - /home/maso/Git/viraweb123/odoo-mobile-service:/mnt/extra-addons/odoo-mobile-service
-#        - /home/maso/Git/viraweb123/odoo-exchange:/mnt/extra-addons/odoo-exchange
-#        - /home/maso/Git/viraweb123/odoo-viraweb123:/mnt/extra-addons/odoo-viraweb123
-#        command:
-#        - python3
-#        - /var/lib/odoo/odoo-bin
-#        - --db_host
-#        - db
-#        - --db_password
-#        - odoo
-#        - --db_user
-#        - odoo
-#        - --database
-#        - odootest162
-#        - --addons-path
-#        - "/var/lib/odoo/addons,/mnt/extra-addons/odoo-mobile-service,/mnt/extra-addons/odoo-exchange,/mnt/extra-addons/odoo-viraweb123"
-#        - --update
-#        - all
-#        depends_on:
-#        - db
-#        - adminer
-#        - pgadmin
     db:
         image: postgres:13
         restart: always
@@ -48,14 +13,10 @@ services:
         volumes:
         - ./data:/var/lib/postgresql/data
 
-#    adminer:
-#        image: adminer
-#        restart: always
-#        ports:
-#        - 8080:8080
     pgadmin:
         container_name: pgadmin_container
         image: dpage/pgadmin4
+        user: root
         environment:
             PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
             PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
