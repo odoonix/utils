@@ -38,3 +38,9 @@ Following extensions are required:
 - Run command 'chmod +x init-vs' in New Folder
 
 - Then run command './init-vs' in New Folder
+
+# ADD DataBase
+
+- go to odoo-utils directory 'cd odoo-utils'
+
+- Run 'docker compose up -d' command
