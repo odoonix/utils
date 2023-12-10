@@ -6,6 +6,7 @@ services:
         image: postgres:13
         restart: always
         command: postgres -N 5000
+        user: root
         environment:
             POSTGRES_PASSWORD: postgres
         ports:
