@@ -37,4 +37,4 @@ Following extensions are required:
 
 - Run command 'chmod +x init-vs' in New Folder
 
-- Then run command './init.vs' in New Folder
+- Then run command './init-vs' in New Folder
