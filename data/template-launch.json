@@ -25,6 +25,8 @@
             "options": [
                 "prb,prb_portal",
                 "gym,gym_analysis,gym_diet,gym_workout",
+                "vw_payment_zarinpal",
+                "education,employee_fleet_request,gym,gym_account,gym_analysis,gym_analysis_healthup,gym_analysis_iot,gym_analysis_portal,gym_attendance,gym_diet,gym_diet_portal,gym_membership,gym_workout,gym_workout_portal,iot_ext_api_oca,l10n_ir_contact,vw_calendar,vw_customize_title_header,vw_debranding_base,vw_debranding_website,vw_faratotal,vw_gamification,vw_hr_voucher,vw_login_styles,vw_payment_zarinpal,vw_sms_authentication"
             ],
             "default": "prb,prb_portal"
         }
@@ -53,8 +55,10 @@
                 "odoo16-main2",
                 "--addons-path",
                 "${config:odoo.addons.path}",
+                "--load",
+                "vw_odooo_patch,iot_ext_api_oca",
                 "--update",
-                "prb,prb_portal,education_snippet,education",
+                "payment_pinpayments",
                 "--dev",
                 "all"
             ]
@@ -86,6 +90,31 @@
                 "--init",
                 "${input:modulesTest}",
                 "--test-enable",
+                "--stop-after-init"
+            ]
+        },
+        {
+            "name": "Odoo Test (VW)",
+            "type": "python",
+            "request": "launch",
+            "program": "${config:odoo.bin}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--db_host",
+                "localhost",
+                "--db_password",
+                "odoo",
+                "--db_user",
+                "odoo",
+                "--database",
+                "odooiottest${input:databaseName}",
+                "--addons-path",
+                "${config:odoo.addons.path}",
+                "--init",
+                "${input:modulesTest}",
+                "--test-tag",
+                "vw",
                 "--stop-after-init"
             ]
         }

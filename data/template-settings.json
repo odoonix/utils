@@ -1,0 +1,4 @@
+{
+    "odoo.bin": "${workspaceFolder}/odoo/odoo-bin",
+    "odoo.addons.path": "${workspaceFolder}/odoo-prb,${workspaceFolder}/odoo/addons,${workspaceFolder}/CybroAddons,${workspaceFolder}/odoo-viraweb123,${workspaceFolder}/odoo-mobile-service,${workspaceFolder}/sale-workflow,${workspaceFolder}/iot,${workspaceFolder}/odoo-beton,${workspaceFolder}/account-reconcile,${workspaceFolder}/bank-statement-import,${workspaceFolder}/odoo-hr,${workspaceFolder}/healthup,${workspaceFolder}/studyiniranadmission"
+}

@@ -1,0 +1,25 @@
+#!/bin/bash
+
+echo '----------------------------------------------------------'
+echo '| __      ___        __          __  _    __ ___  ____   |'
+echo '| \ \    / (_)       \ \        / / | |  /_ |__ \|___ \  |'
+echo '|  \ \  / / _ _ __ __ \ \  /\  / /__| |__ | |  ) | __) | |'
+echo '|   \ \/ / | | "__/ _` \ \/  \/ / _ \  _ \| | / / |__ <  |'
+echo '|    \  /  | | | | (_| |\  /\  /  __/ |_) | |/ /_ ___) | |'
+echo '|     \/   |_|_|  \__,_| \/  \/ \___|_.__/|_|____|____/  |'
+echo '|                                                        |'
+echo '|                                                        |'
+echo '----------------------------------------------------------'
+echo '| VS Workspace Builder                                   |'
+echo '| Odoo 16.0                                              |'
+echo '----------------------------------------------------------'
+
+
+
+# Make workspace
+mkdir -p .vscode
+cp -f ".vscode/task.json"   "odoo-utils/data/template-tasks.json"
+cp -f ".vscode/settings.json"   "odoo-utils/data/template-settings.json"
+cp -f ".vscode/launch.json"   "odoo-utils/data/template-launch.json"  
+
+# TODO: update project list based on project list

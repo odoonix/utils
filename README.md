@@ -9,7 +9,7 @@ Following extensions are required:
 
 - Clone "odoo-utils" repository
 
-- Go to ./odoo-utils/ directory 
+- Go to outside of odoo-utils Directory
   
 - Run command ./odoo-utils/odoo-repo --init all
 
@@ -27,3 +27,20 @@ Following extensions are required:
 
 - Please check addons-path in odoo-utils/.vscode/setting.json" directory and delete the paths you don't have in your workspace
 
+------------------------------------------------------------------------------------
+
+- Download init-vs file
+
+- Create New Folder 
+
+- Put init-vs in New Folder
+
+- Run command 'chmod +x init-vs' in New Folder
+
+- Then run command './init-vs' in New Folder
+
+# ADD DataBase
+
+- go to odoo-utils directory 'cd odoo-utils'
+
+- Run 'docker compose up -d' command
