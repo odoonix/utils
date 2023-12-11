@@ -8,7 +8,9 @@ services:
         command: postgres -N 5000
         user: root
         environment:
-            POSTGRES_PASSWORD: postgres
+            POSTGRES_PASSWORD: odoo
+            POSTGRES_USER: odoo
+            POSTGRES_DB: odoo
         ports:
         - 5432:5432
         volumes:
