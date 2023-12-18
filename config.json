@@ -1,0 +1,151 @@
+{
+    "repositories": [
+        {
+            "name": "odoo",
+            "workspace": "odoo"
+        },
+        
+
+        {
+            "name": "account-invoicing",
+            "workspace": "oca"
+        },
+        {
+            "name": "account-reconcile",
+            "workspace": "oca"
+        },
+        {
+            "name": "bank-statement-import",
+            "workspace": "oca"
+        },
+        {
+            "name": "OpenUpgrade",
+            "workspace": "oca"
+        },
+        {
+            "name": "sale-workflow",
+            "workspace": "oca"
+        },
+        {
+            "name": "purchase-workflow",
+            "workspace": "oca"
+        },
+        {
+            "name": "server-tools",
+            "workspace": "oca"
+        },
+        {
+            "name": "pos",
+            "workspace": "oca"
+        },
+        {
+            "name": "iot",
+            "workspace": "oca"
+        },
+        {
+            "name": "web",
+            "workspace": "oca"
+        },
+        {
+            "name": "hr",
+            "workspace": "oca"
+        },
+        {
+            "name": "payroll",
+            "workspace": "oca"
+        },
+
+
+
+        {
+            "name": "odoo-iot",
+            "workspace": "viraweb123"
+        },
+        {
+            "name": "odoo-hr",
+            "workspace": "viraweb123"
+        },
+        {
+            "name": "odoo-sms",
+            "workspace": "viraweb123"
+        },
+        {
+            "name": "odoo-themes",
+            "workspace": "viraweb123"
+        },
+        {
+            "name": "odoo-viraweb123",
+            "workspace": "viraweb123"
+        },
+        {
+            "name": "odoo-utils",
+            "workspace": "viraweb123"
+        },
+        {
+            "name": "odoo-prb",
+            "workspace": "viraweb123"
+        },
+        {
+            "name": "odoo-social",
+            "workspace": "viraweb123"
+        },
+
+
+
+        {
+            "name": "odoo-beton",
+            "workspace": "viraweb123",
+            "tags": ["customer"]
+        },
+        {
+            "name": "odoo-mobile-service",
+            "workspace": "viraweb123",
+            "tags": ["customer"]
+        },
+        {
+            "name": "odoo-gilsa",
+            "workspace": "viraweb123",
+            "tags": ["customer"]
+        },
+        {
+            "name": "odoo-7tooti",
+            "workspace": "viraweb123",
+            "tags": ["customer"]
+        },
+        {
+            "name": "studyiniranadmission",
+            "workspace": "viraweb123",
+            "tags": ["customer"]
+        },
+        {
+            "name": "doctorlands",
+            "workspace": "viraweb123",
+            "tags": ["customer"]
+        },
+        {
+            "name": "healthup",
+            "workspace": "viraweb123",
+            "tags": ["customer"]
+        },
+        {
+            "name": "trip2persia",
+            "workspace": "viraweb123",
+            "tags": ["customer"]
+        },
+
+
+
+
+        {
+            "name": "CybroAddons",
+            "workspace": "CybroOdoo",
+            "tags": ["deprecated"]
+        },
+        {
+            "name": "design-themes",
+            "workspace": "odoo",
+            "tags": ["deprecated"]
+        }
+
+    ]
+}

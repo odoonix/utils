@@ -39,6 +39,9 @@ cp -i "${SOURCE_PATH}/data/template-settings.json"    ".vscode/settings.json"
 cp -i "${SOURCE_PATH}/data/template-launch.json"      ".vscode/launch.json"
 # TODO: update project list based on project list
 
+cd "${SOURCE_PATH}/db"
+docker compose up -d
 
 # Open code editor
+cd "${SOURCE_PATH}"
 code .
