@@ -28,8 +28,7 @@ Following extensions are required:
 - Please check addons-path in odoo-utils/.vscode/setting.json" directory and delete the paths you don't have in your workspace
 
 ------------------------------------------------------------------------------------
-
-- Download init-vs file
+- clone odoo-utill
 
 - Create New Folder 
 
