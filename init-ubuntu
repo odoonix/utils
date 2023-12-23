@@ -1,0 +1,102 @@
+#!/bin/bash
+
+echo "Installing APT and APT-GET proxy"
+echo '' > /etc/apt/apt.conf.d/30proxy
+echo 'Acquire::http { Proxy "http://192.168.88.100:3142"; }' > /etc/apt/apt.conf.d/proxy
+
+mkdir -p /mnt/storage_share
+
+add-apt-repository ppa:inkscape.dev/stable
+
+
+apt upgrade
+apt update
+############################################################
+# Python3
+############################################################
+echo "Installing Python"
+apt install -y \
+    python3 \
+    python3-venv \
+    python3-pip \
+    python3-dev \
+    python3-wheel \
+    python3-gevent \
+    python-is-python3 \
+    python3-ldap \
+    python3-ldap3 \
+    python3-pyldap \
+    libldap2-dev \
+    libsasl2-dev 
+    
+
+
+echo "Configure pip proxy"
+echo << EOF
+[global]
+index-url=http://192.168.88.100:5000/index/
+extra-index-url=http://pypi.python.org/pypi
+
+[install]
+trusted-host=192.168.88.100
+	     pypi.python.org
+EOF
+> /etc/pip.conf
+
+
+############################################################
+# Cockpit
+############################################################
+echo "Installing cockpit"
+. /etc/os-release
+apt install -y -t ${VERSION_CODENAME}-backports \
+    cockpit \
+    cockpit-pcp \
+    cockpit-bridge \
+    cockpit-storaged \
+    nfs-common
+
+
+systemctl enable cockpit
+
+
+############################################################
+# Developer Tools
+############################################################
+   
+snap install code --classic
+snap install postman
+snap install chromium
+snap install skype
+snap install audacity
+apt install -y \
+    git \
+    inkscape \
+    build-essential \
+    default-jdk \
+    libpq-dev
+
+
+snap install node --classic
+npm install -g rtlcss
+
+
+
+apt install -y \
+    vlc \
+    vlc-plugin-base \
+    vlc-plugin-access-extra \
+    vlc-plugin-bittorrent \
+    vlc-plugin-video-splitter
+
+
+############################################################
+# Docker
+############################################################
+apt install -y \
+    docker \
+    docker-compose \
+    docker-compose-v2
+
+systemctl enable docker
+
