@@ -1,4 +1,5 @@
 {
+    "version": "15.0",
     "repositories": [
         {
             "name": "odoo",
@@ -143,21 +144,6 @@
             "name": "trip2persia",
             "workspace": "viraweb123",
             "tags": ["customer"]
-        },
-
-
-
-
-        {
-            "name": "CybroAddons",
-            "workspace": "CybroOdoo",
-            "tags": ["deprecated"]
-        },
-        {
-            "name": "design-themes",
-            "workspace": "odoo",
-            "tags": ["deprecated"]
         }
-
     ]
 }

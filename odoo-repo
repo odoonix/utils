@@ -22,7 +22,7 @@ DEVELOPER_MODE=false
 #################################################################
 # Configs
 #################################################################
-odoo="16.0"
+odoo="15.0"
 # ViraWeb123 Customers
 # odoo-beton          -> Tachar
 # odoo-mobile-service -> elbaan

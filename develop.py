@@ -24,10 +24,10 @@ def call_safe(command, shell=False, cwd='.'):
 
 
 def git_update(workspace, project):
-    branch_name = '16.0'
+    branch_name = '15.0'
     depth = '1'
     # SOURCE_PATH="./odoo-utils"
-    # GIT_OPTIONS=" --branch 16.0  --depth 1"
+    # GIT_OPTIONS=" --branch 15.0  --depth 1"
     # git clone $GIT_OPTIONS git@github.com:viraweb123/odoo-utils.git
     if os.path.exists(project):
         call_safe(['git', 'pull'], cwd=project)

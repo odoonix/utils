@@ -11,11 +11,11 @@ echo '|                                                        |'
 echo '|                                                        |'
 echo '----------------------------------------------------------'
 echo '| VS Workspace Builder                                   |'
-echo '| Odoo 16.0                                              |'
+echo '| Odoo 15.0                                              |'
 echo '----------------------------------------------------------'
 
 SOURCE_PATH="./odoo-utils"
-GIT_OPTIONS=" --branch 16.0  --depth 1"
+GIT_OPTIONS=" --branch 15.0  --depth 1"
 git clone $GIT_OPTIONS git@github.com:viraweb123/odoo-utils.git 
 
 # TODO: get list of module to install (ODOO, VW, OCA, ..)
