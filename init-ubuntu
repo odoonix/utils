@@ -27,7 +27,8 @@ apt install -y \
     python3-ldap3 \
     python3-pyldap \
     libldap2-dev \
-    libsasl2-dev 
+    libsasl2-dev \
+    pre-commit
     
 
 

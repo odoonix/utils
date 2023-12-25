@@ -32,8 +32,10 @@ def git_update(workspace, project):
     if os.path.exists(project):
         call_safe(['git', 'pull'], cwd=project)
     else:
-        call_safe(['git', 'clone', '--branch', branch_name, '--depth',
-                   depth, 'git@github.com:' + workspace + '/' + project + '.git'])
+        call_safe(['git', 'clone', 
+                   '--branch', branch_name, 
+                   '--depth', depth, 
+                   'git@github.com:' + workspace + '/' + project + '.git'])
 
 
 def progressBar(iterable, prefix='', suffix='', decimals=1, length=100, fill='█', printEnd="\r"):
@@ -98,5 +100,5 @@ call_safe(['mkdir', '-p', '.vscode'])
 # # TODO: update project list based on project list
 
 
-# # Open code editor
-# code .
+# Open code editor
+call_safe(['code', '.'])
