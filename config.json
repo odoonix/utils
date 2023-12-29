@@ -146,13 +146,6 @@
         },
 
 
-
-
-        {
-            "name": "CybroAddons",
-            "workspace": "CybroOdoo",
-            "tags": ["deprecated"]
-        },
         {
             "name": "design-themes",
             "workspace": "odoo",
