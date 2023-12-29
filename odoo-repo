@@ -241,10 +241,6 @@ check_repos(){
     check_repo_single "design-themes"
     print_repo_close_info
 
-    print_repo_info "CybroOdoo" "CybroAddons"
-    check_repo_single "CybroAddons"
-    print_repo_close_info
-    
 }
 
 init_repo_single(){
@@ -327,7 +323,6 @@ init_repo(){
     if [[ $1 = "old" ]]; 
     then
         init_repo_single "odoo" "design-themes"
-        init_repo_single "CybroOdoo" "CybroAddons"
     fi
 
     # for single repo
