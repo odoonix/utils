@@ -71,11 +71,9 @@ REPO_VW=( \
 
 # NOTE: not supprted and will removed soon
 REPO_DEPRICATED=(\
-    "CybroAddons" \
     "design-themes" \
 )
 REPO_DEPRICATED_KEY=(\
-    "CybroOdoo" \
     "odoo" \
 )
 
