@@ -15,7 +15,15 @@
             "workspace": "oca"
         },
         {
+            "name": "account-financial-reporting",
+            "workspace": "oca"
+        },
+        {
             "name": "bank-statement-import",
+            "workspace": "oca"
+        },
+        {
+            "name": "credit-control",
             "workspace": "oca"
         },
         {
@@ -40,6 +48,10 @@
         },
         {
             "name": "web",
+            "workspace": "oca"
+        },
+        {
+            "name": "website",
             "workspace": "oca"
         },
         {

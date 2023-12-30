@@ -44,7 +44,9 @@ REPO_CUSTOMER=( \
 REPO_OCA=(\
     "account-invoicing" \
     "account-reconcile" \
+    "account-financial-reporting" \
     "bank-statement-import" \
+    "credit-control" \
     "OpenUpgrade" \
     "sale-workflow" \
     "purchase-workflow" \
@@ -52,6 +54,7 @@ REPO_OCA=(\
     "pos" \
     "iot" \
     "web" \
+    "website" \
     "hr" \
     "payroll" \
 )
