@@ -75,6 +75,10 @@
             "workspace": "oca"
         },
         {
+            "name": "server-brand",
+            "workspace": "oca"
+        },
+        {
             "name": "server-ux",
             "workspace": "oca"
         },
