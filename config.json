@@ -16,6 +16,10 @@
             "workspace": "oca"
         },
         {
+            "name": "account-financial-reporting",
+            "workspace": "oca"
+        },
+        {
             "name": "bank-statement-import",
             "workspace": "oca"
         },
