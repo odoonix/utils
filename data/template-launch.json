@@ -52,7 +52,7 @@
                 "--db_user",
                 "odoo",
                 "--database",
-                "odoo16-main2",
+                "odoo15",
                 "--addons-path",
                 "${config:odoo.addons.path}",
                 "--load",
