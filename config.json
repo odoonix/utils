@@ -36,6 +36,10 @@
             "workspace": "oca"
         },
         {
+            "name": "project",
+            "workspace": "oca"
+        },
+        {
             "name": "pos",
             "workspace": "oca"
         },

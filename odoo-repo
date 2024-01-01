@@ -47,13 +47,14 @@ REPO_OCA=(\
     "bank-statement-import" \
     "OpenUpgrade" \
     "sale-workflow" \
-    "purchase-workflow" \
     "server-tools" \
+    "payroll" \
+    "project" \
     "pos" \
+    "purchase-workflow" \
     "iot" \
     "web" \
     "hr" \
-    "payroll" \
 )
 
 # Viraweb123 Projects   
