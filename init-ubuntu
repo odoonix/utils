@@ -55,7 +55,9 @@ apt install -y -t ${VERSION_CODENAME}-backports \
     cockpit-pcp \
     cockpit-bridge \
     cockpit-storaged \
-    nfs-common
+    nfs-common \
+    openssh-server \
+    openssh-client
 
 
 systemctl enable cockpit
@@ -101,3 +103,11 @@ apt install -y \
 
 systemctl enable docker
 
+
+
+############################################################
+# Cokpit
+############################################################
+mkdir -p /root/.ssh
+touch /root/.ssh/authorized_keys
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDgkKnDH/ruQAquOB1FgQW0glN7vVnTJnNoiESNbrgPI46od4dwVoR+Xc4wVUqP3eRhbOCgqlilxdos6XgG8y7fuDgA3MVEIyvO3pUF3jRhTw7uJm3JOMFyfxBAszlQsOROU24HdaUEAWNi4z1Ks6P+oTywa76A0NbHGUkydDnCirEVtP+lSR715s3GP0E5SKrlIYoSiI0v4EFItWdU8oIYr9pa7s0G1tm1XZ8CLHTGUZKxeo8bQRYEbn8DtRReL5R5val3DBWxdjybRuQGnT05xvn687AjeOdrC8p95bLlaV+/H+C5umHYmKottlPYGdYUoZVXWgM4WAJ2GLUYMcFdZRiCvzChocp8e3PGbsdquyESsEvMAqj9KFfDAejiV3i32IN4eJcOp3uW3Fx9nI+fbSit0qWwoS4RSz440L5+PNZ+AdAXs9/7wxkMjXWkr8naJXbg1oTG3M8XtjMZkfpYRuJ2P52/fXpSXIrSHkPjUXc9j8i+vj+VFE+QJxhxB/E= maso@localhost.localdomain" >> "/root/.ssh/authorized_keys"
