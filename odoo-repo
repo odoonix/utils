@@ -50,6 +50,7 @@ REPO_OCA=(\
     "OpenUpgrade" \
     "sale-workflow" \
     "purchase-workflow" \
+    "project" \
     "server-brand" \
     "server-tools" \
     "pos" \
