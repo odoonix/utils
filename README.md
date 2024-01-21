@@ -28,18 +28,12 @@ Following extensions are required:
 - Please check addons-path in odoo-utils/.vscode/setting.json" directory and delete the paths you don't have in your workspace
 
 ------------------------------------------------------------------------------------
-- clone odoo-utill
+# How use odoo utils?
 
-- Create New Folder 
+- Create a folder named "odoo16"
 
-- Put init-vs in New Folder
+- Clone odoo-utill in "odoo16"
 
-- Run command 'chmod +x init-vs' in New Folder
+- Run command 'chmod +x init-vs' in "odoo16"
 
-- Then run command './init-vs' in New Folder
-
-# ADD DataBase
-
-- go to odoo-utils directory 'cd odoo-utils'
-
-- Run 'docker compose up -d' command
+- Go back one folder and run init-vs "../init-vs" 
