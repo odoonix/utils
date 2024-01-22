@@ -3,7 +3,7 @@ from . import linux
 from . import admin
 
 
-def update():
+def update(**kargs):
     # 1- load all repositories
     admin.update_repositories()
 
