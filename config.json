@@ -33,10 +33,6 @@
             "workspace": "oca"
         },
         {
-            "name": "credit-control",
-            "workspace": "oca"
-        },
-        {
             "name": "management-system",
             "workspace": "oca"
         },
@@ -105,99 +101,12 @@
             "workspace": "oca"
         },
         {
-            "name": "odoo-iot",
-            "workspace": "viraweb123"
-        },
-        {
-            "name": "odoo-hr",
-            "workspace": "viraweb123"
-        },
-        {
-            "name": "odoo-sms",
-            "workspace": "viraweb123"
-        },
-        {
-            "name": "odoo-themes",
-            "workspace": "viraweb123"
-        },
-        {
             "name": "odoo-viraweb123",
             "workspace": "viraweb123"
         },
         {
             "name": "odoo-utils",
             "workspace": "viraweb123"
-        },
-        {
-            "name": "odoo-prb",
-            "workspace": "viraweb123"
-        },
-        {
-            "name": "odoo-social",
-            "workspace": "viraweb123"
-        },
-        {
-            "name": "documentation",
-            "workspace": "viraweb123",
-            "tags": ["doc"],
-            "enterprise": true
-        },
-
-
-
-        {
-            "name": "odoo-beton",
-            "workspace": "viraweb123",
-            "tags": [
-                "customer"
-            ]
-        },
-        {
-            "name": "odoo-mobile-service",
-            "workspace": "viraweb123",
-            "tags": [
-                "customer"
-            ]
-        },
-        {
-            "name": "odoo-gilsa",
-            "workspace": "viraweb123",
-            "tags": [
-                "customer"
-            ]
-        },
-        {
-            "name": "odoo-7tooti",
-            "workspace": "viraweb123",
-            "tags": [
-                "customer"
-            ]
-        },
-        {
-            "name": "studyiniranadmission",
-            "workspace": "viraweb123",
-            "tags": [
-                "customer"
-            ]
-        },
-        {
-            "name": "doctorlands",
-            "workspace": "viraweb123",
-            "tags": [
-                "customer"
-            ]
-        },
-        {
-            "name": "healthup",
-            "workspace": "viraweb123",
-            "tags": [
-                "customer"
-            ]
-        },
-        {
-            "name": "trip2persia",
-            "workspace": "viraweb123",
-            "tags": ["customer"]
         }
     ]
 }
