@@ -1,10 +1,9 @@
-#!/usr/bin/env python3
-
-import os
-import platform
 import subprocess
 import logging
-import json
+from rich.console import Console
+from rich.table import Table
+
+logger = logging.getLogger(__file__)
 
 
 def call_safe(command, shell=False, cwd='.'):
@@ -17,25 +16,10 @@ def call_safe(command, shell=False, cwd='.'):
                     print("Killed by signal")
                 else:
                     print("Command failed with return code")
-                exit(2)
+                return ret
     except Exception as e:
-        logging.error('Failed to execute command: %s', e)
-        exit(2)
-
-
-def git_update(workspace, project):
-    branch_name = '16.0'
-    depth = '1'
-    # SOURCE_PATH="./odoo-utils"
-    # GIT_OPTIONS=" --branch 16.0  --depth 1"
-    # git clone $GIT_OPTIONS git@github.com:viraweb123/odoo-utils.git
-    if os.path.exists(project):
-        call_safe(['git', 'pull'], cwd=project)
-    else:
-        call_safe(['git', 'clone', 
-                   '--branch', branch_name, 
-                   '--depth', depth, 
-                   'git@github.com:' + workspace + '/' + project + '.git'])
+        logger.error('Failed to execute command: %s', e)
+        return 2
 
 
 def progressBar(iterable, prefix='', suffix='', decimals=1, length=100, fill='â–ˆ', printEnd="\r"):
@@ -69,36 +53,35 @@ def progressBar(iterable, prefix='', suffix='', decimals=1, length=100, fill='â–
     print()
 
 
-# To update repositories
-directory = os.path.dirname(os.path.realpath(__file__))
-configs = {}
-with open(directory+'/config.json') as config_file:
-    configs = json.load(config_file)
+def run(commands, **kargs):
+    for command in progressBar(
+            commands,
+            prefix='Progress:',
+            suffix='Complete',
+            length=50):
+        if callable(command):
+            command(**kargs)
+        else:
+            call_safe(command)
 
 
-print("Clone&Update Repositories")
-for repo in progressBar(
-        configs['repositories'],
-        prefix='Progress:',
-        suffix='Complete',
-        length=50):
-    git_update(repo['workspace'], repo['name'])
+def info_table(data, keys, columns=None,  title="#"):
+    table = Table(title)
+    rows = []
 
-# Make venv
-call_safe(['python', '-m', 'venv', '.venv'])
+    if not columns:
+        columns = keys
 
-# To install requirenment
-call_safe(['.venv/bin/pip', 'install', '-r', 'odoo/requirements.txt'])
+    for column in columns:
+        table.add_column(column)
 
-# Make workspace
-call_safe(['mkdir', '-p', '.vscode'])
+    count = 1
+    for item in data:
+        row = [str(count)]
+        count = count+1
+        for key in keys:
+            row.append(item[key])
+        table.add_row(*row, style='bright_green')
 
-# echo "Try to load new VS configuraiton"
-# cp -i "${SOURCE_PATH}/data/template-tasks.json"       ".vscode/task.json"
-# cp -i "${SOURCE_PATH}/data/template-settings.json"    ".vscode/settings.json"
-# cp -i "${SOURCE_PATH}/data/template-launch.json"      ".vscode/launch.json"
-# # TODO: update project list based on project list
-
-
-# Open code editor
-call_safe(['code', '.'])
+    console = Console()
+    console.print(table)
