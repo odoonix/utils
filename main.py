@@ -3,6 +3,7 @@ import argparse
 
 from utils import develop
 from utils import admin
+from utils import repo
 
 
 parser = argparse.ArgumentParser(
@@ -114,4 +115,6 @@ dev_update.set_defaults(func=admin.update_repositories)
 
 if __name__ == '__main__':
     args = parser.parse_args()
+    if args.verbose:
+        print("Odoo version :{}".format(repo.get_branch()))
     args.func(**args.__dict__)
