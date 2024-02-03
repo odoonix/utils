@@ -27,7 +27,13 @@ odoo="17.0"
 # odoo-beton          -> Tachar
 # odoo-mobile-service -> elbaan
 #
-REPO_CUSTOMER=()
+REPO_CUSTOMER=(
+
+
+# MoonSun
+    "zadandco"\
+
+)
 
 # OCA Supported projects
 REPO_OCA=(
