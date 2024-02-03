@@ -1,0 +1,114 @@
+{
+    "version": "17.0",
+    "repositories": [
+        {
+            "name": "odoo",
+            "workspace": "odoo"
+        },
+        {
+            "name": "account-invoicing",
+            "workspace": "oca"
+        },
+        {
+            "name": "account-reconcile",
+            "workspace": "oca"
+        },
+        {
+            "name": "account-financial-reporting",
+            "workspace": "oca"
+        },
+        {
+            "name": "bank-statement-import",
+            "workspace": "oca"
+        },
+        {
+            "name": "credit-control",
+            "workspace": "oca"
+        },
+        {
+            "name": "management-system",
+            "workspace": "oca"
+        },
+        {
+            "name": "OpenUpgrade",
+            "workspace": "oca"
+        },
+        {
+            "name": "purchase-workflow",
+            "workspace": "oca"
+        },
+        {
+            "name": "pos",
+            "workspace": "oca"
+        },
+        {
+            "name": "iot",
+            "workspace": "oca"
+        },
+        {
+            "name": "web",
+            "workspace": "oca"
+        },
+        {
+            "name": "website",
+            "workspace": "oca"
+        },
+        {
+            "name": "hr",
+            "workspace": "oca"
+        },
+        {
+            "name": "payroll",
+            "workspace": "oca"
+        },
+        {
+            "name": "project",
+            "workspace": "oca"
+        },
+        {
+            "name": "sale-workflow",
+            "workspace": "oca"
+        },
+        {
+            "name": "server-auth",
+            "workspace": "oca"
+        },
+        {
+            "name": "server-tools",
+            "workspace": "oca"
+        },
+        {
+            "name": "server-brand",
+            "workspace": "oca"
+        },
+        {
+            "name": "server-ux",
+            "workspace": "oca"
+        },
+        {
+            "name": "odoo-viraweb123",
+            "workspace": "viraweb123"
+        },
+        {
+            "name": "odoo-utils",
+            "workspace": "viraweb123"
+        },
+        {
+            "name": "documentation",
+            "workspace": "viraweb123",
+            "tags": [
+                "doc"
+            ],
+            "enterprise": true
+        },
+        {
+            "name": "exchange",
+            "workspace": "moonsunsoft"
+        },
+        {
+            "name": "exchange",
+            "workspace": "moonsunsoft"
+        }
+        
+    ]
+}
