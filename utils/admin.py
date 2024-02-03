@@ -8,7 +8,7 @@ def update_repositories(verbose=False, oca=False, viraweb123=False, moonsunsoft=
     # Generate filters
     filter = False
     if oca or viraweb123 or moonsunsoft:
-        filter = []
+        filter = ['odoo']
         if oca:
             filter.append('oca')
         if viraweb123:
