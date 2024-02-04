@@ -33,10 +33,12 @@ def init(
         print("VSCode configs")
         linux.run([
             ['mkdir', '-p', '.vscode'],
-            # echo "Try to load new VS configuraiton"
-            # cp -i "${SOURCE_PATH}/data/template-tasks.json"       ".vscode/task.json"
-            # cp -i "${SOURCE_PATH}/data/template-settings.json"    ".vscode/settings.json"
-            # cp -i "${SOURCE_PATH}/data/template-launch.json"      ".vscode/launch.json"
+            ['cp', '-i', '${SOURCE_PATH}/data/template-tasks.json',
+                '.vscode/task.json']
+            ['cp', '-i', '${SOURCE_PATH}/data/template-settings.json',
+                '.vscode/settings.json']
+            ['cp', '-i', '${SOURCE_PATH}/data/template-launch.json',
+                '.vscode/launch.json']
             # # TODO: update project list based on project list
             # # TODO: update project list based on project list
             ['code', '.'],
