@@ -33,11 +33,11 @@ def init(
         print("VSCode configs")
         linux.run([
             ['mkdir', '-p', '.vscode'],
-            ['cp', '-i', '${SOURCE_PATH}/data/template-tasks.json',
+            ['cp', '-i', 'odoo-utils/data/template-tasks.json',
                 '.vscode/task.json'],
-            ['cp', '-i', '${SOURCE_PATH}/data/template-settings.json',
+            ['cp', '-i', 'odoo-utils/data/template-settings.json',
                 '.vscode/settings.json'],
-            ['cp', '-i', '${SOURCE_PATH}/data/template-launch.json',
+            ['cp', '-i', 'odoo-utils/data/template-launch.json',
                 '.vscode/launch.json'],
             # # TODO: update project list based on project list
             # # TODO: update project list based on project list
