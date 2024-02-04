@@ -34,11 +34,11 @@ def init(
         linux.run([
             ['mkdir', '-p', '.vscode'],
             ['cp', '-i', '${SOURCE_PATH}/data/template-tasks.json',
-                '.vscode/task.json']
+                '.vscode/task.json'],
             ['cp', '-i', '${SOURCE_PATH}/data/template-settings.json',
-                '.vscode/settings.json']
+                '.vscode/settings.json'],
             ['cp', '-i', '${SOURCE_PATH}/data/template-launch.json',
-                '.vscode/launch.json']
+                '.vscode/launch.json'],
             # # TODO: update project list based on project list
             # # TODO: update project list based on project list
             ['code', '.'],
