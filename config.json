@@ -98,17 +98,26 @@
             "workspace": "viraweb123",
             "tags": [
                 "doc"
-            ],
-            "enterprise": true
+            ]
         },
         {
-            "name": "exchange",
-            "workspace": "moonsunsoft"
+            "name": "ms-exchange",
+            "workspace": "moonsunsoft",
+            "public": false
         },
         {
-            "name": "exchange",
-            "workspace": "moonsunsoft"
+            "name": "ms-product",
+            "workspace": "moonsunsoft",
+            "public": false
+        },
+        {
+            "name": "ms-documentation",
+            "workspace": "moonsunsoft",
+            "public": true,
+            "branch": "main",
+            "tags": [
+                "doc"
+            ]
         }
-        
     ]
 }
