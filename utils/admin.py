@@ -3,9 +3,20 @@ from . import linux
 from . import repo
 
 
-def update_repositories(verbose=False, **kargs):
+def update_repositories(verbose=False, oca=False, viraweb123=False, moonsunsoft=False, **kargs):
     print("Clone&Update Repositories")
-    repos = repo.get_list()
+    # Generate filters
+    filter = False
+    if oca or viraweb123 or moonsunsoft:
+        filter = []
+        if oca:
+            filter.append('oca')
+        if viraweb123:
+            filter.append('viraweb123')
+        if moonsunsoft:
+            filter.append('moonsunsoft')
+    
+    repos = repo.get_list(filter)
     for item in linux.progressBar(
             repos,
             prefix='Progress:',

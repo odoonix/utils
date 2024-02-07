@@ -3,10 +3,9 @@ from . import linux
 from . import admin
 
 
-def update(
-        **kargs):
+def update(**kargs):
     # 1- load all repositories
-    admin.update_repositories()
+    admin.update_repositories(**kargs)
 
     # TODO: check if need to update settings
 
@@ -21,7 +20,7 @@ def init(
 
     if repo:
         # 1- load all repositories
-        admin.update_repositories()
+        admin.update_repositories(**kargs)
 
     if python:
         print("Installing and Updating python3 virtual environment")

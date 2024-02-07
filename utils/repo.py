@@ -29,13 +29,17 @@ def git_update(workspace, project, branch_name=None, depth='1'):
     return state
 
 
-def get_list():
+def get_list(filter_workspace=False):
     # To update repositories
     directory = os.path.dirname(os.path.realpath(__file__)) + '/..'
     configs = {}
     with open(directory+'/config.json') as config_file:
         configs = json.load(config_file)
-    return configs['repositories']
+
+    result = configs['repositories']
+    if filter_workspace:
+        result = [repo for repo in configs['repositories'] if repo['workspace'] in filter_workspace]
+    return result
 
 
 def get_branch():

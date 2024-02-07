@@ -105,6 +105,10 @@
             "workspace": "viraweb123"
         },
         {
+            "name": "odoo-website",
+            "workspace": "viraweb123"
+        },
+        {
             "name": "odoo-gamification",
             "workspace": "viraweb123"
         },
