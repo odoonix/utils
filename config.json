@@ -101,6 +101,13 @@
             ]
         },
         {
+            "name": "docker",
+            "workspace": "viraweb123",
+            "tags": [
+                "doc"
+            ]
+        },
+        {
             "name": "ms-exchange",
             "workspace": "moonsunsoft",
             "public": false
