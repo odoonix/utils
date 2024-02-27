@@ -22,7 +22,7 @@ def call_safe(command, shell=False, cwd='.'):
         return 2
 
 
-def progressBar(iterable, prefix='', suffix='', decimals=1, length=100, fill='█', printEnd="\r"):
+def progress_bar(iterable, prefix='', suffix='', decimals=1, length=100, fill='█', printEnd="\r"):
     """
     Call in a loop to create terminal progress bar
     @params:
@@ -37,24 +37,24 @@ def progressBar(iterable, prefix='', suffix='', decimals=1, length=100, fill='�
     total = len(iterable)
     # Progress Bar Printing Function
 
-    def printProgressBar(iteration):
+    def print_progress_bar(iteration):
         percent = ("{0:." + str(decimals) + "f}").format(100 *
                                                          (iteration / float(total)))
-        filledLength = int(length * iteration // total)
-        bar = fill * filledLength + '-' * (length - filledLength)
+        filled_length = int(length * iteration // total)
+        bar = fill * filled_length + '-' * (length - filled_length)
         print(f'\r{prefix} |{bar}| {percent}% {suffix}', end=printEnd)
     # Initial Call
-    printProgressBar(0)
+    print_progress_bar(0)
     # Update Progress Bar
     for i, item in enumerate(iterable):
         yield item
-        printProgressBar(i + 1)
+        print_progress_bar(i + 1)
     # Print New Line on Complete
     print()
 
 
 def run(commands, **kargs):
-    for command in progressBar(
+    for command in progress_bar(
             commands,
             prefix='Progress:',
             suffix='Complete',
@@ -67,7 +67,6 @@ def run(commands, **kargs):
 
 def info_table(data, keys, columns=None,  title="#"):
     table = Table(title)
-    rows = []
 
     if not columns:
         columns = keys
