@@ -86,6 +86,10 @@
             "workspace": "oca"
         },
         {
+            "name": "product-attribute",
+            "workspace": "oca"
+        },
+        {
             "name": "odoo-viraweb123",
             "workspace": "viraweb123"
         },
