@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from . import linux
 from . import admin
+import os
 
 
 def update(**kargs):
@@ -34,9 +35,9 @@ def init(
         linux.run([
             ['mkdir', '-p', '.vscode'],
             # echo "Try to load new VS configuraiton"
-            # cp -i "${SOURCE_PATH}/data/template-tasks.json"       ".vscode/task.json"
-            # cp -i "${SOURCE_PATH}/data/template-settings.json"    ".vscode/settings.json"
-            # cp -i "${SOURCE_PATH}/data/template-launch.json"      ".vscode/launch.json"
+            ["cp", "-i", os.path.dirname(os.path.realpath(__file__)) + "/../data/template-tasks.json", os.getcwd() + "/.vscode/task.json"],
+            ["cp", "-i", os.path.dirname(os.path.realpath(__file__)) + "/../data/template-launch.json", os.getcwd() + ".vscode/launch.json"],
+            ["cp", "-i", os.path.dirname(os.path.realpath(__file__)) + "/../data/template-settings.json", os.getcwd() + ".vscode/settings.json"],
             # # TODO: update project list based on project list
             # # TODO: update project list based on project list
             ['code', '.'],
