@@ -35,9 +35,9 @@ def init(
         linux.run([
             ['mkdir', '-p', '.vscode'],
             # echo "Try to load new VS configuraiton"
-            ["cp", "-i", os.path.dirname(os.path.realpath(__file__)) + "/../data/template-tasks.json", os.getcwd() + "/.vscode/task.json"],
-            ["cp", "-i", os.path.dirname(os.path.realpath(__file__)) + "/../data/template-launch.json", os.getcwd() + ".vscode/launch.json"],
-            ["cp", "-i", os.path.dirname(os.path.realpath(__file__)) + "/../data/template-settings.json", os.getcwd() + ".vscode/settings.json"],
+            ["cp", "-i", os.path.dirname(os.path.realpath(__file__)) + "/../data/template-tasks.json", os.getcwd() + "/.vscode/task.json","-y"],
+            ["cp", "-i", os.path.dirname(os.path.realpath(__file__)) + "/../data/template-launch.json", os.getcwd() + "/.vscode/launch.json","-y"],
+            ["cp", "-i", os.path.dirname(os.path.realpath(__file__)) + "/../data/template-settings.json", os.getcwd() + "/.vscode/settings.json","-y"],
             # # TODO: update project list based on project list
             # # TODO: update project list based on project list
             ['code', '.'],
