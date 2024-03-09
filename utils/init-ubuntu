@@ -11,8 +11,8 @@ mkdir -p /mnt/storage_share
 add-apt-repository ppa:inkscape.dev/stable
 
 
-apt upgrade
-apt update
+apt upgrade -y
+apt update -y
 ############################################################
 # Python3
 ############################################################
