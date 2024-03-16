@@ -38,6 +38,10 @@
             "workspace": "oca"
         },
         {
+            "name": "margin-analysis",
+            "workspace": "oca"
+        },
+        {
             "name": "purchase-workflow",
             "workspace": "oca"
         },
