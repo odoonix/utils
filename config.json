@@ -6,6 +6,7 @@
             "workspace": "odoo"
         },
         {
+            "-": "----------------------------------------------------------------------",
             "name": "account-invoicing",
             "workspace": "oca"
         },
@@ -97,12 +98,20 @@
             "name": "product-attribute",
             "workspace": "oca"
         },
+ 
+ 
+ 
         {
+            "-": "----------------------------------------------------------------------",
             "name": "odoo-viraweb123",
             "workspace": "viraweb123"
         },
         {
             "name": "odoo-utils",
+            "workspace": "viraweb123"
+        },
+        {
+            "name": "odoo-sms",
             "workspace": "viraweb123"
         },
         {
@@ -119,7 +128,9 @@
                 "doc"
             ]
         },
+
         {
+            "-": "----------------------------------------------------------------------",
             "name": "ms-exchange",
             "workspace": "moonsunsoft",
             "public": false
