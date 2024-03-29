@@ -66,7 +66,7 @@ def run(commands, **kargs):
 
 
 def info_table(data, keys, columns=None,  title="#"):
-    table = Table(title)
+    table = Table(title, show_lines=True)
     rows = []
 
     if not columns:

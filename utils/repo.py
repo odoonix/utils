@@ -4,11 +4,42 @@ import json
 from . import linux
 
 
+class ModuleList(list):
+    def __rich__(self):
+        return '\n'.join(self)
+
+    def difference(self, other):
+        new_list = ModuleList()
+        for item in self:
+            if item not in other:
+                new_list.append(item)
+        return new_list
+
+
+def is_addons(name, dir):
+    new_path = os.path.join(name, dir)
+    for file_name in os.listdir(new_path):
+        if file_name == '__manifest__.py':
+            return True
+    return False
+
+
+def get_addons_list(name, *args, **kargs):
+    addons_list = ModuleList()
+    if not os.path.exists(name) \
+            or os.path.isfile(name):
+        return addons_list
+
+    for dir in os.listdir(name):
+        new_path = os.path.join(name, dir)
+        if os.path.isdir(new_path) \
+                and is_addons(name, dir):
+            addons_list.append(dir)
+
+    return addons_list
+
+
 def git_update(workspace, project, branch_name=None, depth='1'):
-    state = 'Not Found'
-    # SOURCE_PATH="./odoo-utils"
-    # GIT_OPTIONS=" --branch 16.0  --depth 1"
-    # git clone $GIT_OPTIONS git@github.com:viraweb123/odoo-utils.git
     if not branch_name:
         branch_name = get_branch()
     if os.path.exists(project):
@@ -38,7 +69,8 @@ def get_list(filter_workspace=False):
 
     result = configs['repositories']
     if filter_workspace:
-        result = [repo for repo in configs['repositories'] if repo['workspace'] in filter_workspace]
+        result = [repo for repo in configs['repositories']
+                  if repo['workspace'] in filter_workspace]
     return result
 
 
