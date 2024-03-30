@@ -23,6 +23,10 @@
             "workspace": "oca"
         },
         {
+            "name": "brand",
+            "workspace": "oca"
+        },
+        {
             "name": "bank-statement-import",
             "workspace": "oca"
         },
