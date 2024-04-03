@@ -1,4 +1,3 @@
-
 from . import linux
 from . import repo
 
@@ -15,7 +14,7 @@ def update_repositories(verbose=False, oca=False, viraweb123=False, moonsunsoft=
             filter_module.append('viraweb123')
         if moonsunsoft:
             filter_module.append('moonsunsoft')
-    
+
     repos = repo.get_list(filter_module)
     for item in linux.progress_bar(
             repos,
@@ -26,3 +25,22 @@ def update_repositories(verbose=False, oca=False, viraweb123=False, moonsunsoft=
 
     if verbose:
         linux.info_table(repos, ['workspace', 'name', 'state'])
+
+
+def print_repositories(oca=False, viraweb123=False, moonsunsoft=False, **kargs):
+    print("Supported Repositories:")
+    # Generate filters
+    filter_module = False
+    if oca or viraweb123 or moonsunsoft:
+        filter_module = []
+        if oca:
+            filter_module.append('oca')
+        if viraweb123:
+            filter_module.append('viraweb123')
+        if moonsunsoft:
+            filter_module.append('moonsunsoft')
+
+    repos = repo.get_list(filter_module)
+    print("addons_path=/var/lib/odoo/addons,")
+    for item in repos:
+        print("    /mnt/extra-addons/{}".format(item['name']))

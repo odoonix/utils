@@ -112,6 +112,11 @@ dev_update = admin_subparser.add_parser(
     description="Update packages")
 dev_update.set_defaults(func=admin.update_repositories)
 
+dev_print = admin_subparser.add_parser(
+    'print',
+    description="Print packages")
+dev_print.set_defaults(func=admin.print_repositories)
+
 
 if __name__ == '__main__':
     args = parser.parse_args()

@@ -3,31 +3,106 @@
     "repositories": [
         {
             "name": "odoo",
-            "workspace": "odoo"
+            "workspace": "odoo",
+            "tags": [
+                "base"
+            ]
         },
         {
             "name": "design-themes",
             "workspace": "odoo",
             "tags": [
-                "deprecated"
+                "base"
+            ]
+        },
+
+
+
+        {
+            "name": "account-analytic",
+            "workspace": "oca",
+            "team": "https://odoo-community.org/psc-teams/accounting-9",
+            "tags": [
+                "accounting"
+            ]
+        },
+        {
+            "name": "account-financial-reporting",
+            "workspace": "oca",
+            "team": "https://odoo-community.org/psc-teams/accounting-9",
+            "tags": [
+                "accounting"
+            ]
+        },
+        {
+            "name": "account-financial-tools",
+            "workspace": "oca",
+            "team": "https://odoo-community.org/psc-teams/accounting-9",
+            "tags": [
+                "accounting"
+            ]
+        },
+        {
+            "name": "account-invoice-reporting",
+            "workspace": "oca",
+            "team": "https://odoo-community.org/psc-teams/accounting-9",
+            "tags": [
+                "accounting"
             ]
         },
         {
             "name": "account-invoicing",
-            "workspace": "oca"
+            "workspace": "oca",
+            "team": "https://odoo-community.org/psc-teams/accounting-9",
+            "tags": [
+                "accounting"
+            ]
+        },
+
+        {
+            "name": "account-payment",
+            "workspace": "oca",
+            "team": "https://odoo-community.org/psc-teams/banking-10",
+            "tags": [
+                "banking",
+                "accounting"
+            ]
         },
         {
             "name": "account-reconcile",
-            "workspace": "oca"
+            "workspace": "oca",
+            "team": "https://odoo-community.org/psc-teams/banking-10",
+            "tags": [
+                "banking",
+                "accounting"
+            ]
         },
         {
-            "name": "account-financial-reporting",
-            "workspace": "oca"
+            "name": "bank-payment",
+            "workspace": "oca",
+            "team": "https://odoo-community.org/psc-teams/banking-10",
+            "tags": [
+                "banking",
+                "accounting"
+            ]
         },
         {
             "name": "bank-statement-import",
-            "workspace": "oca"
+            "workspace": "oca",
+            "team": "https://odoo-community.org/psc-teams/banking-10",
+            "tags": [
+                "banking",
+                "accounting"
+            ]
         },
+        
+        
+
+
+
+
+
+        
         {
             "name": "credit-control",
             "workspace": "oca"
