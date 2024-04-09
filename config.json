@@ -101,6 +101,10 @@
             "workspace": "oca"
         },
         {
+            "name": "dms",
+            "workspace": "oca"
+        },
+        {
             "name": "odoo-viraweb123",
             "workspace": "viraweb123"
         },
