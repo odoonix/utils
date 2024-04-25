@@ -144,6 +144,12 @@ dev_update = admin_subparser.add_parser(
 dev_update.set_defaults(func=admin.update_repositories)
 add_repo_list_filter(dev_update)
 
+# admin info
+dev_info = admin_subparser.add_parser(
+    'info',
+    description="List packages")
+dev_info.set_defaults(func=admin.show_repositories)
+add_repo_list_filter(dev_info)
 
 if __name__ == '__main__':
     args = parser.parse_args()
