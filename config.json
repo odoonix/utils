@@ -102,6 +102,10 @@
             "name": "product-attribute",
             "workspace": "oca"
         },
+        {
+            "name": "partner_stage",
+            "workspace": "oca"
+        },
  
  
  
