@@ -43,4 +43,4 @@ def print_repositories(oca=False, viraweb123=False, moonsunsoft=False, **kargs):
     repos = repo.get_list(filter_module)
     print("addons_path=/var/lib/odoo/addons,")
     for item in repos:
-        print("    /mnt/extra-addons/{}".format(item['name']))
+        print("    /mnt/extra-addons/{},".format(item['name']))

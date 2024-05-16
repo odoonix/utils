@@ -100,9 +100,13 @@
 
 
 
-
+        
 
         
+        {
+            "name": "geospatial",
+            "workspace": "oca"
+        },
         {
             "name": "credit-control",
             "workspace": "oca"
@@ -167,6 +171,16 @@
             "name": "server-ux",
             "workspace": "oca"
         },
+        {
+            "name": "partner-contact",
+            "workspace": "oca"
+        },
+        {
+            "name": "knowledge",
+            "workspace": "oca"
+        },
+
+
         {
             "name": "odoo-iot",
             "workspace": "viraweb123"
