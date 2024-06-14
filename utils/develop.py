@@ -18,6 +18,11 @@ def init(
         python=False,
         **kargs):
 
+    # 0- Basics
+    linux.run([
+        ['mkdir', '-p', '.vw'],
+    ])
+
     if repo:
         # 1- load all repositories
         admin.update_repositories(**kargs)

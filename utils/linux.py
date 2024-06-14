@@ -8,7 +8,7 @@ logger = logging.getLogger(__file__)
 
 def call_safe(command, shell=False, cwd='.'):
     try:
-        with open("app.logs", "a") as log:
+        with open(".vw/app.logs", "a") as log:
             ret = subprocess.call(command, shell=shell,
                                   cwd=cwd, stdout=log, stderr=log)
             if ret != 0:

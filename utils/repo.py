@@ -42,8 +42,30 @@ def get_addons_list(name, *args, **kargs):
 def git_update(workspace, project, branch_name=None, depth='1'):
     if not branch_name:
         branch_name = get_branch()
+
+    cwd = "{}/{}".format(workspace, project)
+    # Replace old scafolding with new one
     if os.path.exists(project):
-        linux.call_safe(['git', 'pull'], cwd=project)
+        linux.run([
+            ['mkdir', '-p', 'tmp'],
+            ['mv', project, 'tmp'],
+            
+            ['mkdir', '-p', workspace],
+            ['mv', "tmp/{}".format(project), workspace],
+
+            ['rm', 'tmp']
+        ])
+
+    # Replace old scafolding with new one
+    if os.path.exists("{}/{}".format(cwd, project)):
+        linux.run([
+            ['mv', cwd, cwd + 'a'],
+            ['mv', "{}a/{}".format(cwd, project), workspace],
+            ['rm', "{}a/{}".format(cwd, project)]
+        ])
+
+    if os.path.exists(cwd):
+        linux.call_safe(['git', 'pull'], cwd=cwd)
         state = 'Created'
     else:
         result = linux.call_safe([
@@ -52,7 +74,7 @@ def git_update(workspace, project, branch_name=None, depth='1'):
             '--branch', branch_name,
             '--depth', depth,
             'git@github.com:' + workspace + '/' + project + '.git'
-        ])
+        ], cwd=workspace)
         if result == 0:
             state = 'Updated'
         else:
@@ -62,9 +84,9 @@ def git_update(workspace, project, branch_name=None, depth='1'):
 
 def get_list(filter_workspace=False):
     # To update repositories
-    directory = os.path.dirname(os.path.realpath(__file__)) + '/..'
+    directory = get_workspace()
     configs = {}
-    with open(directory+'/config.json') as config_file:
+    with open(directory+'/odoo-utils/config.json') as config_file:
         configs = json.load(config_file)
 
     result = configs['repositories']
@@ -76,8 +98,12 @@ def get_list(filter_workspace=False):
 
 def get_branch():
     # To update repositories
-    directory = os.path.dirname(os.path.realpath(__file__)) + '/..'
+    directory = get_workspace()
     configs = {}
-    with open(directory+'/config.json') as config_file:
+    with open(directory+'/odoo-utils/config.json') as config_file:
         configs = json.load(config_file)
     return configs['version']
+
+
+def get_workspace():
+    return os.path.dirname(os.path.abspath(__file__)) + '/../..'
