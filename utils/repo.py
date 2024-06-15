@@ -45,11 +45,11 @@ def git_update(workspace, project, branch_name=None, depth='1'):
 
     cwd = "{}/{}".format(workspace, project)
     # Replace old scafolding with new one
-    if os.path.exists(project):
+    if project != 'odoo' and os.path.exists(project):
         linux.run([
             ['mkdir', '-p', 'tmp'],
             ['mv', project, 'tmp'],
-            
+
             ['mkdir', '-p', workspace],
             ['mv', "tmp/{}".format(project), workspace],
 
@@ -60,6 +60,9 @@ def git_update(workspace, project, branch_name=None, depth='1'):
         linux.call_safe(['git', 'pull'], cwd=cwd)
         state = 'Created'
     else:
+        linux.run([
+            ['mkdir', '-p', workspace],
+        ])
         result = linux.call_safe([
             'git',
             'clone',
