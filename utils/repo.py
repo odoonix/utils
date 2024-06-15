@@ -56,14 +56,6 @@ def git_update(workspace, project, branch_name=None, depth='1'):
             ['rm', 'tmp']
         ])
 
-    # Replace old scafolding with new one
-    if os.path.exists("{}/{}".format(cwd, project)):
-        linux.run([
-            ['mv', cwd, cwd + 'a'],
-            ['mv', "{}a/{}".format(cwd, project), workspace],
-            ['rm', "{}a/{}".format(cwd, project)]
-        ])
-
     if os.path.exists(cwd):
         linux.call_safe(['git', 'pull'], cwd=cwd)
         state = 'Created'

@@ -149,6 +149,11 @@
             "public": false
         },
         {
+            "name": "gmtlighting",
+            "workspace": "moonsunsoft",
+            "public": false
+        },
+        {
             "name": "ms-documentation",
             "workspace": "moonsunsoft",
             "public": true,
