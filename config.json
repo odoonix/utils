@@ -214,6 +214,10 @@
             "workspace": "viraweb123"
         },
         {
+            "name": "odoo-gamification",
+            "workspace": "viraweb123"
+        },
+        {
             "name": "documentation",
             "workspace": "viraweb123",
             "tags": [

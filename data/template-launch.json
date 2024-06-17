@@ -39,7 +39,7 @@
         //---------------------------------------------------------------------------
         {
             "name": "Odoo Run",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${config:odoo.bin}",
             "console": "integratedTerminal",
@@ -71,7 +71,7 @@
         //----------------------------------------------------------------------------
         {
             "name": "Odoo Test",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${config:odoo.bin}",
             "console": "integratedTerminal",
