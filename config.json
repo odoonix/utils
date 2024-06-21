@@ -127,6 +127,14 @@
             "workspace": "viraweb123"
         },
         {
+            "name": "iot",
+            "workspace": "viraweb123"
+        },
+        {
+            "name": "odoo-iot",
+            "workspace": "viraweb123"
+        },
+        {
             "name": "documentation",
             "workspace": "viraweb123",
             "tags": [
@@ -152,6 +160,11 @@
             "workspace": "moonsunsoft",
             "public": false
         },
+        {
+            "name": "iot",
+            "workspace": "viraweb123"
+        },
+        
         {
             "name": "gmtlighting",
             "workspace": "moonsunsoft",
