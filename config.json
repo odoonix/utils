@@ -123,6 +123,10 @@
             "workspace": "viraweb123"
         },
         {
+            "name": "odoo-hr",
+            "workspace": "viraweb123"
+        },
+        {
             "name": "documentation",
             "workspace": "viraweb123",
             "tags": [
