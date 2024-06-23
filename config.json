@@ -182,6 +182,12 @@
 
 
         {
+            "name": "payment",
+            "workspace": "MoonsunSoft"
+        },
+
+
+        {
             "name": "odoo-iot",
             "workspace": "viraweb123"
         },
