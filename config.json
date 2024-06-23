@@ -132,7 +132,8 @@
         },
         {
             "name": "odoo-iot",
-            "workspace": "viraweb123"
+            "workspace": "viraweb123",
+            "branch": "3.5.1"
         },
         {
             "name": "documentation",
@@ -148,6 +149,10 @@
                 "doc"
             ]
         },
+        {
+            "name": "payment",
+            "workspace": "viraweb123"
+        },
 
         {
             "-": "----------------------------------------------------------------------",
@@ -161,8 +166,9 @@
             "public": false
         },
         {
-            "name": "iot",
-            "workspace": "viraweb123"
+            "name": "payment",
+            "workspace": "moonsunsoft",
+            "public": false
         },
         
         {
@@ -171,7 +177,7 @@
             "public": false
         },
         {
-            "name": "ms-documentation",
+            "name": "documentation",
             "workspace": "moonsunsoft",
             "public": true,
             "branch": "main",
