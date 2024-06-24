@@ -6,6 +6,11 @@
             "workspace": "odoo"
         },
         {
+            "name": "design-themes",
+            "workspace": "odoo"
+        },
+        
+        {
             "-": "----------------------------------------------------------------------",
             "name": "account-invoicing",
             "workspace": "oca"
