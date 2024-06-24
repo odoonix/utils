@@ -1,3 +1,4 @@
+
 from . import linux
 from . import repo
 
@@ -5,42 +6,56 @@ from . import repo
 def update_repositories(verbose=False, oca=False, viraweb123=False, moonsunsoft=False, **kargs):
     print("Clone&Update Repositories")
     # Generate filters
-    filter_module = False
+    repo_filter = False
     if oca or viraweb123 or moonsunsoft:
-        filter_module = []
+        repo_filter = ['odoo']
         if oca:
-            filter_module.append('oca')
+            repo_filter.append('oca')
         if viraweb123:
-            filter_module.append('viraweb123')
+            repo_filter.append('viraweb123')
         if moonsunsoft:
-            filter_module.append('moonsunsoft')
+            repo_filter.append('moonsunsoft')
 
-    repos = repo.get_list(filter_module)
-    for item in linux.progress_bar(
+    repos = repo.get_list(repo_filter)
+    for repo_detail in linux.progressBar(
             repos,
             prefix='Progress:',
             suffix='Complete',
             length=50):
-        item['state'] = repo.git_update(item['workspace'], item['name'])
+        branch_name = repo_detail.get('branch', None)
+        repo_detail['old_addons'] = repo.get_addons_list(**repo_detail)
+        repo_detail['state'] = repo.git_update(
+            repo_detail['workspace'],
+            repo_detail['name'],
+            branch_name=branch_name)
+        repo_detail['current_addons'] = repo.get_addons_list(**repo_detail)
+        repo_detail['new_addons'] = repo_detail['current_addons'].difference(repo_detail['old_addons'])
 
     if verbose:
-        linux.info_table(repos, ['workspace', 'name', 'state'])
+        linux.info_table(repos, ['workspace', 'name', 'state', 'new_addons'])
 
 
-def print_repositories(oca=False, viraweb123=False, moonsunsoft=False, **kargs):
-    print("Supported Repositories:")
-    # Generate filters
-    filter_module = False
+
+
+def show_repositories(verbose=False, oca=False, viraweb123=False, moonsunsoft=False, **kargs):
+        # Generate filters
+    repo_filter = False
     if oca or viraweb123 or moonsunsoft:
-        filter_module = []
+        repo_filter = ['odoo']
         if oca:
-            filter_module.append('oca')
+            repo_filter.append('oca')
         if viraweb123:
-            filter_module.append('viraweb123')
+            repo_filter.append('viraweb123')
         if moonsunsoft:
-            filter_module.append('moonsunsoft')
+            repo_filter.append('moonsunsoft')
+    repos = repo.get_list(repo_filter)
 
-    repos = repo.get_list(filter_module)
-    print("addons_path=/var/lib/odoo/addons,")
-    for item in repos:
-        print("    /mnt/extra-addons/{},".format(item['name']))
+
+    for repo_detail in linux.progressBar(
+            repos,
+            prefix='Progress:',
+            suffix='Complete',
+            length=50):
+        repo_detail['addons'] = repo.get_addons_list(**repo_detail)
+
+    linux.info_table(repos, ['workspace', 'name', 'addons'])

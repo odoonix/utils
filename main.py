@@ -6,6 +6,35 @@ from utils import admin
 from utils import repo
 
 
+def add_repo_list_filter(parser):
+    parser.add_argument(
+        '--oca',
+        default=False,
+        action='store_true')
+    parser.add_argument(
+        '--no-oca',
+        dest='python',
+        action='store_false')
+
+    parser.add_argument(
+        '--viraweb123',
+        default=False,
+        action='store_true')
+    parser.add_argument(
+        '--no-viraweb123',
+        dest='python',
+        action='store_false')
+
+    parser.add_argument(
+        '--moonsunsoft',
+        default=False,
+        action='store_true')
+    parser.add_argument(
+        '--no-moonsunsoft',
+        dest='python',
+        action='store_false')
+
+
 parser = argparse.ArgumentParser(
     prog='odoo-util',
     description='ViraWeb123 Odoo Utility',
@@ -38,6 +67,7 @@ dev = _dev_parseer.add_subparsers(
 dev_init = dev.add_parser(
     'init',
     description='Initialize the development environment')
+add_repo_list_filter(dev_init)
 
 dev_init.add_argument(
     '--ubuntu',
@@ -93,6 +123,7 @@ dev_update = dev.add_parser(
     'update',
     description="Update packages")
 dev_update.set_defaults(func=develop.update)
+add_repo_list_filter(dev_update)
 
 
 #####################################################################
@@ -111,12 +142,14 @@ dev_update = admin_subparser.add_parser(
     'update',
     description="Update packages")
 dev_update.set_defaults(func=admin.update_repositories)
+add_repo_list_filter(dev_update)
 
-dev_print = admin_subparser.add_parser(
-    'print',
-    description="Print packages")
-dev_print.set_defaults(func=admin.print_repositories)
-
+# admin info
+dev_info = admin_subparser.add_parser(
+    'info',
+    description="List packages")
+dev_info.set_defaults(func=admin.show_repositories)
+add_repo_list_filter(dev_info)
 
 if __name__ == '__main__':
     args = parser.parse_args()
