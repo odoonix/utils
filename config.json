@@ -111,9 +111,7 @@
             "name": "partner-contact",
             "workspace": "oca"
         },
- 
- 
- 
+  
         {
             "-": "----------------------------------------------------------------------",
             "name": "odoo-viraweb123",
@@ -125,14 +123,6 @@
         },
         {
             "name": "odoo-sms",
-            "workspace": "viraweb123"
-        },
-        {
-            "name": "odoo-hr",
-            "workspace": "viraweb123"
-        },
-        {
-            "name": "iot",
             "workspace": "viraweb123"
         },
         {
@@ -176,6 +166,14 @@
             "public": false
         },
         
+        {
+            "name": "hr",
+            "workspace": "moonsunsoft"
+        },
+        {
+            "name": "iot",
+            "workspace": "moonsunsoft"
+        },
         {
             "name": "gmtlighting",
             "workspace": "moonsunsoft",
