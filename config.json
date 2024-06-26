@@ -174,10 +174,24 @@
             "name": "iot",
             "workspace": "moonsunsoft"
         },
+
+
+
+        {
+            "name": "cnp",
+            "workspace": "moonsunsoft",
+            "public": false,
+            "tags": [
+                "customer"
+            ]
+        },
         {
             "name": "gmtlighting",
             "workspace": "moonsunsoft",
-            "public": false
+            "public": false,
+            "tags": [
+                "customer"
+            ]
         },
         {
             "name": "documentation",
