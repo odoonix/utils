@@ -179,11 +179,20 @@
             "name": "knowledge",
             "workspace": "oca"
         },
+        {
+            "name": "mis_builder",
+            "workspace": "oca"
+        },
 
 
+        
         {
             "name": "payment",
-            "workspace": "MoonsunSoft"
+            "workspace": "moonsunsoft"
+        },
+        {
+            "name": "payment-mp",
+            "workspace": "moonsunsoft"
         },
 
 
