@@ -156,12 +156,12 @@
 
         {
             "-": "----------------------------------------------------------------------",
-            "name": "ms-exchange",
+            "name": "exchange",
             "workspace": "moonsunsoft",
             "public": false
         },
         {
-            "name": "ms-product",
+            "name": "exchange-mp",
             "workspace": "moonsunsoft",
             "public": false
         },
@@ -172,17 +172,36 @@
         },
         {
             "name": "payment-mp",
-            "workspace": "moonsunsoft"
+            "workspace": "moonsunsoft",
+            "public": false
         },
-        
         {
             "name": "hr",
-            "workspace": "moonsunsoft"
+            "workspace": "moonsunsoft",
+            "public": false
         },
         {
             "name": "iot",
-            "workspace": "moonsunsoft"
+            "workspace": "moonsunsoft",
+            "public": false
         },
+        {
+            "name": "product",
+            "workspace": "moonsunsoft",
+            "public": false
+        },
+        {
+            "name": "pos",
+            "workspace": "moonsunsoft",
+            "public": false
+        },
+        {
+            "name": "sale",
+            "workspace": "moonsunsoft",
+            "public": false
+        },
+
+
 
 
 
