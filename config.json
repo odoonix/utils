@@ -200,11 +200,13 @@
             "workspace": "moonsunsoft",
             "public": false
         },
+        {
+            "name": "stock-logistics-warehouse",
+            "workspace": "moonsunsoft",
+            "public": false
+        },
 
-
-
-
-
+        
         {
             "name": "cnp",
             "workspace": "moonsunsoft",
