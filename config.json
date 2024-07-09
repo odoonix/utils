@@ -111,6 +111,10 @@
             "name": "partner-contact",
             "workspace": "oca"
         },
+        {
+            "name": "geospatial",
+            "workspace": "oca"
+        },
   
         {
             "-": "----------------------------------------------------------------------",
@@ -123,6 +127,10 @@
         },
         {
             "name": "odoo-sms",
+            "workspace": "viraweb123"
+        },
+        {
+            "name": "geospatial",
             "workspace": "viraweb123"
         },
         {
