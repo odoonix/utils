@@ -131,6 +131,11 @@
             "branch": "3.5.1"
         },
         {
+            "name": "docker-postgres",
+            "workspace": "viraweb123",
+            "branch": "13"
+        },
+        {
             "name": "documentation",
             "workspace": "viraweb123",
             "tags": [
