@@ -208,6 +208,12 @@
             "workspace": "viraweb123"
         },
         {
+            "name": "docker",
+            "workspace": "viraweb123",
+            "branch": "3.5.1"
+
+        },
+        {
             "name": "odoo-hr",
             "workspace": "viraweb123"
         },
