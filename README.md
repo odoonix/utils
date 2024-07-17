@@ -1,7 +1,6 @@
-# odoo-utils
+# Odoo Utils
+
 Some utilities to manage odoos
-
-
 
 Following extensions are required:
  

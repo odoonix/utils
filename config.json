@@ -126,10 +126,6 @@
             "workspace": "viraweb123"
         },
         {
-            "name": "odoo-sms",
-            "workspace": "viraweb123"
-        },
-        {
             "name": "geospatial",
             "workspace": "viraweb123"
         },
@@ -147,10 +143,6 @@
         },
         {
             "name": "payment",
-            "workspace": "viraweb123"
-        },
-        {
-            "name": "municipality",
             "workspace": "viraweb123"
         },
         
@@ -238,6 +230,17 @@
         
 
 
+        {
+            "name": "municipality",
+            "workspace": "odoonix"
+        },
+        {
+            "name": "sms",
+            "workspace": "odoonix",
+            "tags": [
+                "marketing"
+            ]
+        },
         {
             "name": "documentation",
             "workspace": "odoonix",
