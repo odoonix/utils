@@ -215,20 +215,6 @@
             ]
         },
         {
-            "name": "odoo-gilsa",
-            "workspace": "viraweb123",
-            "tags": [
-                "customer"
-            ]
-        },
-        {
-            "name": "odoo-7tooti",
-            "workspace": "viraweb123",
-            "tags": [
-                "customer"
-            ]
-        },
-        {
             "name": "studyiniranadmission",
             "workspace": "viraweb123",
             "tags": [
