@@ -126,24 +126,50 @@
             "workspace": "viraweb123"
         },
         {
-            "name": "geospatial",
-            "workspace": "viraweb123"
-        },
-        {
             "name": "docker-postgres",
             "workspace": "viraweb123",
-            "branch": "13"
+            "branch": "13",
+            "tags": [
+                "IT"
+            ]
         },
         {
             "name": "docker",
-            "workspace": "viraweb123",
+            "workspace": "odoonix",
+            "tags": [
+                "IT"
+            ]
+        },
+        {
+            "name": "payment",
+            "workspace": "odoonix"
+        },
+        {
+            "name": "geospatial",
+            "workspace": "odoonix"
+        },
+        {
+            "name": "municipality",
+            "workspace": "odoonix"
+        },
+        {
+            "name": "sms",
+            "workspace": "odoonix",
+            "tags": [
+                "marketing"
+            ]
+        },
+        {
+            "name": "documentation",
+            "workspace": "odoonix",
             "tags": [
                 "doc"
             ]
         },
         {
-            "name": "payment",
-            "workspace": "viraweb123"
+            "name": "iot",
+            "workspace": "odoonix",
+            "branch": "3.5.1"
         },
         
 
@@ -224,34 +250,6 @@
             "tags": [
                 "doc"
             ]
-        },
-
-
-        
-
-
-        {
-            "name": "municipality",
-            "workspace": "odoonix"
-        },
-        {
-            "name": "sms",
-            "workspace": "odoonix",
-            "tags": [
-                "marketing"
-            ]
-        },
-        {
-            "name": "documentation",
-            "workspace": "odoonix",
-            "tags": [
-                "doc"
-            ]
-        },
-        {
-            "name": "iot",
-            "workspace": "odoonix",
-            "branch": "3.5.1"
         }
     ]
 }
