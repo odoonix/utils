@@ -118,8 +118,8 @@
   
         {
             "-": "----------------------------------------------------------------------",
-            "name": "odoo-viraweb123",
-            "workspace": "viraweb123"
+            "name": "online",
+            "workspace": "odoonix"
         },
         {
             "name": "utils",
