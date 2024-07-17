@@ -208,23 +208,11 @@
 
 
         {
-            "name": "odoo-iot",
-            "workspace": "viraweb123"
-        },
-        {
             "name": "docker",
             "workspace": "viraweb123"
         },
         {
             "name": "odoo-hr",
-            "workspace": "viraweb123"
-        },
-        {
-            "name": "odoo-sms",
-            "workspace": "viraweb123"
-        },
-        {
-            "name": "odoo-themes",
             "workspace": "viraweb123"
         },
         {
@@ -241,10 +229,6 @@
         },
         {
             "name": "odoo-social",
-            "workspace": "viraweb123"
-        },
-        {
-            "name": "odoo-gamification",
             "workspace": "viraweb123"
         },
         {
@@ -308,13 +292,41 @@
 
 
         {
+            "name": "gamification",
+            "workspace": "odoonix",
+            "tags": [
+                "hr"
+            ]
+        },
+        {
+            "name": "sms",
+            "workspace": "odoonix",
+            "tags": [
+                "marketing"
+            ]
+        },
+        {
+            "name": "themes",
+            "workspace": "odoonix",
+            "tags": [
+                "website"
+            ]
+        },
+        {
             "name": "documentation",
             "workspace": "odoonix",
             "tags": [
                 "doc"
             ],
+            "enterprise": false
+        },
+        {
+            "name": "iot",
+            "workspace": "odoonix",
+            "tags": [
+                "iot"
+            ],
             "enterprise": true
         }
-        
     ]
 }
