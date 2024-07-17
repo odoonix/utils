@@ -40,7 +40,7 @@ def init(
             ['mkdir', '-p', '.vscode'],
             ['cp', 
                 '-i', 
-                'viraweb123/odoo-utils/data/template-workspace.json',
+                'odoonix/utils/data/template-workspace.json',
                 'odoo.code-workspace'],
             # # TODO: update project list based on project list
             # # TODO: update project list based on project list

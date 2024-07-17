@@ -122,8 +122,8 @@
             "workspace": "viraweb123"
         },
         {
-            "name": "odoo-utils",
-            "workspace": "viraweb123"
+            "name": "utils",
+            "workspace": "odoonix"
         },
         {
             "name": "docker-postgres",

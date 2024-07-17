@@ -19,7 +19,7 @@
         {
             "label": "Workspace to Template",
             "type": "shell",
-            "command": "${workspaceFolder}/odoo-utils/mt-vs",
+            "command": "${workspaceFolder}/utils/mt-vs",
             "group": "none",
             "presentation": {
                 "reveal": "always",
