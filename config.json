@@ -258,6 +258,10 @@
             "workspace": "odoonix"
         },
         {
+            "name": "db",
+            "workspace": "odoonix"
+        },
+        {
             "name": "hr",
             "workspace": "odoonix"
         },
