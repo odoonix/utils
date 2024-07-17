@@ -208,14 +208,6 @@
 
 
         {
-            "name": "docker",
-            "workspace": "viraweb123"
-        },
-        {
-            "name": "odoo-hr",
-            "workspace": "viraweb123"
-        },
-        {
             "name": "odoo-viraweb123",
             "workspace": "viraweb123"
         },
@@ -224,22 +216,7 @@
             "workspace": "viraweb123"
         },
         {
-            "name": "odoo-prb",
-            "workspace": "viraweb123"
-        },
-        {
-            "name": "odoo-social",
-            "workspace": "viraweb123"
-        },
-        {
             "name": "odoo-beton",
-            "workspace": "viraweb123",
-            "tags": [
-                "customer"
-            ]
-        },
-        {
-            "name": "odoo-mobile-service",
             "workspace": "viraweb123",
             "tags": [
                 "customer"
@@ -290,7 +267,29 @@
 
 
 
-
+        {
+            "name": "docker",
+            "workspace": "odoonix"
+        },
+        {
+            "name": "hr",
+            "workspace": "odoonix"
+        },
+        {
+            "name": "prb",
+            "workspace": "odoonix"
+        },
+        {
+            "name": "social",
+            "workspace": "odoonix"
+        },
+        {
+            "name": "mobile-service",
+            "workspace": "odoonix",
+            "tags": [
+                "sale"
+            ]
+        },
         {
             "name": "gamification",
             "workspace": "odoonix",
