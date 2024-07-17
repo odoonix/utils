@@ -134,21 +134,9 @@
             "workspace": "viraweb123"
         },
         {
-            "name": "odoo-iot",
-            "workspace": "viraweb123",
-            "branch": "3.5.1"
-        },
-        {
             "name": "docker-postgres",
             "workspace": "viraweb123",
             "branch": "13"
-        },
-        {
-            "name": "documentation",
-            "workspace": "viraweb123",
-            "tags": [
-                "doc"
-            ]
         },
         {
             "name": "docker",
@@ -244,6 +232,23 @@
             "tags": [
                 "doc"
             ]
+        },
+
+
+        
+
+
+        {
+            "name": "documentation",
+            "workspace": "odoonix",
+            "tags": [
+                "doc"
+            ]
+        },
+        {
+            "name": "iot",
+            "workspace": "odoonix",
+            "branch": "3.5.1"
         }
     ]
 }
