@@ -183,6 +183,10 @@
             "name": "mis_builder",
             "workspace": "oca"
         },
+        {
+            "name": "dms",
+            "workspace": "oca"
+        },
 
 
         
@@ -209,9 +213,7 @@
         },
         {
             "name": "docker",
-            "workspace": "viraweb123",
-            "branch": "3.5.1"
-
+            "workspace": "viraweb123"
         },
         {
             "name": "odoo-hr",
@@ -244,14 +246,6 @@
         {
             "name": "odoo-gamification",
             "workspace": "viraweb123"
-        },
-        {
-            "name": "documentation",
-            "workspace": "viraweb123",
-            "tags": [
-                "doc"
-            ],
-            "enterprise": true
         },
         {
             "name": "odoo-beton",
@@ -308,6 +302,19 @@
             "tags": [
                 "customer"
             ]
+        },
+
+
+
+
+        {
+            "name": "documentation",
+            "workspace": "odoonix",
+            "tags": [
+                "doc"
+            ],
+            "enterprise": true
         }
+        
     ]
 }
