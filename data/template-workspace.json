@@ -110,7 +110,7 @@
                 "command": "python3",
                 "type": "shell",
                 "args": [
-                    "viraweb123/odoo-utils/main.py",
+                    "odoonix/utils/main.py",
                     "dev",
                     "update"
                 ],

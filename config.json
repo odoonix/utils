@@ -212,10 +212,6 @@
             "workspace": "viraweb123"
         },
         {
-            "name": "odoo-utils",
-            "workspace": "viraweb123"
-        },
-        {
             "name": "odoo-beton",
             "workspace": "viraweb123",
             "tags": [
@@ -267,6 +263,10 @@
 
 
 
+        {
+            "name": "utils",
+            "workspace": "odoonix"
+        },
         {
             "name": "docker",
             "workspace": "odoonix"

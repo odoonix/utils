@@ -81,7 +81,7 @@ def get_list(filter_workspace=False):
     # To update repositories
     directory = get_workspace()
     configs = {}
-    with open(directory+'/odoo-utils/config.json') as config_file:
+    with open(directory+'/utils/config.json') as config_file:
         configs = json.load(config_file)
 
     result = configs['repositories']
@@ -95,7 +95,7 @@ def get_branch():
     # To update repositories
     directory = get_workspace()
     configs = {}
-    with open(directory+'/odoo-utils/config.json') as config_file:
+    with open(directory+'/utils/config.json') as config_file:
         configs = json.load(config_file)
     return configs['version']
 
