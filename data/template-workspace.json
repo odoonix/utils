@@ -15,6 +15,10 @@
         {
             "name": "ViraWeb123",
             "path": "viraweb123"
+        },
+        {
+            "name": "Odoonix",
+            "path": "odoonix"
         }
     ],
     "launch": {
@@ -98,7 +102,7 @@
     },
     "settings": {
         "odoo.bin": "${workspaceFolder:Odoo}/odoo/odoo-bin",
-        "odoo.addons.path": "${workspaceFolder:Odoo}/odoo/addons,${workspaceFolder:MoonSun}/gmtlighting,${workspaceFolder:MoonSun}/ms-exchange,${workspaceFolder:MoonSun}/ms-product",
+        "odoo.addons.path": "${workspaceFolder:Odoo}/odoo/addons,${workspaceFolder:Odoonix}/online",
         "git.ignoreLimitWarning": true,
         "python.defaultInterpreterPath": ".venv/bin/python3"
     },
@@ -120,8 +124,8 @@
                 },
                 "group": "build",
                 "options": {
-                    "cwd": "${workspaceFolder:ViraWeb123}/.."
-                },
+                    "cwd": "${workspaceFolder:Odoonix}/.."
+                }
             }
         ]
     }
