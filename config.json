@@ -171,6 +171,10 @@
             "workspace": "odoonix",
             "branch": "3.5.1"
         },
+        {
+            "name": "website",
+            "workspace": "odoonix"
+        },
         
 
         {
