@@ -205,6 +205,13 @@
                 "customer"
             ]
         },
+        {
+            "name": "sms",
+            "workspace": "moonsunsoft",
+            "tags": [
+                "marketing"
+            ]
+        },
 
         
         {
