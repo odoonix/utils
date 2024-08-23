@@ -316,6 +316,14 @@
                 "iot"
             ],
             "enterprise": true
+        },
+        {
+            "name": "website",
+            "workspace": "odoonix",
+            "tags": [
+                "website"
+            ],
+            "enterprise": true
         }
     ]
 }
