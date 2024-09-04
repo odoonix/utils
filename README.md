@@ -1,4 +1,5 @@
-# odoo-utils
+# Odoo Utils
+
 Some utilities to manage odoos
 
 
@@ -9,17 +10,13 @@ Following extensions are required:
 
 - Create a folder named "odoo16"
 
-- Clone odoo-utill in "odoo16"
+- Clone utill in "odoo16"
 
 - Go to ./odoo16 directory
 
-- Run this command: chmod +X odoo-utils/main.py
+- For install Run command "python3 /utils/main.py dev init"
 
-- For install Run command "odoo-utils/main.py dev init --vscode --repo --python"
-
-- For Update Run command "odoo-utils/main.py dev update"
-
-- Run this command to activate your venv: "source .venv/bin/activate"
+- For Update Run command "python3 /utils/main.py dev update"
 
 - With this, a Python environment will be created for you and all the required Odoo libraries will be installed in it
 

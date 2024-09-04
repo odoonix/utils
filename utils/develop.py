@@ -18,6 +18,11 @@ def init(
         python=False,
         **kargs):
 
+    # 0- Basics
+    linux.run([
+        ['mkdir', '-p', '.vw'],
+    ])
+
     if repo:
         # 1- load all repositories
         admin.update_repositories(**kargs)
@@ -33,11 +38,11 @@ def init(
         print("VSCode configs")
         linux.run([
             ['mkdir', '-p', '.vscode'],
-            # echo "Try to load new VS configuraiton"
-            # cp -i "${SOURCE_PATH}/data/template-tasks.json"       ".vscode/task.json"
-            # cp -i "${SOURCE_PATH}/data/template-settings.json"    ".vscode/settings.json"
-            # cp -i "${SOURCE_PATH}/data/template-launch.json"      ".vscode/launch.json"
+            ['cp', 
+                '-i', 
+                'odoonix/utils/data/template-workspace.json',
+                'odoo.code-workspace'],
             # # TODO: update project list based on project list
             # # TODO: update project list based on project list
-            ['code', '.'],
+            ['code', 'odoo.code-workspace'],
         ])

@@ -8,7 +8,7 @@ logger = logging.getLogger(__file__)
 
 def call_safe(command, shell=False, cwd='.'):
     try:
-        with open("app.logs", "a") as log:
+        with open(".vw/app.logs", "a") as log:
             ret = subprocess.call(command, shell=shell,
                                   cwd=cwd, stdout=log, stderr=log)
             if ret != 0:
@@ -22,7 +22,7 @@ def call_safe(command, shell=False, cwd='.'):
         return 2
 
 
-def progress_bar(iterable, prefix='', suffix='', decimals=1, length=100, fill='█', printEnd="\r"):
+def progressBar(iterable, prefix='', suffix='', decimals=1, length=100, fill='█', printEnd="\r"):
     """
     Call in a loop to create terminal progress bar
     @params:
@@ -37,24 +37,24 @@ def progress_bar(iterable, prefix='', suffix='', decimals=1, length=100, fill='�
     total = len(iterable)
     # Progress Bar Printing Function
 
-    def print_progress_bar(iteration):
+    def printProgressBar(iteration):
         percent = ("{0:." + str(decimals) + "f}").format(100 *
                                                          (iteration / float(total)))
-        filled_length = int(length * iteration // total)
-        bar = fill * filled_length + '-' * (length - filled_length)
+        filledLength = int(length * iteration // total)
+        bar = fill * filledLength + '-' * (length - filledLength)
         print(f'\r{prefix} |{bar}| {percent}% {suffix}', end=printEnd)
     # Initial Call
-    print_progress_bar(0)
+    printProgressBar(0)
     # Update Progress Bar
     for i, item in enumerate(iterable):
         yield item
-        print_progress_bar(i + 1)
+        printProgressBar(i + 1)
     # Print New Line on Complete
     print()
 
 
 def run(commands, **kargs):
-    for command in progress_bar(
+    for command in progressBar(
             commands,
             prefix='Progress:',
             suffix='Complete',
@@ -66,7 +66,8 @@ def run(commands, **kargs):
 
 
 def info_table(data, keys, columns=None,  title="#"):
-    table = Table(title)
+    table = Table(title, show_lines=True)
+    rows = []
 
     if not columns:
         columns = keys

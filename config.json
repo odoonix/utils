@@ -179,71 +179,43 @@
             "name": "knowledge",
             "workspace": "oca"
         },
+        {
+            "name": "mis_builder",
+            "workspace": "oca"
+        },
+        {
+            "name": "dms",
+            "workspace": "oca"
+        },
 
 
+        
         {
-            "name": "odoo-iot",
-            "workspace": "viraweb123"
+            "name": "payment",
+            "workspace": "moonsunsoft"
         },
         {
-            "name": "odoo-hr",
-            "workspace": "viraweb123"
+            "name": "payment-mp",
+            "workspace": "moonsunsoft"
         },
         {
-            "name": "odoo-sms",
-            "workspace": "viraweb123"
-        },
-        {
-            "name": "odoo-themes",
-            "workspace": "viraweb123"
-        },
-        {
-            "name": "odoo-viraweb123",
-            "workspace": "viraweb123"
-        },
-        {
-            "name": "odoo-utils",
-            "workspace": "viraweb123"
-        },
-        {
-            "name": "odoo-prb",
-            "workspace": "viraweb123"
-        },
-        {
-            "name": "odoo-social",
-            "workspace": "viraweb123"
-        },
-        {
-            "name": "documentation",
-            "workspace": "viraweb123",
+            "name": "rollsizer",
+            "workspace": "moonsunsoft",
             "tags": [
-                "doc"
-            ],
-            "enterprise": true
+                "customer"
+            ]
         },
+        {
+            "name": "sms",
+            "workspace": "moonsunsoft",
+            "tags": [
+                "marketing"
+            ]
+        },
+
+        
         {
             "name": "odoo-beton",
-            "workspace": "viraweb123",
-            "tags": [
-                "customer"
-            ]
-        },
-        {
-            "name": "odoo-mobile-service",
-            "workspace": "viraweb123",
-            "tags": [
-                "customer"
-            ]
-        },
-        {
-            "name": "odoo-gilsa",
-            "workspace": "viraweb123",
-            "tags": [
-                "customer"
-            ]
-        },
-        {
-            "name": "odoo-7tooti",
             "workspace": "viraweb123",
             "tags": [
                 "customer"
@@ -276,6 +248,89 @@
             "tags": [
                 "customer"
             ]
+        },
+
+
+
+        {
+            "name": "online",
+            "workspace": "odoonix"
+        },
+        {
+            "name": "utils",
+            "workspace": "odoonix"
+        },
+        {
+            "name": "docker",
+            "workspace": "odoonix"
+        },
+        {
+            "name": "db",
+            "workspace": "odoonix"
+        },
+        {
+            "name": "hr",
+            "workspace": "odoonix"
+        },
+        {
+            "name": "prb",
+            "workspace": "odoonix"
+        },
+        {
+            "name": "social",
+            "workspace": "odoonix"
+        },
+        {
+            "name": "mobile-service",
+            "workspace": "odoonix",
+            "tags": [
+                "sale"
+            ]
+        },
+        {
+            "name": "gamification",
+            "workspace": "odoonix",
+            "tags": [
+                "hr"
+            ]
+        },
+        {
+            "name": "sms",
+            "workspace": "odoonix",
+            "tags": [
+                "marketing"
+            ]
+        },
+        {
+            "name": "themes",
+            "workspace": "odoonix",
+            "tags": [
+                "website"
+            ]
+        },
+        {
+            "name": "documentation",
+            "workspace": "odoonix",
+            "tags": [
+                "doc"
+            ],
+            "enterprise": false
+        },
+        {
+            "name": "iot",
+            "workspace": "odoonix",
+            "tags": [
+                "iot"
+            ],
+            "enterprise": true
+        },
+        {
+            "name": "website",
+            "workspace": "odoonix",
+            "tags": [
+                "website"
+            ],
+            "enterprise": true
         }
     ]
 }
