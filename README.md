@@ -10,7 +10,7 @@ Following extensions are required:
 
 - Create a folder named "odoo16"
 
-- Clone odoo-utill in "odoo16"
+- Clone utill in "odoo16"
 
 - Go to ./odoo16 directory
 
