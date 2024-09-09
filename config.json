@@ -102,7 +102,11 @@
             "workspace": "oca",
             "tags":[]
         },
-
+        {
+            "name": "spreadsheet",
+            "workspace": "oca",
+            "tags": []
+        },
 
         
 
