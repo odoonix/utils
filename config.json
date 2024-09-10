@@ -98,7 +98,7 @@
         
         
         {
-            "name": "reporting-engine"
+            "name": "reporting-engine",
             "workspace": "oca",
             "tags":[]
         },
