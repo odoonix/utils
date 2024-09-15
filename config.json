@@ -10,8 +10,71 @@
             "workspace": "odoo"
         },
         
+
+
+
+
         {
-            "-": "----------------------------------------------------------------------",
+            "name": "queue",
+            "workspace": "oca",
+            "tags":[
+                "lib"
+            ]
+        },
+        {
+            "name": "reporting-engine",
+            "workspace": "oca",
+            "tags":[
+                "lib"
+            ]
+        },
+        {
+            "name": "spreadsheet",
+            "workspace": "oca",
+            "tags": [
+                "lib"
+            ]
+        },
+        {
+            "name": "geospatial",
+            "workspace": "oca",
+            "tags": [
+                "lib"
+            ]
+        },
+        {
+            "name": "OpenUpgrade",
+            "workspace": "oca",
+            "tags": [
+                "lib"
+            ]
+        },
+        {
+            "name": "iot",
+            "workspace": "oca",
+            "tags": [
+                "lib"
+            ]
+        },
+        {
+            "name": "server-ux",
+            "workspace": "oca",
+            "tags": [
+                "lib"
+            ]
+        },
+        {
+            "name": "connector",
+            "workspace": "oca",
+            "tags": [
+                "lib"
+            ]
+        },
+
+
+
+
+        {
             "name": "account-invoicing",
             "workspace": "oca"
         },
@@ -44,10 +107,6 @@
             "workspace": "oca"
         },
         {
-            "name": "OpenUpgrade",
-            "workspace": "oca"
-        },
-        {
             "name": "margin-analysis",
             "workspace": "oca"
         },
@@ -57,10 +116,6 @@
         },
         {
             "name": "pos",
-            "workspace": "oca"
-        },
-        {
-            "name": "iot",
             "workspace": "oca"
         },
         {
@@ -100,10 +155,6 @@
             "workspace": "oca"
         },
         {
-            "name": "server-ux",
-            "workspace": "oca"
-        },
-        {
             "name": "product-attribute",
             "workspace": "oca"
         },
@@ -111,13 +162,8 @@
             "name": "partner-contact",
             "workspace": "oca"
         },
-        {
-            "name": "geospatial",
-            "workspace": "oca"
-        },
   
         {
-            "-": "----------------------------------------------------------------------",
             "name": "online",
             "workspace": "odoonix"
         },
@@ -178,7 +224,6 @@
         
 
         {
-            "-": "----------------------------------------------------------------------",
             "name": "exchange",
             "workspace": "moonsunsoft",
             "public": false
@@ -253,6 +298,13 @@
             "branch": "main",
             "tags": [
                 "doc"
+            ]
+        },
+        {
+            "name": "connector",
+            "workspace": "moonsunsoft",
+            "tags": [
+                "lib"
             ]
         }
     ]
