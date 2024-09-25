@@ -91,6 +91,10 @@
             "workspace": "oca"
         },
         {
+            "name": "account-financial-tools",
+            "workspace": "oca"
+        },
+        {
             "name": "brand",
             "workspace": "oca"
         },
