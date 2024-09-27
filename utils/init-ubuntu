@@ -49,6 +49,9 @@ apt install -y \
     vlc-plugin-bittorrent \
     vlc-plugin-video-splitter
 
+
+apt install -y \
+    webp
 ############################################################
 # Docker
 ############################################################
