@@ -1,18 +1,6 @@
 #!/bin/bash
-############################################################
-# Starter
-############################################################
-echo "Installing APT and APT-GET proxy"
-echo '' > /etc/apt/apt.conf.d/30proxy
-echo 'Acquire::http { Proxy "http://192.168.88.100:3142"; }' > /etc/apt/apt.conf.d/proxy
-
-mkdir -p /mnt/storage_share
-
-add-apt-repository ppa:inkscape.dev/stable
-
-
-apt upgrade -y
 apt update -y
+apt upgrade -y
 ############################################################
 # Python3
 ############################################################
@@ -35,41 +23,11 @@ apt install -y \
     
 
 
-echo "Configure pip proxy"
-echo << EOF
-[global]
-index-url=http://192.168.88.100:5000/index/
-extra-index-url=http://pypi.python.org/pypi
-
-[install]
-trusted-host=192.168.88.100
-	     pypi.python.org
-EOF
-> /etc/pip.conf
-
-
-############################################################
-# Cockpit
-############################################################
-echo "Installing cockpit"
-. /etc/os-release
-apt install -y -t ${VERSION_CODENAME}-backports \
-    cockpit \
-    cockpit-pcp \
-    cockpit-bridge \
-    cockpit-storaged \
-    nfs-common \
-    openssh-server \
-    openssh-client
-
-
-systemctl enable cockpit
-
 
 ############################################################
 # Developer Tools
 ############################################################
-   snap install code --classic
+snap install code --classic
 snap install postman
 snap install chromium
 snap install skype
@@ -102,21 +60,3 @@ apt install -y \
 systemctl enable docker
 
 
-
-############################################################
-# Cokpit
-############################################################
-mkdir -p /root/.ssh
-touch /root/.ssh/authorized_keys
-echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDgkKnDH/\
-ruQAquOB1FgQW0glN7vVnTJnNoiESNbrgPI46od4dwVoR+Xc4wVU\
-qP3eRhbOCgqlilxdos6XgG8y7fuDgA3MVEIyvO3pUF3jRhTw7uJm\
-3JOMFyfxBAszlQsOROU24HdaUEAWNi4z1Ks6P+oTywa76A0NbHGU\
-kydDnCirEVtP+lSR715s3GP0E5SKrlIYoSiI0v4EFItWdU8oIYr9\
-pa7s0G1tm1XZ8CLHTGUZKxeo8bQRYEbn8DtRReL5R5val3DBWxdj\
-ybRuQGnT05xvn687AjeOdrC8p95bLlaV+/H+C5umHYmKottlPYGd\
-YUoZVXWgM4WAJ2GLUYMcFdZRiCvzChocp8e3PGbsdquyESsEvMAq\
-j9KFfDAejiV3i32IN4eJcOp3uW3Fx9nI+fbSit0qWwoS4RSz440L\
-5+PNZ+AdAXs9/7wxkMjXWkr8naJXbg1oTG3M8XtjMZkfpYRuJ2P5\
-2/fXpSXIrSHkPjUXc9j8i+vj+VFE+QJxhxB/E= \
-maso@localhost.localdomain" >> "/root/.ssh/authorized_keys"
