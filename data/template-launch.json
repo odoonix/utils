@@ -49,7 +49,7 @@
                 "--db_user",
                 "odoo",
                 "--database",
-                "odoo17-main",
+                "odoo18-main",
                 "--addons-path",
                 "${config:odoo.addons.path}",
                 "--update",
