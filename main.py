@@ -44,6 +44,10 @@ parser.add_argument(
     '--verbose',
     action='count',
     default=0)
+parser.add_argument(
+    '-P',
+    '--proxy',
+    default=None)
 _dev = parser.add_subparsers(
     title='ViraWeb123 Odoo Tools',
     description="""
