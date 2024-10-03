@@ -62,7 +62,6 @@ dev = _dev_parseer.add_subparsers(
         keep dev environment up to date.
     """)
 
-
 # dev init
 dev_init = dev.add_parser(
     'init',
@@ -115,6 +114,8 @@ dev_init.add_argument(
     dest='python',
     action='store_false')
 
+
+
 dev_init.set_defaults(func=develop.init)
 
 
@@ -124,7 +125,6 @@ dev_update = dev.add_parser(
     description="Update packages")
 dev_update.set_defaults(func=develop.update)
 add_repo_list_filter(dev_update)
-
 
 #####################################################################
 #                          Admin Toolse                             #
@@ -151,6 +151,27 @@ dev_info = admin_subparser.add_parser(
 dev_info.set_defaults(func=admin.show_repositories)
 add_repo_list_filter(dev_info)
 
+# odoo module information
+dev_module_info = admin_subparser.add_parser('status', description='Odoo modules information')
+dev_module_info.add_argument(
+    '--odoo',
+    type = int,
+    action='append',
+    dest='version',
+)
+dev_module_info.add_argument(
+    '--workspace',
+    action ='append',
+    dest ='workspace',
+)
+dev_module_info.add_argument(
+    '--addons=all',
+    dest ='addons',
+    action='store_false'
+)
+dev_module_info.set_defaults(func=admin.supported_addons)
+######### 
+ 
 if __name__ == '__main__':
     args = parser.parse_args()
     if args.verbose:

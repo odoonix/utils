@@ -46,3 +46,8 @@ def init(
             # # TODO: update project list based on project list
             ['code', 'odoo.code-workspace'],
         ])
+
+
+
+
+
