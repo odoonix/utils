@@ -4,7 +4,7 @@ import argparse
 from utils import develop
 from utils import admin
 from utils import repo
-
+from utils import translarion_files
 
 def add_repo_list_filter(parser):
     parser.add_argument(
@@ -174,7 +174,49 @@ dev_module_info.add_argument(
     action='store_false'
 )
 dev_module_info.set_defaults(func=admin.supported_addons)
-######### 
+
+#####################################################################
+#                       Translate po module                         #
+#####################################################################
+localization_parser = _dev.add_parser('localization')
+localization_subparser = localization_parser.add_subparsers(
+    title="Localization",
+    description="This is localization"
+)
+
+dev_translate = localization_subparser.add_parser(
+    'translate',
+    description="Translate packages"
+)
+
+dev_translate.add_argument(
+    '--input',
+    dest='address', 
+    type=str,  
+    help="Input string for address"
+)
+
+dev_translate.add_argument(
+    '--language',
+    dest='language', 
+    type=str,  
+    help="Input string for Language"
+)
+
+dev_translate.add_argument(
+    '--apikey',
+    dest='apikey', 
+    type=str,  
+    help="Input Access token from OpenAI"
+)
+dev_translate.set_defaults(func=translarion_files.translation_file) 
+
+
+
+
+
+
+
  
 if __name__ == '__main__':
     args = parser.parse_args()

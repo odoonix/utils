@@ -133,9 +133,9 @@ def get_addons_module(repo_path_list:str) -> list[AddonsModel]:
                     addons = AddonsModel(workspace=workspace_module, description='Successfully loaded!',name=name_module, versions_odoons=verson_list)
                     addons.status = 1
                     result_version.append(addons)
-                # else:
-                #     addons = AddonsModel(workspace=workspace_module, description='.No matching version found.',name=name_module, versions_odoons=['', ''], status=2)
-                #     result_version.extend(addons)                  
+                else:
+                    addons = AddonsModel(workspace=workspace_module, description='.No matching version found.',name=name_module, versions_odoons=['', ''], status=2)
+                    result_version.append(addons)                
     return result_version
 
 

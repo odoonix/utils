@@ -114,6 +114,9 @@ def supported_addons(version=False, **krgs):
                     table.add_row( str(count), repo_item.name, repo_item.workspace,  "✔", '✗', repo_item.description,style='bright_green', )
                 elif repo_item.versions_odoons[1] == '17.0':
                     table.add_row( str(count), repo_item.name, repo_item.workspace,  '✗', "✔", repo_item.description,style='bright_green', )
+                elif repo_item.status == 2:
+                    table.add_row( str(count), repo_item.name, repo_item.workspace,  "", "", repo_item.description,style='bright_yellow', )
+                        
 
         console = Console()
         console.print(table)
