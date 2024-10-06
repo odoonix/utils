@@ -4,7 +4,7 @@ import argparse
 from utils import develop
 from utils import admin
 from utils import repo
-from utils import translarion_files
+from utils import po_manage
 
 def add_repo_list_filter(parser):
     parser.add_argument(
@@ -209,12 +209,7 @@ dev_translate.add_argument(
     type=str,  
     help="Input Access token from OpenAI"
 )
-dev_translate.set_defaults(func=translarion_files.translation_file) 
-
-
-
-
-
+dev_translate.set_defaults(func=po_manage.process_po_file) 
 
 
  

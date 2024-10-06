@@ -108,16 +108,15 @@ def supported_addons(version=False, **krgs):
             if repo_item.is_private == True and repo_item.status == 0:
                 table.add_row( str(count), repo_item.name, repo_item.workspace, " ", " ", repo_item.description,style='bright_red', )
             else:
-                if repo_item.versions_odoons[0] == '16.0' and repo_item.versions_odoons[1] == '17.0' :
-                    table.add_row( str(count), repo_item.name, repo_item.workspace,  "✔", "✔", repo_item.description, style='bright_green', )
-                elif repo_item.versions_odoons[0] == '16.0':
-                    table.add_row( str(count), repo_item.name, repo_item.workspace,  "✔", '✗', repo_item.description,style='bright_green', )
-                elif repo_item.versions_odoons[1] == '17.0':
-                    table.add_row( str(count), repo_item.name, repo_item.workspace,  '✗', "✔", repo_item.description,style='bright_green', )
+                if len(repo_item.versions_odoons) >= 2 and repo_item.versions_odoons[0] == '16.0' and repo_item.versions_odoons[1] == '17.0':
+                    table.add_row(str(count), repo_item.name, repo_item.workspace, "✔", "✔", repo_item.description, style='bright_green')
+                elif len(repo_item.versions_odoons) >= 1 and repo_item.versions_odoons[0] == '16.0':
+                    table.add_row(str(count), repo_item.name, repo_item.workspace, "✔", '✗', repo_item.description, style='bright_green')
+                elif len(repo_item.versions_odoons) >= 2 and repo_item.versions_odoons[1] == '17.0':
+                    table.add_row(str(count), repo_item.name, repo_item.workspace, '✗', "✔", repo_item.description, style='bright_green')
                 elif repo_item.status == 2:
-                    table.add_row( str(count), repo_item.name, repo_item.workspace,  "", "", repo_item.description,style='bright_yellow', )
-                        
-
+                    table.add_row(str(count), repo_item.name, repo_item.workspace, "", "", repo_item.description, style='bright_yellow')  
+            
         console = Console()
         console.print(table)
 

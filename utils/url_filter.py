@@ -35,7 +35,7 @@ class URLFilter:
                 workspace=get_workspace,
                   description='Failed Repository. It may be a private repository!',
                   name=get_name,
-                  versions_odoons=['16.0', '17.0'],
+                  versions_odoons=[],
                   is_private = True,
                   status=0  
                     )
