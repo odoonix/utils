@@ -102,7 +102,7 @@
     },
     "settings": {
         "odoo.bin": "${workspaceFolder:Odoo}/odoo/odoo-bin",
-        "odoo.addons.path": "${workspaceFolder:Odoo}/odoo/addons,${workspaceFolder:Odoonix}/online",
+        "odoo.addons.path": "${workspaceFolder:Odoo}/odoo/addons,${workspaceFolder:Odoonix}//odoo/design-themes",
         "git.ignoreLimitWarning": true,
         "python.defaultInterpreterPath": ".venv/bin/python3"
     },

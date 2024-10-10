@@ -261,7 +261,7 @@
         {
             "name": "docker-postgres",
             "workspace": "odoonix",
-            "branch": "13",
+            "branch": "16",
             "tags": [
                 "IT"
             ]
