@@ -85,3 +85,17 @@ def info_table(data, keys, columns=None,  title="#"):
 
     console = Console()
     console.print(table)
+
+def get_addons_version(url):
+    try:
+        result = subprocess.run(
+            ['git', '--no-pager', 'ls-remote', '--heads', url],
+            capture_output=True,
+            text=True,
+            check=True,
+            timeout=20
+            )
+        return result
+    
+    except subprocess.CalledProcessError as e:
+            print(f' error in run command ! {e}')    

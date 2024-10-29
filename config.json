@@ -17,12 +17,70 @@
         },
 
 
+        {
+            "name": "reporting-engine",
+            "workspace": "oca",
+            "tags":[
+                "lib"
+            ]
+        },
+        {
+            "name": "spreadsheet",
+            "workspace": "oca",
+            "tags": [
+                "lib"
+            ]
+        },
+        {
+            "name": "geospatial",
+            "workspace": "oca",
+            "tags": [
+                "lib"
+            ]
+        },
+        {
+            "name": "OpenUpgrade",
+            "workspace": "oca",
+            "tags": [
+                "lib"
+            ]
+        },
+        {
+            "name": "iot",
+            "workspace": "oca",
+            "tags": [
+                "lib"
+            ]
+        },
+        {
+            "name": "server-ux",
+            "workspace": "oca",
+            "tags": [
+                "lib"
+            ]
+        },
+        {
+            "name": "connector",
+            "workspace": "oca",
+            "tags": [
+                "lib"
+            ]
+        },
+
+
+
+
+
+        
+
+        
 
         {
             "name": "account-analytic",
             "workspace": "oca",
             "team": "https://odoo-community.org/psc-teams/accounting-9",
             "tags": [
+                "app",
                 "accounting"
             ]
         },
@@ -31,6 +89,7 @@
             "workspace": "oca",
             "team": "https://odoo-community.org/psc-teams/accounting-9",
             "tags": [
+                "app",
                 "accounting"
             ]
         },
@@ -39,6 +98,7 @@
             "workspace": "oca",
             "team": "https://odoo-community.org/psc-teams/accounting-9",
             "tags": [
+                "app",
                 "accounting"
             ]
         },
@@ -47,6 +107,7 @@
             "workspace": "oca",
             "team": "https://odoo-community.org/psc-teams/accounting-9",
             "tags": [
+                "app",
                 "accounting"
             ]
         },
@@ -55,6 +116,7 @@
             "workspace": "oca",
             "team": "https://odoo-community.org/psc-teams/accounting-9",
             "tags": [
+                "app",
                 "accounting"
             ]
         },
@@ -64,6 +126,7 @@
             "workspace": "oca",
             "team": "https://odoo-community.org/psc-teams/banking-10",
             "tags": [
+                "app",
                 "banking",
                 "accounting"
             ]
@@ -73,6 +136,7 @@
             "workspace": "oca",
             "team": "https://odoo-community.org/psc-teams/banking-10",
             "tags": [
+                "app",
                 "banking",
                 "accounting"
             ]
@@ -82,6 +146,7 @@
             "workspace": "oca",
             "team": "https://odoo-community.org/psc-teams/banking-10",
             "tags": [
+                "app",
                 "banking",
                 "accounting"
             ]
@@ -91,101 +156,129 @@
             "workspace": "oca",
             "team": "https://odoo-community.org/psc-teams/banking-10",
             "tags": [
+                "app",
                 "banking",
                 "accounting"
             ]
         },
-        
-        
-
-
-
-        
-
-        
-        {
-            "name": "geospatial",
-            "workspace": "oca"
-        },
         {
             "name": "credit-control",
-            "workspace": "oca"
+            "workspace": "oca",
+            "tags": [
+                "app"
+            ]
         },
         {
             "name": "management-system",
-            "workspace": "oca"
-        },
-        {
-            "name": "OpenUpgrade",
-            "workspace": "oca"
+            "workspace": "oca",
+            "tags": [
+                "app"
+            ]
         },
         {
             "name": "purchase-workflow",
-            "workspace": "oca"
+            "workspace": "oca",
+            "tags": [
+                "app"
+            ]
         },
         {
             "name": "pos",
-            "workspace": "oca"
-        },
-        {
-            "name": "iot",
-            "workspace": "oca"
+            "workspace": "oca",
+            "tags": [
+                "app"
+            ]
         },
         {
             "name": "web",
-            "workspace": "oca"
+            "workspace": "oca",
+            "tags": [
+                "app"
+            ]
         },
         {
             "name": "website",
-            "workspace": "oca"
+            "workspace": "oca",
+            "tags": [
+                "app"
+            ]
         },
         {
             "name": "hr",
-            "workspace": "oca"
+            "workspace": "oca",
+            "tags": [
+                "app"
+            ]
         },
         {
             "name": "payroll",
-            "workspace": "oca"
+            "workspace": "oca",
+            "tags": [
+                "app"
+            ]
         },
         {
             "name": "project",
-            "workspace": "oca"
+            "workspace": "oca",
+            "tags": [
+                "app"
+            ]
         },
         {
             "name": "sale-workflow",
-            "workspace": "oca"
+            "workspace": "oca",
+            "tags": [
+                "app"
+            ]
         },
         {
             "name": "server-auth",
-            "workspace": "oca"
+            "workspace": "oca",
+            "tags": [
+                "app"
+            ]
         },
         {
             "name": "server-tools",
-            "workspace": "oca"
+            "workspace": "oca",
+            "tags": [
+                "app"
+            ]
         },
         {
             "name": "server-brand",
-            "workspace": "oca"
-        },
-        {
-            "name": "server-ux",
-            "workspace": "oca"
+            "workspace": "oca",
+            "tags": [
+                "app"
+            ]
         },
         {
             "name": "partner-contact",
-            "workspace": "oca"
+            "workspace": "oca",
+            "tags": [
+                "app"
+            ]
         },
         {
             "name": "knowledge",
-            "workspace": "oca"
+            "workspace": "oca",
+            "tags": [
+                "app"
+            ]
         },
         {
             "name": "mis_builder",
-            "workspace": "oca"
+            "workspace": "oca",
+            "tags": [
+                "app"
+            ]
         },
         {
             "name": "dms",
-            "workspace": "oca"
+            "workspace": "oca",
+            "tags": [
+                "app"
+            ]
         },
 
 
