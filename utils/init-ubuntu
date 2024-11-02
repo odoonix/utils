@@ -19,6 +19,7 @@ apt install -y \
     python3-cachetools \
     libldap2-dev \
     libsasl2-dev \
+    python3-polib \
     pre-commit
     
 
@@ -58,7 +59,8 @@ apt install -y \
 apt install -y \
     docker \
     docker-compose \
-    docker-compose-v2
+    docker-compose-v2 \
+    docker-buildx
 
 systemctl enable docker
 
