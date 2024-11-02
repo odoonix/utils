@@ -19,6 +19,7 @@ def connect_to_gpt(apikey) -> OpenAI:
     except Exception as e:
         print(f"Error creating OpenAI client: {e}")
         return None
+    
 
     # read fine-tuned file
     # try:
@@ -55,14 +56,19 @@ def connect_to_gpt(apikey) -> OpenAI:
     return client
 
 
-def chat_gpt_translate(text: str, language: str, client) -> str:
+def chat_gpt_translate(text: str, language: str, module_name: str, client) -> str:
     try:
             
         prompt = f"""
-        Translate the following text to {language}, ensuring that all text is translated, including any text within HTML tags.
-        Preserve the original HTML tags, special characters such as % and others, and ensure that the number of lines in the translated text matches the number of lines in the original text exactly.
+        The following text pertains to Odoo modules, specifically the {module_name} module of Odoo. Translate the
+        text into {language}, ensuring that all content, including the text within HTML tags, is fully translated. For
+        example, if text is placed between two tags, make sure the translated text is also between the two tags.
+        Preserve the original HTML tags, special characters like %, and placeholders such as %s or %d. Ensure that
+        the number of lines in the translated text exactly matches the number of lines in the original text. Pay
+        attention to the specific context of Odoo modules, as word meanings may vary by module, and ensure the
+        translation accurately reflects the original intent. Write the translation in right-to-left format (without
+        any additional explanations). Original text:
 
-        Original text:
         {text}
         """
         response = client.chat.completions.create(

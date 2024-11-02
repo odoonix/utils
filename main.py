@@ -190,10 +190,10 @@ dev_translate = localization_subparser.add_parser(
 )
 
 dev_translate.add_argument(
-    '--input',
+    '--address',
     dest='address', 
     type=str,  
-    help="Input string for address"
+    help="Input string for file address"
 )
 
 dev_translate.add_argument(
@@ -204,6 +204,13 @@ dev_translate.add_argument(
 )
 
 dev_translate.add_argument(
+    '--name',
+    dest='name', 
+    type=str,  
+    help="Input string for module name"
+)
+
+dev_translate.add_argument(
     '--apikey',
     dest='apikey', 
     type=str,  
@@ -211,8 +218,6 @@ dev_translate.add_argument(
 )
 dev_translate.set_defaults(func=po_manage.process_po_file) 
 
-
- 
 if __name__ == '__main__':
     args = parser.parse_args()
     if args.verbose:
