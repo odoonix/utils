@@ -308,6 +308,14 @@
             "name": "website",
             "workspace": "odoonix"
         },
+        {
+            "name": "server-tools",
+            "workspace": "odoonix",
+            "tags": [
+                "server",
+                "db"
+            ]
+        },
         
 
         {
