@@ -1,6 +1,10 @@
 import polib
-from .cht_gpt_manage import chat_gpt_translate, connect_to_gpt
-
+import logging
+try:
+    from .cht_gpt_manage import chat_gpt_translate, connect_to_gpt
+except ModuleNotFoundError:
+    logging.error("module 'openai' is not installed")
+    
 
 def process_po_file(address, language, name, apikey, **kwrgs) -> None:
     po = polib.pofile(address)

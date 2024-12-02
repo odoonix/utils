@@ -308,6 +308,13 @@
             "name": "website",
             "workspace": "odoonix"
         },
+        {
+            "name": "hr",
+            "workspace": "odoonix",
+            "tags": [
+                "HR"
+            ]
+        },
         
 
         {
@@ -352,6 +359,11 @@
         },
         {
             "name": "sale",
+            "workspace": "moonsunsoft",
+            "public": false
+        },
+        {
+            "name": "generalpump",
             "workspace": "moonsunsoft",
             "public": false
         },
