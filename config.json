@@ -370,6 +370,10 @@
             "workspace": "odoonix"
         },
         {
+            "name": "payment",
+            "workspace": "odoonix"
+        },
+        {
             "name": "social",
             "workspace": "odoonix"
         },
