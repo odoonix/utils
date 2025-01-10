@@ -15,6 +15,13 @@
 
 
         {
+            "name": "fleet",
+            "workspace": "oca",
+            "tags":[
+                "lib"
+            ]
+        },
+        {
             "name": "queue",
             "workspace": "oca",
             "tags":[
