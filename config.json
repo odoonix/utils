@@ -9,13 +9,22 @@
             "name": "design-themes",
             "workspace": "odoo"
         },
-        
-
-
-
-
         {
             "name": "queue",
+            "workspace": "oca",
+            "tags":[
+                "lib"
+            ]
+        },
+        {
+            "name": "account-payment",
+            "workspace": "oca",
+            "tags":[
+                "lib"
+            ]
+        },
+        {
+            "name": "bank-payment",
             "workspace": "oca",
             "tags":[
                 "lib"
@@ -326,6 +335,11 @@
 
         {
             "name": "exchange",
+            "workspace": "moonsunsoft",
+            "public": false
+        },
+        {
+            "name": "sms",
             "workspace": "moonsunsoft",
             "public": false
         },
