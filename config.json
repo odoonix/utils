@@ -282,7 +282,10 @@
         },
         {
             "name": "payment",
-            "workspace": "odoonix"
+            "workspace": "odoonix",
+            "tags": [
+                "Payment"
+            ]
         },
         {
             "name": "geospatial",
