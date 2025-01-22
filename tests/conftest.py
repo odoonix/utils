@@ -1,5 +1,5 @@
 """
-    Dummy conftest.py for odoonix_util.
+    Dummy conftest.py for otoolbox.
 
     If you don't know what this is for, just leave it empty.
     Read more about conftest.py under:
