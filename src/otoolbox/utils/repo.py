@@ -1,7 +1,8 @@
 import os
 import json
 
-from . import linux
+from otoolbox import env
+from otoolbox.utils import linux
 
 
 class ModuleList(list):
@@ -79,11 +80,7 @@ def git_update(workspace, project, branch_name=None, depth='1'):
 
 def get_list(filter_workspace=False):
     # To update repositories
-    directory = get_workspace()
-    configs = {}
-    with open(directory+'/utils/config.json') as config_file:
-        configs = json.load(config_file)
-
+    configs = json.loads(env.resource_string('config.json'))
     result = configs['repositories']
     if filter_workspace:
         result = [repo for repo in configs['repositories']
@@ -93,12 +90,9 @@ def get_list(filter_workspace=False):
 
 def get_branch():
     # To update repositories
-    directory = get_workspace()
-    configs = {}
-    with open(directory+'/utils/config.json') as config_file:
-        configs = json.load(config_file)
+    configs = json.loads(env.resource_string('config.json'))
     return configs['version']
 
 
 def get_workspace():
-    return os.path.dirname(os.path.abspath(__file__)) + '/../..'
+    return env.get_workspace()

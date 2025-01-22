@@ -1,5 +1,8 @@
 import subprocess
 import logging
+
+from otoolbox import env
+
 from rich.console import Console
 from rich.table import Table
 
@@ -8,7 +11,7 @@ logger = logging.getLogger(__file__)
 
 def call_safe(command, shell=False, cwd='.'):
     try:
-        with open(".vw/app.logs", "a") as log:
+        with open(env.get_workspace() + "/.vw/app.logs", "a") as log:
             ret = subprocess.call(command, shell=shell,
                                   cwd=cwd, stdout=log, stderr=log)
             if ret != 0:
