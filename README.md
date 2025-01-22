@@ -24,41 +24,22 @@ With Odoonix, experience a seamless integration of development and administrativ
 
 Following extensions are required:
 
-## How use odoo utils?
+## How to install
 
-Create a folder named "odoo18"
+Installing the Odoonix Toolbox is straightforward and can be quickly accomplished using Python's package manager, pip. Simply open your terminal or command prompt and enter the command 
 
-    mkdir "Odoo-18"
-    cd "Odoo-18"
+    pip install otoolbox
 
-Clone odoo-utill
-
-    git clone git@github.com:odoonix/utils.git
-
-Make the main file executable:
-
-    chmod +X odoo-utils/main.py
-
-### Development environment
-
-To prepaire development environment:
-
-    odoo-utils/main.py dev init --vscode --repo --python
+This will download and install the latest version of the toolbox directly to your system. Once the installation is complete, you'll have access to a comprehensive set of tools designed to streamline Odoo module development and server management. With just a single command, you're equipped to harness the full potential of Odoonix, making your development and administrative tasks more efficient than ever.
 
 
-### To update repos
+To explore the various functionalities and options available within the Odoonix Toolbox, you can use the help command for detailed guidance. By entering following command in your terminal or command prompt, you'll access a comprehensive list of commands, features, and usage instructions.
 
-For Update Run command
+     otoolbox --help
 
-    odoo-utils/main.py dev update
+This command provides an overview of the toolbox's capabilities and explains how to utilize its many tools effectively. It's a convenient way to gain insights into the full range of features offered by Odoonix, ensuring you can make the most of its powerful functionalities for both Odoo module development and server management.
 
-### To launch
 
-Activate your venv using this command if not activated: "source .venv/bin/activate"
-
-With this, a Python environment will be created for you and all the required Odoo libraries will be installed in it
-
-The launch file of the vscode program is created automatically and makes the necessary settings for communication between odoo and postgres
 
 Finally, vscode will open automatically and you just need to press the "F5" key to install Odoo locally on your system.
 
