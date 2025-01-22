@@ -50,6 +50,7 @@ def test_multiply():
 
 
 def test_divide():
+    """Test division"""
     assert divide(6, 3) == 2
     with pytest.raises(ValueError, match="Cannot divide by zero."):
         divide(1, 0)
