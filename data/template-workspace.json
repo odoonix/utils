@@ -13,10 +13,6 @@
             "path": "moonsunsoft"
         },
         {
-            "name": "ViraWeb123",
-            "path": "viraweb123"
-        },
-        {
             "name": "Odoonix",
             "path": "odoonix"
         }
@@ -125,7 +121,7 @@
                 "group": "build",
                 "options": {
                     "cwd": "${workspaceFolder:Odoonix}/.."
-                },
+                }
             }
         ]
     }
