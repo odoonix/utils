@@ -10,8 +10,8 @@ managing single projects or complex multi-repository environments, the Maintaine
 package offers a reliable and streamlined solution for maintenance operations.
 """
 
-from otoolbox import common
-from otoolbox.utils import admin
+from otoolbox.args import common
+# from otoolbox.utils import admin
 
 
 def init_cli(parent_parser):

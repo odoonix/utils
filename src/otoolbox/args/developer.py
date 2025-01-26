@@ -10,8 +10,8 @@ to focus on coding and innovation rather than setup and maintenance. This module
 bridges the gap between development and operations, enhancing productivity and 
 ensuring a seamless development experience in Odoo projects.
 """
-from otoolbox import common
-from otoolbox.utils import develop
+from otoolbox.args import common
+# from otoolbox.utils import develop
 
 
 def init_cli(parent_parser):
@@ -77,7 +77,7 @@ def init_cli(parent_parser):
         dest='python',
         action='store_false')
 
-    dev_init.set_defaults(func=develop.init)
+    # dev_init.set_defaults(func=develop.init)
 
     # dev update
     dev_update = dev.add_parser(

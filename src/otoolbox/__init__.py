@@ -2,9 +2,9 @@ import sys
 import argparse
 
 
-from otoolbox import administrator
-from otoolbox import developer
-from otoolbox import maintainer
+from otoolbox.args import administrator
+from otoolbox.args import developer
+from otoolbox.args import maintainer
 from otoolbox import env
 
 
@@ -58,6 +58,15 @@ def init_cli():
         dest="verbose",
         required=False,
         default=0)
+    
+    
+    arg_parser.add_argument(
+        "--silent",
+        help="""Do not print extra information""",
+        action="count",
+        dest="silent",
+        required=False,
+        default=0)
 
     return arg_parser, arg_parser.add_subparsers()
 
@@ -70,5 +79,6 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
     env.context.update(args.__dict__)
-    print(env.load_text_banner())
-    args.func()
+    if not env.context.get('silent', 0):
+        print(env.resource_string("data/banner.txt"))
+    # args.func()
