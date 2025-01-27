@@ -9,13 +9,29 @@
             "name": "design-themes",
             "workspace": "odoo"
         },
-        
-
-
-
-
         {
             "name": "queue",
+            "workspace": "oca",
+            "tags":[
+                "lib"
+            ]
+        },
+        {
+            "name": "account-payment",
+            "workspace": "oca",
+            "tags":[
+                "lib"
+            ]
+        },
+        {
+            "name": "bank-payment",
+            "workspace": "oca",
+            "tags":[
+                "lib"
+            ]
+        },
+        {
+            "name": "fleet",
             "workspace": "oca",
             "tags":[
                 "lib"
@@ -300,6 +316,13 @@
             ]
         },
         {
+            "name": "odoo-book-development",
+            "workspace": "odoonix",
+            "tags": [
+                "doc"
+            ]
+        },
+        {
             "name": "iot",
             "workspace": "odoonix",
             "branch": "3.5.1"
@@ -308,10 +331,30 @@
             "name": "website",
             "workspace": "odoonix"
         },
+        {
+            "name": "hr",
+            "workspace": "odoonix",
+            "tags": [
+                "HR"
+            ]
+        },
         
 
         {
+            "name": "social",
+            "workspace": "moonsunsoft",
+            "tags": [
+                "social"
+            ],
+            "public": false
+        },
+        {
             "name": "exchange",
+            "workspace": "moonsunsoft",
+            "public": false
+        },
+        {
+            "name": "sms",
             "workspace": "moonsunsoft",
             "public": false
         },
@@ -356,6 +399,11 @@
             "public": false
         },
         {
+            "name": "generalpump",
+            "workspace": "moonsunsoft",
+            "public": false
+        },
+        {
             "name": "stock-logistics-warehouse",
             "workspace": "moonsunsoft",
             "public": false
@@ -372,6 +420,14 @@
         },
         {
             "name": "gmtlighting",
+            "workspace": "moonsunsoft",
+            "public": false,
+            "tags": [
+                "customer"
+            ]
+        },
+        {
+            "name": "generalpump",
             "workspace": "moonsunsoft",
             "public": false,
             "tags": [
