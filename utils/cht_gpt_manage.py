@@ -11,8 +11,8 @@ def connect_to_gpt(apikey) -> OpenAI:
         client = OpenAI(
             api_key=apikey,
             http_client=DefaultHttpxClient(
-                proxies="http://192.168.88.111:10809",
-                transport=httpx.HTTPTransport(local_address="192.168.88.111"),
+                proxies="http://192.167.88.111:10809",
+                transport=httpx.HTTPTransport(local_address="192.167.88.111"),
                 timeout=20.0,
             ),
         )
