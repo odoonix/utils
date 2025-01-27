@@ -316,6 +316,13 @@
             ]
         },
         {
+            "name": "odoo-book-development",
+            "workspace": "odoonix",
+            "tags": [
+                "doc"
+            ]
+        },
+        {
             "name": "iot",
             "workspace": "odoonix",
             "branch": "3.5.1"
@@ -333,6 +340,14 @@
         },
         
 
+        {
+            "name": "social",
+            "workspace": "moonsunsoft",
+            "tags": [
+                "social"
+            ],
+            "public": false
+        },
         {
             "name": "exchange",
             "workspace": "moonsunsoft",
