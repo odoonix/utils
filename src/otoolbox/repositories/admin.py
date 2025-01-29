@@ -2,8 +2,8 @@
 import logging
 
 from otoolbox import env
-from otoolbox.utils import linux
-from otoolbox.utils import repo
+from otoolbox.repositories import linux
+from otoolbox.repositories import repo
 
 logger = logging.getLogger(__name__)
 

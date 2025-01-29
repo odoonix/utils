@@ -3,11 +3,17 @@
 import pkg_resources
 import os
 import sys
-from otoolbox import base
+from otoolbox.base import (
+    WorkspaceResource,
+    WorkspaceResourceGroup
+)
 
 VERSION = "0.0.0"
 context = {
-    'resources': {}
+    'resources': WorkspaceResourceGroup(
+        path= 'virtual://', 
+        title="Root Resource"
+    )
 }
 
 
@@ -42,19 +48,13 @@ def get_workspace_path(path):
 #################################################################################
 # Resource
 #################################################################################
-def add_resource(resource:base.WorkspaceResource):
-    group = context['resources'].get(resource.path, None)
+def add_resource(**kargs):
+    resource = WorkspaceResource(**kargs)
+    path = kargs.get('path')
+    group = context['resources'].get(path)
     if not group:
-        group = base.WorkspaceResourceGroup()
+        group = WorkspaceResourceGroup(path=path)
     group.append(resource)
+    context['resources'].append(group)
     return sys.modules[__name__]
 
-def constructor_copy_resource(path):
-    """Create a constructor to copy resource with path"""
-    def copy_resource(resource:base.WorkspaceResource):
-        resource_stream = resource_stream(path)
-        # Open the output file in write-binary mode
-        with open(resource.path, 'wb') as out_file:
-            # Read from the resource stream and write to the output file
-            out_file.write(resource_stream.read())
-    return copy_resource
