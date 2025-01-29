@@ -2,7 +2,7 @@ import os
 import json
 
 from otoolbox import env
-from otoolbox.utils import linux
+from otoolbox.repositories import linux
 
 
 class ModuleList(list):

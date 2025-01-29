@@ -1,11 +1,13 @@
 import sys
 import argparse
+import importlib
 
 
-from otoolbox.args import administrator
+from otoolbox.args import workspace
 from otoolbox.args import developer
 from otoolbox.args import maintainer
 from otoolbox import env
+from otoolbox import workspace
 
 
 if sys.version_info[:2] >= (3, 8):
@@ -16,7 +18,7 @@ else:
 
 try:
     # Change here if project is renamed and does not equal the package name
-    dist_name = "utils"
+    dist_name = "otoolbox"
     __version__ = version(dist_name)
 except PackageNotFoundError:  # pragma: no cover
     __version__ = "unknown"
@@ -71,14 +73,36 @@ def init_cli():
     return arg_parser, arg_parser.add_subparsers()
 
 
+
+def load_resources(*args):
+    def call_init(package_name):
+        # Import the package dynamically
+        package = importlib.import_module(package_name)
+        
+        # Check if the package has an __init__ method and call it if it exists
+        if hasattr(package, 'init'):
+            package.init()
+
+    # Example usage
+    for path in args:
+        call_init(path)
+
+
 if __name__ == '__main__':
+    # Init resources
+    load_resources(
+        'otoolbox.help',
+        'otoolbox.workspace'
+    )
+
+    # Init arguments
     parser, parent_parser = init_cli()
-    administrator_parser = administrator.init_cli(parent_parser)
-    developer_parser = developer.init_cli(parent_parser)
-    maintainer_parser = maintainer.init_cli(parent_parser)
+    workspace.init_cli(parent_parser)
+    developer.init_cli(parent_parser)
+    maintainer.init_cli(parent_parser)
 
     args = parser.parse_args()
     env.context.update(args.__dict__)
     if not env.context.get('silent', 0):
         print(env.resource_string("data/banner.txt"))
-    # args.func()
+    args.func()

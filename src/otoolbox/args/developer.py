@@ -11,7 +11,7 @@ bridges the gap between development and operations, enhancing productivity and
 ensuring a seamless development experience in Odoo projects.
 """
 from otoolbox.args import common
-# from otoolbox.utils import develop
+from otoolbox.repositories import develop
 
 
 def init_cli(parent_parser):
