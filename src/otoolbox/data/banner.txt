@@ -11,7 +11,19 @@
           ░                                                
 
 
-Odoo Toolbax from Odoonix
-Version {version}
+Odoo Toolbax developed by {{author}}
+Version: {{version}}
+EMail  : {{email}}
+Website: {{website}}
+
+{{#verbose}}
+  {{#resources.resources}}
 
 
+{{title}} 
+---------------------------
+Path:{{path}}
+Type: 
+Description: {{description}}
+  {{/resources.resources}}
+{{/verbose}}

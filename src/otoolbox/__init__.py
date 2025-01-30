@@ -1,13 +1,11 @@
 import sys
 import argparse
 import importlib
+import chevron
 
 
-from otoolbox.args import workspace
-from otoolbox.args import developer
-from otoolbox.args import maintainer
+from otoolbox import args
 from otoolbox import env
-from otoolbox import workspace
 
 
 if sys.version_info[:2] >= (3, 8):
@@ -60,8 +58,7 @@ def init_cli():
         dest="verbose",
         required=False,
         default=0)
-    
-    
+
     arg_parser.add_argument(
         "--silent",
         help="""Do not print extra information""",
@@ -73,12 +70,11 @@ def init_cli():
     return arg_parser, arg_parser.add_subparsers()
 
 
-
 def load_resources(*args):
     def call_init(package_name):
         # Import the package dynamically
         package = importlib.import_module(package_name)
-        
+
         # Check if the package has an __init__ method and call it if it exists
         if hasattr(package, 'init'):
             package.init()
@@ -92,17 +88,23 @@ if __name__ == '__main__':
     # Init resources
     load_resources(
         'otoolbox.help',
-        'otoolbox.workspace'
+        'otoolbox.workspace',
+        'otoolbox.ubuntu',
+        'otoolbox.vscode',
+        'otoolbox.repositories'
     )
 
     # Init arguments
     parser, parent_parser = init_cli()
-    workspace.init_cli(parent_parser)
-    developer.init_cli(parent_parser)
-    maintainer.init_cli(parent_parser)
+    args.workspace.init_cli(parent_parser)
+    args.developer.init_cli(parent_parser)
+    args.maintainer.init_cli(parent_parser)
 
     args = parser.parse_args()
     env.context.update(args.__dict__)
     if not env.context.get('silent', 0):
-        print(env.resource_string("data/banner.txt"))
+        print(chevron.render(
+            template=env.resource_string("data/banner.txt"),
+            data=env.context
+        ))
     args.func()

@@ -62,4 +62,9 @@ apt install -y \
 
 systemctl enable docker
 
+############################################################
+# Multimedia
+############################################################
+apt install -y \
+    ubuntu-restricted-extras
 

@@ -1,17 +1,11 @@
-"""Adds helps and documents
+"""Adds resources to manage repositories
 
 Resources:
-- README.md
+- .otoolbox/repositoires.json
 
 """
 from otoolbox import env
 from otoolbox import utils
-
-
-
-
-
-
 
 
 ###################################################################
@@ -22,18 +16,19 @@ def init():
     """
     (env
         .add_resource(
-            path="README.md",
-            title="Workspace README",
-            description="A readme that shows parts of the workspace",
+            path=".otoolbox/{}-workspace.json".format(
+                env.context.get("odoo_version", "18.0")),
+            title="List of managed repositories",
+            description="""Adding, removing, and updating repositories in the workspace is done through this file""",
             constructors=[
-                utils.constructor_copy_resource("data/WORKSPACE_README.md")
+                utils.constructor_copy_resource("data/vscode-workspace.json")
             ],
             destructors=[
                 utils.delete_file
             ],
             validators=[
-                utils.is_file, 
+                utils.is_file,
                 utils.is_readable
             ]
         )
-    )
+     )

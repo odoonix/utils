@@ -1,39 +1,37 @@
-"""Adds helps and documents
+
+"""Support tools to init and config Ubuntu workspace
 
 Resources:
-- README.md
-
+- .otoolbox/run/init.sh
 """
+import os
+
 from otoolbox import env
 from otoolbox import utils
-
-
-
-
-
-
-
 
 ###################################################################
 # init
 ###################################################################
+
+
 def init():
     """Init the resources for the workspace
     """
     (env
         .add_resource(
-            path="README.md",
-            title="Workspace README",
-            description="A readme that shows parts of the workspace",
+            priority=100,
+            path=".otoolbox",
+            title="Workspace configuration directory",
+            description="All configuration related to current workspace are located in this folder",
             constructors=[
-                utils.constructor_copy_resource("data/WORKSPACE_README.md")
+                utils.makedir
             ],
             destructors=[
-                utils.delete_file
+                utils.delete_dir
             ],
             validators=[
-                utils.is_file, 
+                utils.is_dir,
                 utils.is_readable
             ]
         )
-    )
+     )

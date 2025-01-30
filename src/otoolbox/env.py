@@ -8,21 +8,18 @@ from otoolbox.base import (
     WorkspaceResourceGroup
 )
 
-VERSION = "0.0.0"
+VERSION = "0.1.0"
 context = {
+    'version': VERSION,
+    'author': "Odoonix",
+    'email': "info@odoonix.com",
+    'website': "https://odoonix.com",
+    'github': "https://githubs.com/odoonix",
     'resources': WorkspaceResourceGroup(
-        path= 'virtual://', 
+        path='virtual://',
         title="Root Resource"
     )
 }
-
-
-
-
-def load_text_banner():
-    """Load texu"""
-    data = resource_string("banner.txt")
-    return data.format(version=VERSION)
 
 
 def resource_string(resource_name, encoding="utf-8"):
@@ -39,10 +36,10 @@ def get_workspace():
     """Get the workspace"""
     return context.get("path", ".")
 
+
 def get_workspace_path(path):
     """Gets subfolder/file with in workspace"""
     return os.path.join(get_workspace(), path)
-
 
 
 #################################################################################
@@ -57,4 +54,3 @@ def add_resource(**kargs):
     group.append(resource)
     context['resources'].append(group)
     return sys.modules[__name__]
-

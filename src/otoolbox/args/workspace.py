@@ -7,9 +7,11 @@ def _init_resources(**kargs):
     resources = env.context.get('resources')
     resources.build()
 
+
 def _delete_resources(**kargs):
     resources = env.context.get('resources')
     resources.destroy()
+
 
 def init_cli(parent_parser):
     """Init CLI to support maintainer tools
@@ -21,11 +23,12 @@ def init_cli(parent_parser):
             keep dev repositories up to date.
         """)
     init_parseer.set_defaults(func=_init_resources)
-    
+
     init_parseer.add_argument(
         '--odoo',
         dest='odoo_version',
         action='store',
+        default="18.0",
         required=False
     )
 
@@ -35,6 +38,5 @@ def init_cli(parent_parser):
             Delete resources.
         """)
     delete_parseer.set_defaults(func=_delete_resources)
-    
 
     return parent_parser
