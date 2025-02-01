@@ -314,7 +314,17 @@
         },
         {
             "name": "talentbookr",
-            "workspace": "moonsunsoft"
+            "workspace": "moonsunsoft",
+            "tags": [
+                "customer"
+            ]
+        }, 
+        {
+            "name": "voltario",
+            "workspace": "moonsunsoft",
+            "tags": [
+                "customer"
+            ]
         },
         
 
