@@ -1,11 +1,16 @@
 """Envirnement fo the sysetm"""
 
+
 import pkg_resources
 import os
 import sys
 from otoolbox.base import (
     WorkspaceResource,
     WorkspaceResourceGroup
+)
+
+from otoolbox.constants import(
+RESOURCE_PREFIX_VIRTUAL
 )
 
 VERSION = "0.1.0"
@@ -16,20 +21,21 @@ context = {
     'website': "https://odoonix.com",
     'github': "https://githubs.com/odoonix",
     'resources': WorkspaceResourceGroup(
-        path='virtual://',
-        title="Root Resource"
+        path=RESOURCE_PREFIX_VIRTUAL,
+        title="Root Resource",
+        visible=False,
     )
 }
 
 
-def resource_string(resource_name, encoding="utf-8"):
+def resource_string(resource_name:str, packag_name:str="otoolbox", encoding:str="utf-8"):
     """Load resource"""
-    return pkg_resources.resource_string("otoolbox", resource_name).decode(encoding)
+    return pkg_resources.resource_string(packag_name, resource_name).decode(encoding)
 
 
-def resource_stream(resource_name):
+def resource_stream(resource_name:str, packag_name:str="otoolbox"):
     """Load resource"""
-    return pkg_resources.resource_stream("otoolbox", resource_name)
+    return pkg_resources.resource_stream(packag_name, resource_name)
 
 
 def get_workspace():

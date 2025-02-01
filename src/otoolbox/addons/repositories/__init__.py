@@ -9,8 +9,12 @@ import json
 
 from otoolbox import env
 from otoolbox import utils
+from otoolbox import addons
+from otoolbox.constants import (
+    RESOURCE_PRIORITY_ROOT
+)
 
-from otoolbox.repositories import git
+from otoolbox.addons.repositories import git
 
 
 REPOSITORIES_PATH = ".otoolbox/repositoires.json"
@@ -28,21 +32,42 @@ def _load_repositories():
             data = f.read()
 
     if not data:
-        with env.resource_string(reposiotires_path, 'w') as f:
-            data = f.read()
+        data = env.resource_string(
+            RESOURCE_REPOSITORIES_PATH, 
+            packag_name=__name__
+        )
     repo_list = json.loads(data)
+    workspaces = []
     for item in repo_list:
         env.add_resource(
             path="{}/{}".format(item["workspace"], item["name"]),
+            parent=item["workspace"],
             title="Git repository: {}/{}".format(item["workspace"], item["name"]),
-            description="""
-                    Automaticaly added resources from git.
-                """,
+            description="""Automaticaly added resources from git.""",
             constructors=[
                 git.git_clone
             ],
+            updates=[
+                git.git_pull
+            ],
             destructors=[],
-            validators=[]
+            validators=[],
+        )
+        if item["workspace"] not in workspaces:
+            workspaces.append(item["workspace"])
+
+    for workspace_path in workspaces:
+        env.add_resource(
+            priority=RESOURCE_PRIORITY_ROOT,
+            path=workspace_path,
+            title="Git workspace: {}".format(workspace_path),
+            description="""Automaticaly added resources from git.""",
+            constructors=[
+                utils.makedir
+            ],
+            updates=[],
+            destructors=[],
+            validators=[],
         )
 
 
@@ -51,12 +76,14 @@ def init():
     """
     (env
         .add_resource(
-            priority=100,
+            priority=RESOURCE_PRIORITY_ROOT,
             path=REPOSITORIES_PATH,
             title="List of managed repositories",
             description="Adding, removing, and updating repositories in the workspace is done through this file",
             constructors=[
-                utils.constructor_copy_resource(RESOURCE_REPOSITORIES_PATH)
+                utils.constructor_copy_resource(
+                    RESOURCE_REPOSITORIES_PATH,
+                    packag_name=__name__)
             ],
             destructors=[
                 utils.delete_file
@@ -67,3 +94,4 @@ def init():
             ]
         )
      )
+    _load_repositories()

@@ -1,13 +1,16 @@
 import os
-import logging
+import sys
 
-_logger = logging.getLogger(__name__)
+from otoolbox.constants import (
+    RESOURCE_PRIORITY_DEFAULT
+)
 
 
 class WorkspaceResource():
     def __init__(
         self,
         path,
+        parent=None,
         title=None,
         description=None,
         constructors=None,
@@ -15,9 +18,11 @@ class WorkspaceResource():
         validators=None,
         updates=None,
         tags=None,
-        priority=10,
+        priority=RESOURCE_PRIORITY_DEFAULT,
+        visible=True,
     ):
         self.path = path
+        self.parent = parent
         self.title = title
         self.description = description if description else []
         self.constructors = constructors if constructors else []
@@ -26,9 +31,10 @@ class WorkspaceResource():
         self.tags = tags if tags else []
         self.updates = updates if updates else []
         self.priority = priority
+        self.visible=True,
 
         # internals
-        self.validation_errors = []
+        self.validation_errors = {}
         self.is_valied = False
 
     def build(self, **kargs):
@@ -41,16 +47,33 @@ class WorkspaceResource():
         for destructor in self.destructors:
             destructor(context=self, **kargs)
 
-    def verify(self, **kargs):
+    def verify(self, continue_on_exception:bool=True, **kargs) -> int:
         """Launch all verifiy function"""
+        verified = 0
         for validator in self.validators:
-            validator(context=self, **kargs)
+            try:
+                validator(context=self, **kargs)
+                verified+=1
+            except BaseException as ex:
+                if not continue_on_exception:
+                    raise ex
+                self.set_validator_failed(validator, ex)
+        self.is_valied = verified == len(self.validators)
+        return verified
 
     def update(self, **kargs):
         """Launch all updates function"""
         for udpdate in self.updates:
             udpdate(context=self, **kargs)
 
+    def get_validators_len(self):
+        return len(self.validators)
+    
+    def set_validator_failed(self, validator, exception):
+        self.validation_errors[validator] = exception
+
+    def clean_validator_failer(self):
+        self.validation_errors.clear()
 
 class WorkspaceResourceGroup(WorkspaceResource):
     """Group of resources
@@ -61,6 +84,7 @@ class WorkspaceResourceGroup(WorkspaceResource):
     def __init__(self, **kargs):
         super().__init__(**kargs)
         self.resources = kargs.get('resources', [])
+        self.validators_len = 0
 
     def append(self, resource: WorkspaceResource):
         """Appends new resource to the group"""
@@ -69,8 +93,10 @@ class WorkspaceResourceGroup(WorkspaceResource):
         self.priority = self.resources[0].priority
         self.title = self.resources[0].title
         self.description = self.resources[0].description
+        self.visible = self.resources[0].visible
+        self.validators_len += resource.get_validators_len()
 
-    def get(self, path, default=False, **kargs):
+    def get(self, path, default=False):
         """Gets resources"""
         for resource in self.resources:
             if resource.path == path:
@@ -88,6 +114,11 @@ class WorkspaceResourceGroup(WorkspaceResource):
         super().destroy(**kargs)
 
     def verify(self, **kargs):
+        verified = 0
         for resource in self.resources:
-            resource.verify(**kargs)
-        super().verify(**kargs)
+            verified += resource.verify(**kargs)
+        verified += super().verify(**kargs)
+        return verified
+    
+    def get_validators_len(self) -> int:
+        return self.validators_len

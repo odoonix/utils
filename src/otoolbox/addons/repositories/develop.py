@@ -2,14 +2,6 @@
 from . import linux
 from . import admin
 
-
-def update(**kargs):
-    # 1- load all repositories
-    admin.update_repositories(**kargs)
-
-    # TODO: check if need to update settings
-
-
 def init(
         repo=False,
         vscode=False,

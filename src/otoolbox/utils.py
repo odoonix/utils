@@ -1,15 +1,31 @@
 import os
 import logging
 import subprocess
+import typer
 
 from otoolbox.base import (WorkspaceResource)
+from otoolbox import env
 from otoolbox.env import (
     get_workspace_path,
     resource_stream,
 )
+from otoolbox.constants import (
+    ERROR_CODE_PRE_VERIFICATION
+)
 
 _logger = logging.getLogger(__name__)
 
+
+def verify_all_resource(should_exit=True):
+    continue_on_exception = env.context.get('continue_on_exception', True)
+    verified = env.context['resources'].verify(
+        continue_on_exception=continue_on_exception
+    )
+    total = env.context['resources'].get_validators_len()
+    if verified != total and should_exit:
+        print('Resource verification fail.')
+        typer.Exit(ERROR_CODE_PRE_VERIFICATION)
+    return verified != total, verified, total
 
 ###################################################################
 # constructors
@@ -35,15 +51,18 @@ def call_process_safe(command, shell=False, cwd='.'):
 # constructors
 ###################################################################
 def makedir(context: WorkspaceResource):
+    """Create new directory in the current workspace.
+    
+    Parameters:
+    context (WorkspaceResource): The resource detail"""
     path = get_workspace_path(context.path)
     if not os.path.exists(path):
         os.makedirs(path)
 
-
-def constructor_copy_resource(path):
+def constructor_copy_resource(path, packag_name:str="otoolbox"):
     """Create a constructor to copy resource with path"""
     def copy_resource(context: WorkspaceResource):
-        stream = resource_stream(path)
+        stream = resource_stream(path,packag_name=packag_name)
         # Open the output file in write-binary mode
         out_file_path = get_workspace_path(context.path)
         with open(out_file_path, 'wb') as out_file:
