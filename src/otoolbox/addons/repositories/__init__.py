@@ -52,6 +52,7 @@ def _load_repositories():
             ],
             destructors=[],
             validators=[],
+            tags=['git', item["workspace"], *item.get('tags', [])]
         )
         if item["workspace"] not in workspaces:
             workspaces.append(item["workspace"])

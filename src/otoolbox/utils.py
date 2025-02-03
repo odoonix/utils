@@ -30,18 +30,20 @@ def verify_all_resource(should_exit=True):
 ###################################################################
 # constructors
 ###################################################################
-def call_process_safe(command, shell=False, cwd='.'):
+def call_process_safe(command, shell=False, cwd=None):
     """Execute a command in a subprocess and log the output"""
     try:
+        if not cwd:
+            cwd = env.get_workspace()
         with open(get_workspace_path(".otoolbox/logs.txt"), "a", encoding="utf8") as log:
-            ret = subprocess.call(command, shell=shell,
-                                  cwd=cwd, stdout=log, stderr=log)
-            if ret != 0:
-                if ret < 0:
-                    print("Killed by signal")
-                else:
-                    print("Command failed with return code")
-                return ret
+            ret = subprocess.call(
+                command, 
+                shell=shell,
+                cwd=cwd, 
+                stdout=log, 
+                stderr=log
+            )
+            return ret
     except Exception as e:
         _logger.error('Failed to execute command: %s', e)
         return 2

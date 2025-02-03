@@ -27,6 +27,9 @@ context = {
     )
 }
 
+# list of errors and warnings
+errors = []
+
 
 def resource_string(resource_name:str, packag_name:str="otoolbox", encoding:str="utf-8"):
     """Load resource"""
