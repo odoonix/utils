@@ -7,7 +7,7 @@ import chevron
 
 from otoolbox import workspace
 from otoolbox import developer
-from otoolbox import maintainer
+from otoolbox import repositories
 from otoolbox import env
 from otoolbox import utils
 
@@ -136,10 +136,11 @@ if __name__ == '__main__':
     
     # Launch the CLI application
     app = typer.Typer(
-        callback=callback_common_arguments, 
-        result_callback=result_callback
+        callback=callback_common_arguments,
+        result_callback=result_callback,
+        pretty_exceptions_show_locals=False
     )
     app.add_typer(workspace.app, name="workspace")
+    app.add_typer(repositories.app, name="repo")
     app.add_typer(developer.app, name="dev")
-    app.add_typer(maintainer.app, name="admin")
     app()

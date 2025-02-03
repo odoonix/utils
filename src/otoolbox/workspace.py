@@ -4,7 +4,9 @@ from otoolbox import env
 from otoolbox import utils
 
 
-app = typer.Typer()
+app = typer.Typer(
+    pretty_exceptions_show_locals=False
+)
 
 @app.command()
 def init():
@@ -27,6 +29,27 @@ def verify():
 def delete():
     resources = env.context.get('resources')
     resources.destroy()
+
+
+# TODO: maso, 2025: add info command
+#
+# Info command displayes information about the current workspace such as
+# - version
+# - creation time
+# - last update time
+# - acvite moduals
+#
+# @app.command()
+# def info():
+#     """Display information about the workspace"""
+#     pass
+
+@app.command()
+def update():
+    """Updates current workspace to the latest version"""
+    resources = env.context.get('resources')
+    resources.update()
+
 
 
 # def init_cli(parent_parser):

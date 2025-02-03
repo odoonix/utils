@@ -1,8 +1,39 @@
 
 import os
+import logging
 
 from otoolbox import env
 from otoolbox import utils
+
+_logger = logging.getLogger(__name__)
+
+GIT_ERROR_TABLE = {
+    2: {
+        'level': 'fatal',
+        'message': "Resource {path}, doese not exist or is not a git repository."
+    },
+    128: {
+        'level': 'fatal',
+        'message': "Destination path '{path}' already exists and is not an empty directory."
+    }
+}
+
+def _rais_git_error(context, error_code):
+    if not error_code:
+        return
+    error = GIT_ERROR_TABLE.get(error_code, {
+        'level': 'fatal',
+        'message': "Unknown GIT error for distination path {path}. Error code is {error_code}. "
+        "See .otoolbox/logs.text for more information."
+    })
+    message = error['message'].format(error_code=error_code,**context.__dict__)
+    if env.context.get('continue_on_exception'):
+        _logger.error(message)
+        env.errors.append(message)
+    else:
+        raise RuntimeError(
+            error['message'].format(error_code=error_code,**context.__dict__)
+        )
 
 
 def git_clone(context):
@@ -20,20 +51,17 @@ def git_clone(context):
         f"git@github.com:{context.path}.git"
     ], cwd=cwd)
 
-    if result != 0:
-        raise AssertionError("Fail to update the repository")
+    _rais_git_error(context=context, error_code=result)
 
 
 
 def git_pull(context):
     """Pull the git repository from github
     """
-    cwd = os.path.dirname(context.path)
+    cwd = env.get_workspace_path(context.path)
     result = utils.call_process_safe([
         'git',
-        'pull',
-        f"git@github.com:{context.path}.git"
+        'pull'
     ], cwd=cwd)
 
-    if result != 0:
-        raise AssertionError("Fail to update the repository")
+    _rais_git_error(context=context, error_code=result)

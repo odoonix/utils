@@ -11,11 +11,22 @@ package offers a reliable and streamlined solution for maintenance operations.
 """
 import typer
 
-# from otoolbox.args import common
+
+
+from otoolbox import env
 # from otoolbox.repositories import admin
 
 
 app = typer.Typer()
+
+
+def _filter_resources():
+    resources = (
+        env.context
+            .get('resources')
+            .filter(lambda resource: resource.has_tag('git'))
+    )
+    return resources;
 
 @app.command()
 def info():
@@ -23,8 +34,14 @@ def info():
     pass
 
 @app.command()
+def init():
+    """Initialize all resources from addons into the current workspace"""
+    return _filter_resources().build()
+
+@app.command()
 def update():
-    pass
+    """Updates current workspace to the latest version"""
+    return _filter_resources().update()
 
 
 

@@ -75,19 +75,37 @@ class WorkspaceResource():
     def clean_validator_failer(self):
         self.validation_errors.clear()
 
+    def has_tag(self, *args):
+        """Check if it has any tags from arguments.
+        
+        # git or github
+        flag = resource.has_tag('git', 'github')
+          
+        """
+        for arg in args:
+            if arg in self.tags:
+                return True
+
 class WorkspaceResourceGroup(WorkspaceResource):
     """Group of resources
 
     If there are many resources that are related to each other, it is possible to group them in a group.
     """
 
-    def __init__(self, **kargs):
-        super().__init__(**kargs)
-        self.resources = kargs.get('resources', [])
+    def __init__(self,
+                 path,
+                 resources=None, 
+                 root=None, 
+                 **kargs):
+        super().__init__(path, **kargs)
+        self.resources = resources if resources else []
         self.validators_len = 0
+        self.root = root
 
     def append(self, resource: WorkspaceResource):
         """Appends new resource to the group"""
+        if self.root:
+            raise RuntimeError("Imposible to modifie virtual resource")
         self.resources.append(resource)
         self.resources = sorted(self.resources, key=lambda x: x.priority, reverse=True)
         self.priority = self.resources[0].priority
@@ -120,5 +138,20 @@ class WorkspaceResourceGroup(WorkspaceResource):
         verified += super().verify(**kargs)
         return verified
     
+    def update(self, **kargs):
+        for resource in self.resources:
+            resource.update(**kargs)
+        super().update(**kargs)
+    
     def get_validators_len(self) -> int:
         return self.validators_len
+
+    def has_tag(self, *args):
+        for resource in self.resources:
+            if resource.has_tag(*args):
+                return True
+        return super().has_tag(*args)
+    
+    def filter(self, filter_function):
+        resources = list(filter(filter_function, self.resources))
+        return WorkspaceResourceGroup(self.path, root=self, resources=resources)
