@@ -12,7 +12,6 @@ package offers a reliable and streamlined solution for maintenance operations.
 import typer
 
 
-
 from otoolbox import env
 # from otoolbox.repositories import admin
 
@@ -23,27 +22,28 @@ app = typer.Typer()
 def _filter_resources():
     resources = (
         env.context
-            .get('resources')
-            .filter(lambda resource: resource.has_tag('git'))
+        .get('resources')
+        .filter(lambda resource: resource.has_tag('git'))
     )
-    return resources;
+    return resources
+
 
 @app.command()
 def info():
     """Display information about the workspace"""
     pass
 
+
 @app.command()
 def init():
     """Initialize all resources from addons into the current workspace"""
     return _filter_resources().build()
 
+
 @app.command()
 def update():
     """Updates current workspace to the latest version"""
     return _filter_resources().update()
-
-
 
 
 # def add_repo_list_filter(parser):
@@ -73,7 +73,7 @@ def update():
 #         '--no-moonsunsoft',
 #         dest='python',
 #         action='store_false')
-    
+
 # def init_cli(parent_parser):
 #     """Init CLI to support maintainer tools
 #     """
@@ -81,7 +81,7 @@ def update():
 #     admin_subparser = admin_parseer.add_subparsers(
 #         title="Administrator Tools",
 #         description="""
-#             Tools and Utilites to help administrators. It makes simple to 
+#             Tools and Utilites to help administrators. It makes simple to
 #             keep dev repositories up to date.
 #         """)
 
@@ -100,3 +100,12 @@ def update():
 #     common.add_repo_list_filter(dev_info)
 
 #     return admin_parseer
+
+
+def run():
+    """Run the application"""
+    app()
+
+
+if __name__ == "__main__":
+    run()
