@@ -329,6 +329,11 @@
         
 
         {
+            "name": "associated_projects",
+            "workspace": "moonsunsoft",
+            "public": false
+        },
+        {
             "name": "exchange",
             "workspace": "moonsunsoft",
             "public": false
