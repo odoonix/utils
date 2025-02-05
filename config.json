@@ -341,6 +341,14 @@
         
 
         {
+            "name": "stock",
+            "workspace": "moonsunsoft",
+            "tags": [
+                "stock"
+            ],
+            "public": false
+        },
+        {
             "name": "social",
             "workspace": "moonsunsoft",
             "tags": [
