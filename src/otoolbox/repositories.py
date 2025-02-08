@@ -36,8 +36,11 @@ def info():
 
 
 @app.command()
-def init():
+def init(ssh_git: bool = False):
     """Initialize all resources from addons into the current workspace"""
+    env.context.update({
+        'ssh_git': ssh_git
+    })
     return _filter_resources().build()
 
 
@@ -62,9 +65,8 @@ def list_repo():
     console.print(table)
 
 
-
 @app.command()
-def add(organization:str, project:str, branch:str, title:str=None, description:str=None, tags:str=None):
+def add(organization: str, project: str, branch: str, title: str = None, description: str = None, tags: str = None):
     """Add a new repository to the workspace"""
     return _filter_resources().build()
 
