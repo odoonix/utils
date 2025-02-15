@@ -289,7 +289,10 @@
         },
 
 
-        
+        {
+            "name": "connector",
+            "workspace": "moonsunsoft"
+        }, 
         {
             "name": "payment",
             "workspace": "moonsunsoft"
